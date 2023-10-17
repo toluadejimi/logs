@@ -112,6 +112,9 @@ class ProductController extends Controller
         $inst = Item::where('id', $request->id)->first()->inst;
         $description = Item::where('id', $request->id)->first()->description;
 
+        $instruction = Item::where('id', $request->id)->first()->instruction;
+        $description = Item::where('id', $request->id)->first()->description;
+
 
 
 

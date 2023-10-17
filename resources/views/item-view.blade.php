@@ -219,7 +219,7 @@
 
 
                                 <div class="border-product">
-                                    <p>{{$inst}}</p>
+                                    <p>{{$inst ?? "Product Instrctions"}}</p>
 
                                 </div>
 
