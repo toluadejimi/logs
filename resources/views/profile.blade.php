@@ -2,73 +2,27 @@
 <html lang="en">
 
 
+
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <title>Social Media Accounts for Sale - Facebook, Instagram and more</title>
-    <meta name="description"
-        content="Buy Facebook accounts, Instagram accounts, Twitter accs and more! Bulk and aged social media accounts. High quality!">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="csrf-token" content="490663bfeb6915c8245bac0df6461bef1cf3c3c65fd34b2b07e971e27716c29a" />
-
-
-    {{--
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    --}}
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-
-
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
-    </script>
-
-
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
-        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous">
-    </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
-        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous">
-    </script>
-    {{--
-    <link href="{{ url('') }}/css/file.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="{{ url('') }}/public/css/my.css"> --}}
-
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url('') }}/public/concept/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="{{ url('') }}/public/concept/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url('') }}/public/concept/assets/libs/css/style.css">
+    <link rel="stylesheet" href="{{ url('') }}/public/concept/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="{{ url('') }}/public/concept/assets/vendor/charts/chartist-bundle/chartist.css">
+    <link rel="stylesheet" href="{{ url('') }}/public/concept/assets/vendor/charts/morris-bundle/morris.css">
+    <link rel="stylesheet"
+        href="{{ url('') }}/public/concept/assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="{{ url('') }}/public/concept/assets/vendor/charts/c3charts/c3.css">
+    <link rel="stylesheet" href="{{ url('') }}/public/concept/assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
+    <title>Log Marketplace </title>
 
 
 </head>
-
 <body>
-
-    <style>
-        .breadcrumb {
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            padding: 0.75rem 1rem;
-            margin-bottom: 1rem;
-            list-style: none;
-            background-color: #000000;
-            border-radius: 0.25rem;
-        }
-    </style>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD8JTK6" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <div class="main-wrapper black">
-
-
 
 
 
@@ -76,7 +30,7 @@
 
 
             <a href="/" class=" justify-content-center my-2 mr-3 me-3 text-dark">
-                <strong class=" ">LOGS MARKEPLACE</strong>
+                <strong class=" ">LOG MARKETPLACE</strong>
             </a>
 
 
@@ -90,7 +44,7 @@
                         <ion-icon name="wallet-outline"></ion-icon> Fund Wallet
                     </a></li>
                 @endif
-                <li><a href="#" class="badge badge-dark p-2 mr-2 nav-link px-2 mb-2 link-dark">
+                <li><a href="faq" class="badge badge-dark p-2 mr-2 nav-link px-2 mb-2 link-dark">
                         <ion-icon name="help-circle-outline"></ion-icon> FAQs
                     </a></li>
                 @if($user != null)
@@ -429,7 +383,7 @@
         <footer class="py-3 my-4">
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
                 <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Telegram</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+                <li class="nav-item"><a href="faq" class="nav-link px-2 text-muted">FAQs</a></li>
             </ul>
             <p class="text-center text-muted">&copy; 2023 Log Market Place</p>
         </footer>

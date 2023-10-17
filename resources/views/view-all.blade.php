@@ -107,7 +107,7 @@
 
 
             <a href="/" class=" justify-content-center my-2 mr-3 me-3 text-dark">
-                <strong class=" ">LOGS MARKEPLACE</strong>
+                <strong class=" ">LOG MARKETPLACE</strong>
             </a>
 
 
@@ -121,7 +121,7 @@
                         <ion-icon name="wallet-outline"></ion-icon> Fund Wallet
                     </a></li>
                 @endif
-                <li><a href="#" class="badge badge-dark p-2 mr-2 nav-link px-2 mb-2 link-dark">
+                <li><a href="faq" class="badge badge-dark p-2 mr-2 nav-link px-2 mb-2 link-dark">
                         <ion-icon name="help-circle-outline"></ion-icon> FAQs
                     </a></li>
                 @if($user != null)

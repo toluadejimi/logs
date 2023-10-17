@@ -255,6 +255,21 @@ class HomeController extends Controller
 
 
 
+      public function faq(request $request)
+    {
+        $user = Auth::id();
+        return view('faq', compact('user'));
+    }
+
+         public function terms(request $request)
+    {
+        $user = Auth::id();
+        return view('terms', compact('user'));
+    }
+
+
+
+
     public function update_password_now(request $request)
     {
         // Validate the user input

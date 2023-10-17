@@ -50,6 +50,13 @@ Route::post('session-resolve',  [HomeController::class,'session_resolve']);
 Route::get('change-password',  [HomeController::class,'change_password']);
 
 
+Route::get('faq',  [HomeController::class,'faq']);
+
+Route::get('terms',  [HomeController::class,'terms']);
+
+
+
+
 Route::post('update-password-now',  [HomeController::class,'update_password_now']);
 
 
