@@ -461,7 +461,7 @@
     <div class="container">
         <footer class="py-3 my-4">
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Telegram</a></li>
+                <li class="nav-item"><a href="https://t.me/logsmarkeplace" class="nav-link px-2 text-muted">Telegram</a></li>
                 <li class="nav-item"><a href="faq" class="nav-link px-2 text-muted">FAQs</a></li>
             </ul>
             <p class="text-center text-muted">&copy; 2023 Log Market Place</p>
