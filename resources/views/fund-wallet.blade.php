@@ -301,24 +301,21 @@
         </div>
 
 
+        @if($user == null)
+
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="my-5">Login to confine</h4>
+
+            </div>
+        </div>
+
+        @else
 
         <div class="shadow"></div>
         <script src="js/pages/header.min.js%3Fv=1.25" async></script>
         <section class="soc-category" id="content">
-
-
-
-
-
-            <div class="wrap-breadcrumbs">
-                <div class="container">
-                    <div class="block" itemscope itemtype="http://schema.org/BreadcrumbList" id="breadcrumbs">
-
-                    </div>
-                </div>
-            </div>
-
-
 
 
 
@@ -483,6 +480,9 @@
 
             </div>
         </section>
+
+
+        @endif
 
     </div>
     </div>
