@@ -50,8 +50,8 @@
                     <ion-icon name="wallet-outline"></ion-icon> Fund Wallet
                 </a></li>
             @endif
-            <li><a href="faq" class="badge badge-dark p-2 mr-2 nav-link px-2 mb-2 link-dark">
-                    <ion-icon name="help-circle-outline"></ion-icon> FAQs
+            <li><a href="rules" class="badge badge-dark p-2 mr-2 nav-link px-2 mb-2 link-dark">
+                    <ion-icon name="help-circle-outline"></ion-icon> Rules
                 </a></li>
             @if($user != null)
             <li><a href="/fund-account" class="badge  justify-content-center badge-danger p-2  center-block">

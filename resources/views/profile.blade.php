@@ -44,8 +44,8 @@
                         <ion-icon name="wallet-outline"></ion-icon> Fund Wallet
                     </a></li>
                 @endif
-                <li><a href="faq" class="badge badge-dark p-2 mr-2 nav-link px-2 mb-2 link-dark">
-                        <ion-icon name="help-circle-outline"></ion-icon> FAQs
+                <li><a href="rules" class="badge badge-dark p-2 mr-2 nav-link px-2 mb-2 link-dark">
+                        <ion-icon name="help-circle-outline"></ion-icon> Rules
                     </a></li>
                 @if($user != null)
                 <li><a href="/fund-account" class="badge  justify-content-center badge-danger p-2  center-block">
@@ -383,8 +383,11 @@
         <footer class="py-3 my-4">
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
                 <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Telegram</a></li>
+                <li class="nav-item"><a href="faq" class="nav-link px-2 text-muted">FAQs</a></li> <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Telegram</a></li>
                 <li class="nav-item"><a href="faq" class="nav-link px-2 text-muted">FAQs</a></li>
                 <li class="nav-item"><a href="terms" class="nav-link px-2 text-muted">Terms & Condition</a></li>
+                <li class="nav-item"><a href="policy" class="nav-link px-2 text-muted">Policy</a></li>
+                <li class="nav-item"><a href="rules" class="nav-link px-2 text-muted">Rules</a></li>
 
             </ul>
             <p class="text-center text-muted">&copy; 2023 Log Market Place</p>
