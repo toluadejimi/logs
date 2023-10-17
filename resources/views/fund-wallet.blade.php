@@ -306,7 +306,7 @@
         <div class="card">
             <div class="card-body">
 
-                <h4 class="my-5">Login to confine</h4>
+                <h4 class="my-5">Login to continue</h4>
 
             </div>
         </div>
