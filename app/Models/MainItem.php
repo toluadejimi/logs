@@ -13,5 +13,7 @@ class MainItem extends Model
     protected $fillable = [
         'name',
         'product_id',
+        'des',
+        'amount',
     ];
 }

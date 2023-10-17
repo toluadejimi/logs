@@ -69,7 +69,7 @@ class ProductController extends Controller
         $trx = new Transaction();
         $trx->user_id = Auth::id();
         $trx->amount = $pamount;
-        $trx->type = 2;
+        $trx->type = 1;
         $trx->ref_id = $ref;
         $trx->status = 1;
         $trx->save();

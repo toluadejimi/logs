@@ -16,7 +16,7 @@
         href="{{ url('') }}/public/concept/assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="{{ url('') }}/public/concept/assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="{{ url('') }}/public/concept/assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
-    <title>Concept - Bootstrap 4 Admin Dashboard Template</title>
+    <title>Log Marketplace - Bootstrap 4 Admin Dashboard Template</title>
 </head>
 
 <body>
@@ -29,7 +29,7 @@
         <!-- ============================================================== -->
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="index.html">Concept</a>
+                <a class="navbar-brand" href="index.html">Log Marketplace</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -73,21 +73,24 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
+                      
+
                         <ul class="navbar-nav flex-column">
                             <li class="nav-divider">
                                 Menu
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="admin-dashbaofd" <i
-                                    class="fa fa-fw fa-user-circle"></i>Dashboard <span
+                                <a class="nav-link" href="admin-dashboard" ><i
+                                        class="fa fa-fw fa-user-circle"></i>Dashboard <span
                                         class="badge badge-success">6</span></a>
-
+                                <div id="submenu-1" class="collapse submenu" style="">
+                                </div>
                             </li>
 
 
 
                             <li class="nav-item">
-                                <a class="nav-link" href="uses" ><i
+                                <a class="nav-link" href="/users"  aria-controls="submenu-2"><i
                                         class="fa fa-fw fa-rocket"></i>Users</a>
 
                             </li>
@@ -95,16 +98,14 @@
 
 
                             <li class="nav-item">
-                                <a class="nav-link" href="products" ><i
-                                        class="fas fa-fw fa-chart-pie"></i>Products</a>
+                                <a class="nav-link" href="products"><i class="fas fa-fw fa-chart-pie"></i>Products</a>
 
                             </li>
 
 
 
                             <li class="nav-item ">
-                                <a class="nav-link active" href="caterogies" data-toggle="collapse"
-                                    aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i
+                                <a class="nav-link active" href="caterogies"><i
                                         class="fab fa-fw fa-wpforms"></i>Categories</a>
 
 
@@ -115,6 +116,8 @@
 
 
                         </ul>
+
+
                     </div>
                 </nav>
             </div>
@@ -329,7 +332,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                        Copyright © 2018 Concept. All rights reserved. Dashboard by <a
+                        Copyright © 2018 Log Marketplace. All rights reserved. Dashboard by <a
                             href="https://colorlib.com/wp/">Colorlib</a>.
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">

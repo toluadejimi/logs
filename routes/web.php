@@ -75,6 +75,12 @@ Route::post('delete-pr',  [AdminController::class,'delete_pr']);
 
 
 
+Route::get('users',  [AdminController::class,'index_user']);
+Route::get('view-user',  [AdminController::class,'view_user']);
+Route::post('update-user',  [AdminController::class,'update_user']);
+Route::post('remove-user',  [AdminController::class,'remove_user']);
+
+
 
 
 

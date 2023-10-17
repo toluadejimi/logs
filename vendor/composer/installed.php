@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '126f6e93e0ab2cae0ecd98ed6a4f429f2b73aea9',
+        'reference' => 'fe8711ef49b1adde7c6073e281d9f8ccdb37966e',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -374,8 +374,8 @@
             ),
         ),
         'irazasyed/telegram-bot-sdk' => array(
-            'pretty_version' => 'v3.13.0',
-            'version' => '3.13.0.0',
+            'pretty_version' => 'dev-develop',
+            'version' => 'dev-develop',
             'reference' => '31a71aef80fd328bfe0084738cc3b51cc49867f4',
             'type' => 'library',
             'install_path' => __DIR__ . '/../irazasyed/telegram-bot-sdk',
@@ -400,7 +400,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '126f6e93e0ab2cae0ecd98ed6a4f429f2b73aea9',
+            'reference' => 'fe8711ef49b1adde7c6073e281d9f8ccdb37966e',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

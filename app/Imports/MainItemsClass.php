@@ -20,6 +20,10 @@ class MainItemsClass implements ToModel
         return new MainItem([
             'name' => $row[0],
             'product_id' => $row[1],
+            'des' => $row[2],
+            'amount' => $row[3],
+
+
             // Map other columns as needed
         ]);
     }

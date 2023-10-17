@@ -32,7 +32,8 @@ return [
     */
     'bots' => [
         'mybot' => [
-            'token' => env('TELEGRAM_BOT_TOKEN', 'bot6140179825:AAGfAmHK6JQTLegsdpnaklnhBZ4qA1m2c64'),
+            'username' => 'Logmarketplace_bot',
+            'token' => env('TELEGRAM_BOT_TOKEN', '6672089802:AAElshUyomrixNlnmiJNb7g75v9ku5YG3zc'),
             'certificate_path' => env('TELEGRAM_CERTIFICATE_PATH', 'YOUR-CERTIFICATE-PATH'),
             'webhook_url' => env('TELEGRAM_WEBHOOK_URL', 'YOUR-BOT-WEBHOOK-URL'),
             'commands' => [

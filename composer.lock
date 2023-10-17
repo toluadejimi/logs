@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "41b44ff0b9b51e9fe5695a2f8b6b8505",
+    "content-hash": "88e27052ce33cdf6e43fbff85943ba47",
     "packages": [
         {
             "name": "brick/math",
@@ -1114,7 +1114,7 @@
         },
         {
             "name": "irazasyed/telegram-bot-sdk",
-            "version": "v3.13.0",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/irazasyed/telegram-bot-sdk.git",
@@ -1191,7 +1191,7 @@
             ],
             "support": {
                 "issues": "https://github.com/irazasyed/telegram-bot-sdk/issues",
-                "source": "https://github.com/irazasyed/telegram-bot-sdk/tree/v3.13.0"
+                "source": "https://github.com/irazasyed/telegram-bot-sdk/tree/develop"
             },
             "time": "2023-05-28T19:57:36+00:00"
         },
@@ -8710,7 +8710,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "irazasyed/telegram-bot-sdk": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
