@@ -53,6 +53,9 @@ Route::get('change-password',  [HomeController::class,'change_password']);
 Route::get('faq',  [HomeController::class,'faq']);
 
 Route::get('terms',  [HomeController::class,'terms']);
+Route::get('policy',  [HomeController::class,'policy']);
+Route::get('rules',  [HomeController::class,'rules']);
+
 
 
 

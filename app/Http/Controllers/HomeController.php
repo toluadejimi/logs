@@ -267,6 +267,18 @@ class HomeController extends Controller
         return view('terms', compact('user'));
     }
 
+    public function rules(request $request)
+    {
+        $user = Auth::id();
+        return view('rules', compact('user'));
+    }
+
+    public function policy(request $request)
+    {
+        $user = Auth::id();
+        return view('policy', compact('user'));
+    }
+
 
 
 

@@ -103,14 +103,43 @@
 
             </div>
 
-            <h5>Terms and Conditions</h5>
-           <p class="small"> We provide services that makes it easier for our clients to connect to family and friends across the world,
-            have fun using the internet, educational purposes or any other personal use.<br><br>
+            <h4>RULES</h4>
 
-            Don’t use our product to harm other people , bullying on social networks, comment spam, threats, etc and to
-            commit other illegal actions – fraud, extortion, data theft, etc.<br><br>
+           <h5> RULES @LOGS MARKETPLACE</h5>
 
-           <strong>We do not support scam/fraud activities, so DO NOT USE OUR PRODUCTS FOR ILLEGAL ACTIVITIES</strong> .</p>
+           <ul>
+
+           <li>Always Secure your accts few hours after login
+           </li> 
+
+           <li>Accounts cannot be replaced after changing the password.</li>
+
+           <li>We replace bad accounts, if fault is from us (not after use)</li>
+
+           <li>This rules can be changed at any time without prior notice.</li>
+
+           <li>Obscene language to the admins may be grounds for service refusal.</li>
+
+            <li>Ignorance of the rules does not absolve you of responsibility.</li>
+
+           <li>The response time for technical support and the resolution of all problems/claims is 24/7.</li>
+
+           <li>Accounts are always checked by our private program on private mobile proxy prior to sale, so we can guarantee 100% validity of the items.</li>
+
+           <li>Accounts cannot be returned; instead, they can only be replaced if bad, provided that other rules are complied with.
+        </li>
+
+           <li>The store is not liable for any account activity. How your account will last depends on how it’s used. No replacement or refund for an account suspended/disabled/logged out after a successful login.</li>
+
+           <li>Purchase an account only if you understand how to use it. Refunds will not be given if you buy something and don't know how to use it. The best we can do is to give you tips
+
+           </li>
+
+
+           </ul>
+
+
+     
 
         </div>
 
@@ -123,8 +152,6 @@
                 <li class="nav-item"><a href="terms" class="nav-link px-2 text-muted">Terms & Condition</a></li>
                 <li class="nav-item"><a href="policy" class="nav-link px-2 text-muted">Policy</a></li>
                 <li class="nav-item"><a href="rules" class="nav-link px-2 text-muted">Rules</a></li>
-
-
             </ul>
             <p class="text-center text-muted">&copy; 2023 Log MarketPlace</p>
         </footer>
