@@ -687,6 +687,7 @@
                                     </table>
 
 
+                                    {{ $front_pr->links() }}
 
 
                                 </div>

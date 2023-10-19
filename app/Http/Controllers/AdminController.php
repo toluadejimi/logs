@@ -107,7 +107,7 @@ class AdminController extends Controller
 
         return view('user', compact('user', 'users'));
 
-    
+
     }
 
 
@@ -132,7 +132,7 @@ class AdminController extends Controller
 
 
     }
-    
+
 
 
     public function view_user(request $request)
@@ -152,7 +152,7 @@ class AdminController extends Controller
 
         return view('view-user', compact('data'));
 
-    
+
     }
 
 
@@ -255,7 +255,7 @@ class AdminController extends Controller
         $main = MainItem::all()->count();
         $cat = Category::all();
         $pr = MainItem::latest()->paginate(10);
-        $front_pr = Item::all();
+        $front_pr = Item::latest()->paginate(10);
 
 
 
