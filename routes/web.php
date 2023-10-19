@@ -47,6 +47,9 @@ Route::get('verify',  [HomeController::class,'verify_payment']);
 
 Route::post('session-resolve',  [HomeController::class,'session_resolve']);
 
+
+
+
 Route::get('change-password',  [HomeController::class,'change_password']);
 
 
@@ -55,6 +58,10 @@ Route::get('faq',  [HomeController::class,'faq']);
 Route::get('terms',  [HomeController::class,'terms']);
 Route::get('policy',  [HomeController::class,'policy']);
 Route::get('rules',  [HomeController::class,'rules']);
+
+
+
+
 
 
 
@@ -93,6 +100,7 @@ Route::post('remove-user',  [AdminController::class,'remove_user']);
 
 
 
+Route::post('edit-front-pr',  [AdminController::class,'edit_front_product']);
 
 
 

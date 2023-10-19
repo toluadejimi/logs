@@ -80,7 +80,7 @@
                                 Menu
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="admin-dashboard" ><i
+                                <a class="nav-link" href="admin-dashboard"><i
                                         class="fa fa-fw fa-user-circle"></i>Dashboard <span
                                         class="badge badge-success">6</span></a>
                                 <div id="submenu-1" class="collapse submenu" style="">
@@ -90,7 +90,7 @@
 
 
                             <li class="nav-item">
-                                <a class="nav-link" href="/users"  aria-controls="submenu-2"><i
+                                <a class="nav-link" href="/users" aria-controls="submenu-2"><i
                                         class="fa fa-fw fa-rocket"></i>Users</a>
 
                             </li>
@@ -98,15 +98,15 @@
 
 
                             <li class="nav-item">
-                                <a class="nav-link active" href="products"><i class="fas fa-fw fa-chart-pie"></i>Products</a>
+                                <a class="nav-link active" href="products"><i
+                                        class="fas fa-fw fa-chart-pie"></i>Products</a>
 
                             </li>
 
 
 
                             <li class="nav-item ">
-                                <a class="nav-link" href="caterogies"><i
-                                        class="fab fa-fw fa-wpforms"></i>Categories</a>
+                                <a class="nav-link" href="caterogies"><i class="fab fa-fw fa-wpforms"></i>Categories</a>
 
 
                             </li>
@@ -178,84 +178,85 @@
 
 
                     <div class="modal fade" id="addnewfr" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
+                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
 
-                            <div class="modal-body">
-                                <h5>Add Front Product</h5>
+                                <div class="modal-body">
+                                    <h5>Add Front Product</h5>
 
-                                <form action="/add-front-product" method="POST" enctype="multipart/form-data">
-                                    @csrf
+                                    <form action="/add-front-product" method="POST" enctype="multipart/form-data">
+                                        @csrf
 
 
-                                    <div class="row">
+                                        <div class="row">
 
-                                        <div class="col-6 my-4">
-                                            <label>Choose Product</label>
-                                            <select class="form-control" name="pro_id" required required>
+                                            <div class="col-6 my-4">
+                                                <label>Choose Product</label>
+                                                <select class="form-control" name="pro_id" required required>
 
-                                                <option value="">Choose a Product</option>
-                                                @foreach ($pr_list as $data )
-                                                <option value="{{ $data->id }}">{{ $data->name }}</option>
-                                                @endforeach
+                                                    <option value="">Choose a Product</option>
+                                                    @foreach ($pr_list as $data )
+                                                    <option value="{{ $data->id }}">{{ $data->name }}</option>
+                                                    @endforeach
 
-                                            </select>
+                                                </select>
+
+
+
+                                            </div>
+
+                                            <div class="col-6 my-4">
+                                                <label>Choose Category</label>
+                                                <select class="form-control" name="cat_id" required required>
+
+                                                    <option value="">Choose a Product</option>
+                                                    @foreach ($cat as $data )
+                                                    <option value="{{ $data->id }}">{{ $data->title }}</option>
+                                                    @endforeach
+
+                                                </select>
+
+
+
+                                            </div>
+
+
+                                            <div class="col-6 my-4">
+                                                <label>Amount(NGN)</label>
+                                                <input type="number" class="form-control" required name="amount"
+                                                    autofocus>
+
+                                            </div>
+
+
+                                            <div class="col-6 my-4">
+                                                <label>Product Icon</label>
+                                                <input type="file" name="image">
+
+                                            </div>
+
 
 
 
                                         </div>
 
-                                        <div class="col-6 my-4">
-                                            <label>Choose Category</label>
-                                            <select class="form-control" name="cat_id" required required>
 
-                                                <option value="">Choose a Product</option>
-                                                @foreach ($cat as $data )
-                                                <option value="{{ $data->id }}">{{ $data->title }}</option>
-                                                @endforeach
-
-                                            </select>
-
-
-
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-success">Add</button>
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
                                         </div>
 
 
-                                        <div class="col-6 my-4">
-                                            <label>Amount(NGN)</label>
-                                            <input type="number" class="form-control" required name="amount" autofocus>
-
-                                        </div>
+                                    </form>
 
 
-                                        <div class="col-6 my-4">
-                                            <label>Product Icon</label>
-                                            <input type="file" name="image">
-
-                                        </div>
-
-
-
-
-                                    </div>
-
-
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-success">Add</button>
-                                        <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                    </div>
-
-
-                                </form>
-
+                                </div>
 
                             </div>
-
                         </div>
                     </div>
-                </div>
 
 
                     <div class="modal fade" id="addnew" tabindex="-1" role="dialog"
@@ -343,37 +344,37 @@
 
 
                     <div class="modal fade" id="addnewpr" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
+                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
 
-                            <div class="modal-body">
-                                <h5>Add new Product</h5>
+                                <div class="modal-body">
+                                    <h5>Add new Product</h5>
 
-                                <form action="/add-new-pr" method="POST" >
-                                    @csrf
-
-
-                                            <label>Enter Title</label>
-                                            <input class="form-control" required  name="title" autofocus>
+                                    <form action="/add-new-pr" method="POST">
+                                        @csrf
 
 
-
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-success">Add</button>
-                                        <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                    </div>
+                                        <label>Enter Title</label>
+                                        <input class="form-control" required name="title" autofocus>
 
 
-                                </form>
 
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-success">Add</button>
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                        </div>
+
+
+                                    </form>
+
+
+                                </div>
 
                             </div>
-
                         </div>
                     </div>
-                </div>
 
 
 
@@ -388,7 +389,7 @@
 
 
 
-
+{{-- 
 
                     <div class="ecommerce-widget">
 
@@ -461,7 +462,7 @@
 
 
                     </div>
-
+ --}}
 
 
                     <div class="row">
@@ -479,11 +480,11 @@
 
 
                                     <button type="button" data-toggle="modal" data-target="#addnewpr"
-                                    class="btn btn-sm btn-success my-3"> Add New Product</button>
+                                        class="btn btn-sm btn-success my-3"> Add New Product</button>
 
 
                                     <button type="button" data-toggle="modal" data-target="#addnewfr"
-                                    class="btn btn-sm btn-warning my-3"> Add New Front Product</button>
+                                        class="btn btn-sm btn-warning my-3"> Add New Front Product</button>
 
 
 
@@ -496,7 +497,7 @@
                                         <thead class="thead-dark">
                                             <tr>
                                                 <th scope="col">Title</th>
-                                                 <th scope="col">Product</th>
+                                                <th scope="col">Product</th>
 
                                             </tr>
                                         </thead>
@@ -543,7 +544,7 @@
                         </div>
 
 
-                         <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12 col-12">
+                        <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12 col-12">
 
 
 
@@ -626,9 +627,9 @@
                                                 <th scope="col">Title</th>
                                                 <th scope="col">Price</th>
                                                 <th scope="col">Qty</th>
-                                               <th scope="col">Category</th>
-                                               <th scope="col">Action</th>
-                                               <th scope="col">Edit</th>
+                                                <th scope="col">Category</th>
+                                                <th scope="col">Action</th>
+                                                <th scope="col">Edit</th>
 
 
 
@@ -649,8 +650,8 @@
                                                 {{$data->title}}
                                             </td>
 
-                                             <td>
-                                                {{$data->amount}}(NGN)
+                                            <td>
+                                                {{number_format($data->amount, 2)}}
                                             </td>
 
                                             <td>
@@ -669,11 +670,67 @@
                                             </td>
 
 
-                                            <td>
-                                                <a href="/edit-front-pr?id={{ $data->id }}"
-                                                    class="btn btn-sm btn-success">Edit</a>
-                                            </td>
+                                            <td><button type="button" data-toggle="modal" data-target="#register{{  $data->id }}"
+                                                class="btn btn-success">
+                                                <ion-icon name="person-add-outline"></ion-icon> Edit
+                                            </button>
 
+                                        </td>
+
+
+
+                                            <div class="modal fade p-3" id="register{{  $data->id }}" tabindex="-1"
+                                                role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+
+                                                        <div class="modal-body">
+                                                            <h5 class="my-3">Edit Product</h5>
+
+                                                            <form action="/edit-front-pr" method="POST">
+                                                                @csrf
+
+                                                                <label>Title</label>
+                                                                   <input class="form-control" name="title" required
+                                                                        type="text" value="{{ $data->title }}">
+
+                                                                        <input class="form-control" name="id" required
+                                                                        type="text" hidden value="{{ $data->id }}">
+
+
+                                                                <div class="my-2">
+
+                                                                    <label>Amount</label>
+                                                                    <input class="form-control" name="amount" required
+                                                                        type="number"  value="{{ $data->amount }}">
+
+                                                                    <input hidden class="form-control mb-5" name="id"
+                                                                        value="{{ $data->id }}" required type="number"
+                                                                        autofocus>
+
+
+                                                                </div>
+
+
+                                                                <div class="my-4">
+                                                                    <button class="btn btn-success" required
+                                                                        type="submit" autofocus> Edit </button>
+                                                                </div>
+
+
+
+
+
+
+                                                            </form>
+
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
 
 
 

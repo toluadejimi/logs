@@ -60,6 +60,25 @@ class AdminController extends Controller
 
 	}
 
+
+
+    public function edit_front_product(request $request)
+	{
+
+
+        Item::where('id', $request->id)->first()->update([
+            
+            'amount' => $request->amount,
+            'title' => $request->title
+
+            
+        ]);
+
+
+        return back()->with('message', 'Front Item successfully Updated');
+
+    }
+
 	public function admin_dashboard(request $request)
 	{
 

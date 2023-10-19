@@ -9,6 +9,11 @@ class Item extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'amount',
+        'title',
+    ];
+
     public function transaction()
     {
         return $this->belongsTo('App\Models\Transaction');
