@@ -838,7 +838,7 @@
 
                         <td>
                             <a href="#" data-help="Click to read detailed description">
-                                <img src="{{ url('') }}/public/storage/content/images/{{ $data->icon }}" height="20"
+                                <img src="{{ url('') }}/public/storage/content/images/{{ $data->icon }}" height="30"
                                     width="35" loading="lazy">
                             </a>
                         </td>
