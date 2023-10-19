@@ -199,6 +199,7 @@ public function add_front_product(Request $request)
 
 
 
+
      if ($request->hasFile('image')) {
         $image = $request->file('image');
         $imageName = time() . '.' . $image->getClientOriginalExtension();
@@ -206,12 +207,13 @@ public function add_front_product(Request $request)
     }
 
 
-    $title = Product::where('id', $request->pr_id)->name;
+
+    $title = Product::where('id', $request->pro_id)->first()->name;
 
     $tr = new Item();
     $tr->title = $title;
     $tr->amount = $request->amount;
-    $tr->product_id = $request->pr_id;
+    $tr->product_id = $request->pro_id;
     $tr->cat_id = $request->cat_id;
     $tr->icon = $imageName;
     $tr->save();

@@ -73,7 +73,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
-                       
+
 
                         <ul class="navbar-nav flex-column">
                             <li class="nav-divider">
@@ -193,7 +193,7 @@
 
                                         <div class="col-6 my-4">
                                             <label>Choose Product</label>
-                                            <select class="form-control" name="cat_id" required required>
+                                            <select class="form-control" name="pro_id" required required>
 
                                                 <option value="">Choose a Product</option>
                                                 @foreach ($pr_list as $data )
@@ -208,7 +208,7 @@
 
                                         <div class="col-6 my-4">
                                             <label>Choose Category</label>
-                                            <select class="form-control" name="pr_id" required required>
+                                            <select class="form-control" name="cat_id" required required>
 
                                                 <option value="">Choose a Product</option>
                                                 @foreach ($cat as $data )
@@ -291,7 +291,7 @@
                                                 <label>Choose Product</label>
                                                 <select class="form-control" name="pr_id" required required>
 
-                                                    <option value="">Choose a Product</option>
+                                                    <option value="">Choose a product</option>
                                                     @foreach ($pr_list as $data )
                                                     <option value="{{ $data->id }}">{{ $data->name }}</option>
                                                     @endforeach
@@ -616,7 +616,7 @@
                                 <div class="card-body ">
 
                                     <div class="card-title">
-                                        All Front Product 
+                                        All Front Product
                                     </div>
 
                                     <table class="table table-sm table-responsive-sm">

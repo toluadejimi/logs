@@ -360,14 +360,8 @@
             </form>
 
 
-        </div>
 
-
-
-
-
-
-        {{-- nstagram --}}
+        {{-- FACEBOOK DATING --}}
 
 
         <div class="soc-bl">
@@ -484,9 +478,8 @@
 
 
 
-    </div>
 
-      {{-- Gvoice --}}
+      {{-- OTHER COUNTRIES FACEBOOK --}}
 
       <div class="soc-bl">
         @foreach ($gv as $cat)
@@ -590,6 +583,572 @@
         <button type="submit" data-cat="48" data-collapse="#subcat_48" data-name="Hide accounts"
             class="btn  btn-warning my-3 btn-sm btn-block">View all</button>
     </form>
+
+
+
+
+      {{-- Twitter--}}
+
+      <div class="soc-bl">
+        @foreach ($tw as $cat)
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active text-white" aria-current="page">{{ $cat->title}}</li>
+
+            </ol>
+        </nav>
+        @endforeach
+
+
+
+        <div class="card">
+            <div class="card-body">
+
+                <table class="table table-sm table-responsive-sm">
+                    <thead class="thead-dark border border-warning">
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Stock</th>
+                            <th scope="col">Action</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach ($tw_items as $data)
+
+                        <td>
+                            <a href="#" data-help="Click to read detailed description">
+                                <img src="{{ url('') }}/public/storage/content/images/{{ $data->icon }}" height="20"
+                                    width="20" loading="lazy">
+                            </a>
+                        </td>
+
+                        <td class="small">
+                            {{$data->title}}
+                        </td>
+
+                        <td class="small">
+                            NGN{{ number_format($data->amount, 2) }}
+                        </td>
+
+
+                        <td class="small bold">{{ $data->qty }} pcs.</td>
+                        <td>
+                            @if ($data->qty == 0)
+                            <div class="subscribe-cell" data-help="Subscribe to newsletter">
+                                <button class="form-control" type="button" data-id="12005">
+                                    <img src="{{ url('') }}/public/img/ic-subscribe.png" height="18" width="21" alt>
+                                </button>
+                            </div>
+
+
+
+                            @else
+
+
+                            <form action="/item-view?id={{ $data->id }}" method="POST">
+                                @csrf
+
+                                <div class="subscribe-cell" data-help="Buy Now">
+                                    <button type="submit" class="form-control" type="button" data-id="12005">
+                                        <ion-icon class="text-success" name="cart-outline"></ion-icon>
+
+                                    </button>
+                                </div>
+            </div>
+
+            </form>
+            </td>
+
+            @endif
+
+
+            </tbody>
+
+            @endforeach
+
+            </table>
+
+
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+    <form action="/allcatproduct" method="GET">
+        @csrf
+        <div id="subcat_48" class="collapse"></div>
+
+        <input hidden name="cat_id" value="{{ $cat->id }}">
+        <button type="submit" data-cat="48" data-collapse="#subcat_48" data-name="Hide accounts"
+            class="btn  btn-warning my-3 btn-sm btn-block">View all</button>
+    </form>
+
+
+
+
+
+
+
+
+     {{-- Reedit--}}
+
+     <div class="soc-bl">
+        @foreach ($rd as $cat)
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active text-white" aria-current="page">{{ $cat->title}}</li>
+
+            </ol>
+        </nav>
+        @endforeach
+
+
+
+        <div class="card">
+            <div class="card-body">
+
+                <table class="table table-sm table-responsive-sm">
+                    <thead class="thead-dark border border-warning">
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Stock</th>
+                            <th scope="col">Action</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach ($rd_items as $data)
+
+                        <td>
+                            <a href="#" data-help="Click to read detailed description">
+                                <img src="{{ url('') }}/public/storage/content/images/{{ $data->icon }}" height="20"
+                                    width="20" loading="lazy">
+                            </a>
+                        </td>
+
+                        <td class="small">
+                            {{$data->title}}
+                        </td>
+
+                        <td class="small">
+                            NGN{{ number_format($data->amount, 2) }}
+                        </td>
+
+
+                        <td class="small bold">{{ $data->qty }} pcs.</td>
+                        <td>
+                            @if ($data->qty == 0)
+                            <div class="subscribe-cell" data-help="Subscribe to newsletter">
+                                <button class="form-control" type="button" data-id="12005">
+                                    <img src="{{ url('') }}/public/img/ic-subscribe.png" height="18" width="21" alt>
+                                </button>
+                            </div>
+
+
+
+                            @else
+
+
+                            <form action="/item-view?id={{ $data->id }}" method="POST">
+                                @csrf
+
+                                <div class="subscribe-cell" data-help="Buy Now">
+                                    <button type="submit" class="form-control" type="button" data-id="12005">
+                                        <ion-icon class="text-success" name="cart-outline"></ion-icon>
+
+                                    </button>
+                                </div>
+            </div>
+
+            </form>
+            </td>
+
+            @endif
+
+
+            </tbody>
+
+            @endforeach
+
+            </table>
+
+
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+    <form action="/allcatproduct" method="GET">
+        @csrf
+        <div id="subcat_48" class="collapse"></div>
+
+        <input hidden name="cat_id" value="{{ $cat->id }}">
+        <button type="submit" data-cat="48" data-collapse="#subcat_48" data-name="Hide accounts"
+            class="btn  btn-warning my-3 btn-sm btn-block">View all</button>
+    </form>
+
+     {{-- Mail--}}
+
+     <div class="soc-bl">
+        @foreach ($ml as $cat)
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active text-white" aria-current="page">{{ $cat->title}}</li>
+
+            </ol>
+        </nav>
+        @endforeach
+
+
+
+        <div class="card">
+            <div class="card-body">
+
+                <table class="table table-sm table-responsive-sm">
+                    <thead class="thead-dark border border-warning">
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Stock</th>
+                            <th scope="col">Action</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach ($ml_items as $data)
+
+                        <td>
+                            <a href="#" data-help="Click to read detailed description">
+                                <img src="{{ url('') }}/public/storage/content/images/{{ $data->icon }}" height="20"
+                                    width="35" loading="lazy">
+                            </a>
+                        </td>
+
+                        <td class="small">
+                            {{$data->title}}
+                        </td>
+
+                        <td class="small">
+                            NGN{{ number_format($data->amount, 2) }}
+                        </td>
+
+
+                        <td class="small bold">{{ $data->qty }} pcs.</td>
+                        <td>
+                            @if ($data->qty == 0)
+                            <div class="subscribe-cell" data-help="Subscribe to newsletter">
+                                <button class="form-control" type="button" data-id="12005">
+                                    <img src="{{ url('') }}/public/img/ic-subscribe.png" height="18" width="21" alt>
+                                </button>
+                            </div>
+
+
+
+                            @else
+
+
+                            <form action="/item-view?id={{ $data->id }}" method="POST">
+                                @csrf
+
+                                <div class="subscribe-cell" data-help="Buy Now">
+                                    <button type="submit" class="form-control" type="button" data-id="12005">
+                                        <ion-icon class="text-success" name="cart-outline"></ion-icon>
+
+                                    </button>
+                                </div>
+            </div>
+
+            </form>
+            </td>
+
+            @endif
+
+
+            </tbody>
+
+            @endforeach
+
+            </table>
+
+
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+    <form action="/allcatproduct" method="GET">
+        @csrf
+        <div id="subcat_48" class="collapse"></div>
+
+        <input hidden name="cat_id" value="{{ $cat->id }}">
+        <button type="submit" data-cat="48" data-collapse="#subcat_48" data-name="Hide accounts"
+            class="btn  btn-warning my-3 btn-sm btn-block">View all</button>
+    </form>
+
+
+      {{-- GV--}}
+
+      <div class="soc-bl">
+        @foreach ($gv as $cat)
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active text-white" aria-current="page">{{ $cat->title}}</li>
+
+            </ol>
+        </nav>
+        @endforeach
+
+
+
+        <div class="card">
+            <div class="card-body">
+
+                <table class="table table-sm table-responsive-sm">
+                    <thead class="thead-dark border border-warning">
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Stock</th>
+                            <th scope="col">Action</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach ($gv_items as $data)
+
+                        <td>
+                            <a href="#" data-help="Click to read detailed description">
+                                <img src="{{ url('') }}/public/storage/content/images/{{ $data->icon }}" height="20"
+                                    width="20" loading="lazy">
+                            </a>
+                        </td>
+
+                        <td class="small">
+                            {{$data->title}}
+                        </td>
+
+                        <td class="small">
+                            NGN{{ number_format($data->amount, 2) }}
+                        </td>
+
+
+                        <td class="small bold">{{ $data->qty }} pcs.</td>
+                        <td>
+                            @if ($data->qty == 0)
+                            <div class="subscribe-cell" data-help="Subscribe to newsletter">
+                                <button class="form-control" type="button" data-id="12005">
+                                    <img src="{{ url('') }}/public/img/ic-subscribe.png" height="18" width="21" alt>
+                                </button>
+                            </div>
+
+
+
+                            @else
+
+
+                            <form action="/item-view?id={{ $data->id }}" method="POST">
+                                @csrf
+
+                                <div class="subscribe-cell" data-help="Buy Now">
+                                    <button type="submit" class="form-control" type="button" data-id="12005">
+                                        <ion-icon class="text-success" name="cart-outline"></ion-icon>
+
+                                    </button>
+                                </div>
+            </div>
+
+            </form>
+            </td>
+
+            @endif
+
+
+            </tbody>
+
+            @endforeach
+
+            </table>
+
+
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+    <form action="/allcatproduct" method="GET">
+        @csrf
+        <div id="subcat_48" class="collapse"></div>
+
+        <input hidden name="cat_id" value="{{ $cat->id }}">
+        <button type="submit" data-cat="48" data-collapse="#subcat_48" data-name="Hide accounts"
+            class="btn  btn-warning my-3 btn-sm btn-block">View all</button>
+    </form>
+
+
+
+      {{-- Instagram--}}
+
+      <div class="soc-bl">
+        @foreach ($in as $cat)
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active text-white" aria-current="page">{{ $cat->title}}</li>
+
+            </ol>
+        </nav>
+        @endforeach
+
+
+
+        <div class="card">
+            <div class="card-body">
+
+                <table class="table table-sm table-responsive-sm">
+                    <thead class="thead-dark border border-warning">
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Stock</th>
+                            <th scope="col">Action</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach ($in_items as $data)
+
+                        <td>
+                            <a href="#" data-help="Click to read detailed description">
+                                <img src="{{ url('') }}/public/storage/content/images/{{ $data->icon }}" height="20"
+                                    width="20" loading="lazy">
+                            </a>
+                        </td>
+
+                        <td class="small">
+                            {{$data->title}}
+                        </td>
+
+                        <td class="small">
+                            NGN{{ number_format($data->amount, 2) }}
+                        </td>
+
+
+                        <td class="small bold">{{ $data->qty }} pcs.</td>
+                        <td>
+                            @if ($data->qty == 0)
+                            <div class="subscribe-cell" data-help="Subscribe to newsletter">
+                                <button class="form-control" type="button" data-id="12005">
+                                    <img src="{{ url('') }}/public/img/ic-subscribe.png" height="18" width="21" alt>
+                                </button>
+                            </div>
+
+
+
+                            @else
+
+
+                            <form action="/item-view?id={{ $data->id }}" method="POST">
+                                @csrf
+
+                                <div class="subscribe-cell" data-help="Buy Now">
+                                    <button type="submit" class="form-control" type="button" data-id="12005">
+                                        <ion-icon class="text-success" name="cart-outline"></ion-icon>
+
+                                    </button>
+                                </div>
+            </div>
+
+            </form>
+            </td>
+
+            @endif
+
+
+            </tbody>
+
+            @endforeach
+
+            </table>
+
+
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+    <form action="/allcatproduct" method="GET">
+        @csrf
+        <div id="subcat_48" class="collapse"></div>
+
+        <input hidden name="cat_id" value="{{ $cat->id }}">
+        <button type="submit" data-cat="48" data-collapse="#subcat_48" data-name="Hide accounts"
+            class="btn  btn-warning my-3 btn-sm btn-block">View all</button>
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </section>
 

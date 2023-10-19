@@ -22,15 +22,31 @@ class HomeController extends Controller
         $fbaged = Category::where('id', 1)->get();
         $insta_cat = Category::where('id', 2)->get();
         $gv = Category::where('id', 3)->get();
+        $tw = Category::where('id', 5)->get();
+        $rd = Category::where('id', 6)->get();
+        $ml = Category::where('id', 7)->get();
+        $gv = Category::where('id', 8)->get();
+        $in = Category::where('id', 9)->get();
+
+
+
 
 
         $fbaged_items = Item::where('cat_id', 1)->take(5)->get();
         $insta_items = Item::where('cat_id', 2)->take(5)->get();
         $gv_items = Item::where('cat_id', 3)->take(5)->get();
+        $tw_items = Item::where('cat_id', 5)->take(5)->get();
+        $rd_items = Item::where('cat_id', 6)->take(5)->get();
+        $ml_items = Item::where('cat_id', 7)->take(5)->get();
+        $gv_items = Item::where('cat_id', 8)->take(5)->get();
+        $in_items = Item::where('cat_id', 9)->take(5)->get();
 
 
 
-        return view('welcome', compact('fbaged', 'gv', 'gv_items',  'user', 'insta_items', 'fbaged_items', 'insta_cat'));
+
+
+
+        return view('welcome', compact('fbaged', 'gv', 'tw', 'gv_items', 'tw_items', 'rd', 'rd_items',  'ml', 'ml_items',  'gv', 'gv_items',  'in', 'in_items', 'user', 'insta_items', 'fbaged_items', 'insta_cat'));
     }
 
 
@@ -153,18 +169,26 @@ class HomeController extends Controller
 
             $user = Auth::id() ?? null;
 
-            $fbaged = Category::where('id', 1)->get();
-            $insta_cat = Category::where('id', 2)->get();
-            $gv = Category::where('id', 3)->get();
-
-
-            $fbaged_items = Item::where('cat_id', 1)->take(5)->get();
-            $insta_items = Item::where('cat_id', 2)->take(5)->get();
-            $gv_items = Item::where('cat_id', 3)->take(5)->get();
 
 
 
-            return view('welcome', compact('fbaged', 'gv', 'gv_items',  'user', 'insta_items', 'fbaged_items', 'insta_cat'));
+            return redirect('/');
+            // $fbaged = Category::where('id', 1)->get();
+            // $insta_cat = Category::where('id', 2)->get();
+            // $gv = Category::where('id', 3)->get();
+            // $tw = Category::where('id', 5)->get();
+
+
+
+            // $fbaged_items = Item::where('cat_id', 1)->take(5)->get();
+            // $insta_items = Item::where('cat_id', 2)->take(5)->get();
+            // $gv_items = Item::where('cat_id', 3)->take(5)->get();
+            // $tw_items = Item::where('cat_id', 5)->take(5)->get();
+
+
+
+
+            // return view('welcome', compact('fbaged', 'gv', 'tw', 'gv_items', 'tw_items',  'user', 'insta_items', 'fbaged_items', 'insta_cat'));
         }
 
         return back()->with('error', "Email or Password Incorrect");
