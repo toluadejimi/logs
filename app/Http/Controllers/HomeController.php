@@ -7,9 +7,11 @@ use App\Models\Item;
 use App\Models\SoldLog;
 use App\Models\Transaction;
 use App\Models\User;
+use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 
 class HomeController extends Controller
@@ -279,13 +281,13 @@ class HomeController extends Controller
 
 
 
-      public function faq(request $request)
+    public function faq(request $request)
     {
         $user = Auth::id();
         return view('faq', compact('user'));
     }
 
-         public function terms(request $request)
+    public function terms(request $request)
     {
         $user = Auth::id();
         return view('terms', compact('user'));
@@ -319,5 +321,104 @@ class HomeController extends Controller
 
         // Redirect the user to a protected route or dashboard
         return back()->with('message', 'Password Changed Successfully');
+    }
+
+
+    public function forget_password(request $request)
+    {
+
+        $user = Auth::id() ?? null;
+
+        return view('forget-password', compact('user'));
+    }
+
+    public function reset_password(request $request)
+    {
+
+        $email = $request->email;
+        $expiryTimestamp = time() + 24 * 60 * 60; // 24 hours in seconds
+        $url = url('') . "/verify-password?code=$expiryTimestamp&email=$request->email";
+
+        $ck = User::where('email', $request->email)->first()->email ?? null;
+
+        if ($ck == $request->email) {
+
+            User::where('email', $email)->update([
+                'code' => $expiryTimestamp
+            ]);
+
+            $data = array(
+                'fromsender' => 'noreply@enkpay.com', 'EnkPay',
+                'subject' => "Reset Password",
+                'toreceiver' => $email,
+                'url' => $url,
+            );
+
+
+            Mail::send('reset-password-mail', ["data1" => $data], function ($message) use ($data) {
+                $message->from($data['fromsender']);
+                $message->to($data['toreceiver']);
+                $message->subject($data['subject']);
+            });
+
+
+
+            return redirect('/forgot-password')->with('message', "A reset password mail has been sent to $request->email, if not inside inbox check your spam folder");
+        } else {
+            return back()->with('error', 'Email can not be found on our system');
+        }
+    }
+
+
+    public function verify_password(request $request)
+    {
+
+        $code = User::where('email', $request->email)->first()->code;
+
+
+        $storedExpiryTimestamp = $request->code;;
+
+        if (time() >= $storedExpiryTimestamp) {
+
+            $user = Auth::id() ?? null;
+            $email = $request->email;
+            return view ('expired', compact('user', 'email'));
+
+        } else {
+
+            $user = Auth::id() ?? null;
+            $email = $request->email;
+
+            return view('verify-password', compact('user', 'email'));
+        }
+    }
+
+
+    public function expired(request $request)
+    {
+        $user = Auth::id() ?? null;
+        return view('expired', compact('user'));
+    }
+
+    public function reset_password_now(request $request)
+    {
+
+        $validatedData = $request->validate([
+            'password' => 'required|string|min:4|confirmed',
+        ]);
+
+
+        $password = Hash::make($validatedData['password']);
+
+        User::where('email', $request->email)->update([
+            
+            'password' => $password
+        
+        ]);
+
+        return redirect('/')->with('message', 'Password reset successful, Please login to continue');
+
+
+
     }
 }

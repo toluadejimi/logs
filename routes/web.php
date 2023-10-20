@@ -44,6 +44,27 @@ Route::post('fund-now',  [HomeController::class,'fund_now']);
 
 Route::get('verify',  [HomeController::class,'verify_payment']);
 
+Route::get('forgot-password',  [HomeController::class,'forget_password']);
+
+Route::post('reset-password',  [HomeController::class,'reset_password']);
+
+Route::get('expired',  [HomeController::class,'expired']);
+
+
+Route::post('reset-password-now',  [HomeController::class,'reset_password_now']);
+
+Route::get('verify-password',  [HomeController::class,'verify_password']);
+
+
+
+
+
+
+
+
+
+
+
 
 Route::post('session-resolve',  [HomeController::class,'session_resolve']);
 

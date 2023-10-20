@@ -21,14 +21,6 @@
     <title>Log Marketplace </title>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
-</script>
-
-
 </head>
 
 
@@ -124,44 +116,6 @@
 
         </header>
 
-
-
-        {{-- Resolve Account --}}
-
-
-        <div class="modal fade" id="resolve-deposit" tabindex="-1" aria-labelledby="resolve-deposit" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Resolve Deposit</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-
-                        <p>Resolve pending transactions by using your bank session ID / Refrence No on your transaction
-                            recepit</p>
-
-                        <form action="/session-resolve" method="POST">
-                            @csrf
-
-                            <label class="my-3">Enter Session ID</label>
-                            <div>
-                                <input type="text" name="session_id" required class="form-control"
-                                    placeholder="Enter session ID">
-                            </div>
-
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-success">Verify</button>
-                    </div>
-
-                    </form>
-
-                </div>
-            </div>
-        </div>
 
 
 
@@ -276,17 +230,6 @@
         </div>
 
 
-        @if($user == null)
-
-        <div class="card">
-            <div class="card-body">
-
-                <h4 class="my-5">Login to continue</h4>
-
-            </div>
-        </div>
-
-        @else
 
         <div class="shadow"></div>
         <script src="js/pages/header.min.js%3Fv=1.25" async></script>
@@ -327,18 +270,12 @@
 
 
 
-                                <form action="/fund-now" method="POST">
+                                <form action="/reset-password" method="POST">
                                     @csrf
-                                    <label>Amount to Fund (NGN)</label>
-                                    <input class="form-control" name="amount" required autofocus>
+                                    <label>Enter Registred Email</label>
+                                    <input  type="email" class="form-control" name="email" required autofocus>
 
-
-                                    <button class="btn btn-lg btn-dark my-3" type="submit">Pay Now</button>
-
-
-
-
-
+                                    <button class="btn btn-sm btn-dark my-3" type="submit">Reset</button>
 
 
                                 </form>
@@ -346,95 +283,6 @@
                         </div>
                     </div>
 
-
-                    <div class="col-lg-12 my-5">
-
-                        <div class="card">
-                            <div class="card-body ">
-
-
-                                <button data-toggle="modal" data-target="#resolve-deposit"
-                                    class="btn btn-sm btn-warning my-3" type="button">Resolve Deposit</button>
-
-                                <div class="card-title">
-                                    All Transactions
-                                </div>
-
-                                <table class="table table-sm table-responsive-sm">
-                                    <thead class="thead-dark">
-                                        <tr>
-                                            <th scope="col">Order Id</th>
-                                            <th scope="col">Amount</th>
-                                            <th scope="col">Status</th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-
-
-                                        @foreach ($transaction as $data)
-
-                                        <td>
-                                            {{$data->ref_id}}
-                                        </td>
-
-                                        <td>
-                                            NGN{{ number_format($data->amount, 2) }}
-                                        </td>
-
-                                        @if($data->status == 1)
-                                        <td>
-                                            <span class="badge badge-pill badge-warning">Intitated</span>
-                                        </td>
-
-
-                                        @elseif($data->status == 0)
-                                        <td>
-                                            <span class="badge badge-pill badge-warning">Pending</span>
-                                        </td>
-
-                                        @elseif($data->status == 3)
-                                        <td>
-                                            <span class="badge badge-pill badge-danger">Cancled</span>
-                                        </td>
-
-                                        @else
-                                        <td>
-                                            <span class="badge badge-pill badge-success">Completed</span>
-
-                                        </td>
-                                        @endif
-
-
-
-
-
-
-
-
-
-                                    </tbody>
-
-
-
-                                    @endforeach
-
-
-                                </table>
-
-                                <div class="d-flex">
-                                    {!! $transaction->links() !!}
-                                </div>
-
-
-                            </div>
-
-
-                        </div>
-
-
-
-                    </div>
 
 
 
@@ -457,7 +305,6 @@
         </section>
 
 
-        @endif
 
     </div>
     </div>
