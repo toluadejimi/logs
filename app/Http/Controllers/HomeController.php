@@ -348,7 +348,7 @@ class HomeController extends Controller
             ]);
 
             $data = array(
-                'fromsender' => 'noreply@enkpay.com', 'EnkPay',
+                'fromsender' => 'noreply@logmarketplace.com', 'LOG MARKETPLACE',
                 'subject' => "Reset Password",
                 'toreceiver' => $email,
                 'url' => $url,
@@ -411,9 +411,9 @@ class HomeController extends Controller
         $password = Hash::make($validatedData['password']);
 
         User::where('email', $request->email)->update([
-            
+
             'password' => $password
-        
+
         ]);
 
         return redirect('/')->with('message', 'Password reset successful, Please login to continue');
