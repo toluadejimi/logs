@@ -482,7 +482,7 @@
       {{-- OTHER COUNTRIES FACEBOOK --}}
 
       <div class="soc-bl">
-        @foreach ($gv as $cat)
+        @foreach ($ot as $cat)
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active text-white" aria-current="page">{{ $cat->title}}</li>
@@ -509,7 +509,7 @@
                     </thead>
                     <tbody>
 
-                        @foreach ($gv_items as $data)
+                        @foreach ($ot_items as $data)
 
                         <td>
                             <a href="#" data-help="Click to read detailed description">
