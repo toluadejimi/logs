@@ -136,8 +136,8 @@
                           @csrf
 
                           <div class="my-2">
-                              <label>Username</label>
-                              <input class="form-control" name="username" required type="text" autofocus
+                              <label>Email</label>
+                              <input class="form-control" name="username" required type="email" autofocus
                                   placeholder="Enter your username">
                           </div>
 
@@ -190,7 +190,7 @@
                           @csrf
 
                           <div class="my-2">
-                              <label>Username</label>
+                              <label>Email</label>
                               <input class="form-control" name="email" required type="text" autofocus
                                   placeholder="Enter your Email">
                           </div>
@@ -249,6 +249,12 @@
 
 
 
+
+
+           
+                  <strong>HI {{ Auth::user()->username  ?? "User"}}, </strong> <p class="text-muted">what are you buying today?</p>
+
+                
 
             {{-- Facebook --}}
 

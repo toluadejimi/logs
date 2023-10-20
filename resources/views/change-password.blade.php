@@ -129,7 +129,7 @@
                             @csrf
 
                             <div class="my-2">
-                                <label>Username</label>
+                                <label>Email</label>
                                 <input class="form-control" name="username" required type="text" autofocus
                                     placeholder="Enter your username">
                             </div>
@@ -183,7 +183,7 @@
                             @csrf
 
                             <div class="my-2">
-                                <label>Username</label>
+                                <label>Email</label>
                                 <input class="form-control" name="email" required type="text" autofocus
                                     placeholder="Enter your Email">
                             </div>
