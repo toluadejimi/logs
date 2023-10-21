@@ -136,26 +136,26 @@
                           @csrf
 
                           <div class="my-2">
-                              <label>Email</label>
-                              <input class="form-control" name="username" required type="email" autofocus
+                              <label>Username</label>
+                              <input class="form-control" name="username" required type="text" autofocus
                                   placeholder="Enter your username">
                           </div>
 
                           <div class="my-2">
                               <label>Email</label>
-                              <input class="form-control" name="email" required type="text" autofocus
+                              <input class="form-control" name="email" required type="email" autofocus
                                   placeholder="Enter your Email Address">
                           </div>
 
                           <div class="my-2">
                               <label>Password</label>
-                              <input class="form-control" name="password" required type="text" autofocus
+                              <input class="form-control" name="password" required type="password" autofocus
                                   placeholder="Enter your Password">
                           </div>
 
                           <div class="my-2">
                               <label>Confirm Password</label>
-                              <input class="form-control" name="password_confirmation" required type="text" autofocus
+                              <input class="form-control" name="password_confirmation" required type="password" autofocus
                                   placeholder="Confirm your Password">
                           </div>
 
@@ -191,13 +191,13 @@
 
                           <div class="my-2">
                               <label>Email</label>
-                              <input class="form-control" name="email" required type="text" autofocus
+                              <input class="form-control" name="email" required type="email" autofocus
                                   placeholder="Enter your Email">
                           </div>
 
                           <div class="my-2">
                               <label>Password</label>
-                              <input class="form-control" name="password" required type="text" autofocus
+                              <input class="form-control" name="password" required type="password" autofocus
                                   placeholder="Enter your password">
                           </div>
 
@@ -250,6 +250,16 @@
 
 
 
+            @if($url != null)
+
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Item purchased successfully!</strong><a href="{{ $url }}"> CLICK HERE TO VIEW YOUR ORDER 👉🏽 DOWNLOAD.</a>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+            @endif
 
            
                   <strong>HI {{ Auth::user()->username  ?? "User"}}, </strong> <p class="text-muted">what are you buying today?</p>

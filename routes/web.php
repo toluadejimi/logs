@@ -111,6 +111,15 @@ Route::post('delete-product',  [AdminController::class,'delete_product']);
 Route::post('add-new-pr',  [AdminController::class,'add_new_pr']);
 Route::post('delete-pr',  [AdminController::class,'delete_pr']);
 
+Route::get('delete-front-pr',  [AdminController::class,'delete_front_pr']);
+
+Route::get('delete-pr',  [AdminController::class,'delete_pro']);
+
+Route::get('delete-main',  [AdminController::class,'delete_main']);
+
+
+
+
 
 
 Route::get('users',  [AdminController::class,'index_user']);

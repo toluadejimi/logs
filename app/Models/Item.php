@@ -12,6 +12,7 @@ class Item extends Model
     protected $fillable = [
         'amount',
         'title',
+        'qty',
     ];
 
     public function transaction()

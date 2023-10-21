@@ -109,14 +109,14 @@
                             @csrf
 
                             <div class="my-2">
-                                <label>Email</label>
+                                <label>Usename</label>
                                 <input class="form-control" name="username" required type="text" autofocus
                                     placeholder="Enter your username">
                             </div>
 
                             <div class="my-2">
                                 <label>Email</label>
-                                <input class="form-control" name="email" required type="text" autofocus
+                                <input class="form-control" name="email" required type="email" autofocus
                                     placeholder="Enter your Email Address">
                             </div>
 
@@ -164,7 +164,7 @@
 
                             <div class="my-2">
                                 <label>Email</label>
-                                <input class="form-control" name="email" required type="text" autofocus
+                                <input class="form-control" name="email" required type="email" autofocus
                                     placeholder="Enter your Email">
                             </div>
 
@@ -253,8 +253,11 @@
                                     class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
 
 
-                                    <span class="fs-4">{{ Auth::user()->username }}</span>
+                                    <span class="fs-4">Username -:{{ Auth::user()->username }}</span>
+
                                 </a>
+                                <span class="fs-4">Email -: {{ Auth::user()->email }}</span>
+
                                 <hr>
                                 <ul class="nav nav-pills flex-column mb-auto">
                                     <li class="nav-item">
@@ -305,6 +308,8 @@
                                                 <th scope="col">Data</th>
                                                 <th scope="col">Amount</th>
                                                 <th scope="col">Status</th>
+                                                <th scope="col">Date/Time</th>
+
 
                                             </tr>
                                         </thead>
@@ -314,7 +319,7 @@
                                             @foreach ($orders as $data)
 
                                             <td class="small">
-                                                {{$data->item}}
+                                                <a class"btn btn-sm btn-black" href="{{$data->item}}"> CLICK HERE TO VIEW YOUR ORDER 👉🏽 DOWNLOAD.</a>
                                             </td>
 
                                             <td class="small">
@@ -322,10 +327,11 @@
                                             </td>
 
                                             <td>
-
                                                 <span class="badge badge-pill badge-success">Completed</span>
+                                            </td>
 
-
+                                            <td>
+                                                {{ $data->created_at }}
                                             </td>
 
 
@@ -340,6 +346,7 @@
 
                                     </table>
 
+                                    {{ $orders->links() }}
 
                                 </div>
 

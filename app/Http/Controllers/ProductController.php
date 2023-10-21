@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Imports\MainItemsClass;
 use App\Models\Category;
 use App\Models\Item;
+use App\Models\Output;
 use App\Models\Product;
 use App\Models\SoldLog;
 use App\Models\Transaction;
@@ -63,6 +64,8 @@ class ProductController extends Controller
 
         $url =  url('')."/storage/app/$filename";
 
+        $main_url = "<a href='$url'> CLICK HERE TO VIEW YOUR ORDER 👉🏽 DOWNLOAD </a>";
+
 
         $ref= random_int(000, 999).date('ymdhis');
 
@@ -82,7 +85,36 @@ class ProductController extends Controller
         $sl->item = $url;
         $sl->save();
 
-        return redirect('/')->with('message',  "\n Item Purchased Successfully Use link to access your logs - $url");
+
+        $user = Auth::id() ?? null;
+
+        $fbaged = Category::where('id', 1)->get();
+        $insta_cat = Category::where('id', 2)->get();
+        $ot = Category::where('id', 3)->get();
+        $tw = Category::where('id', 5)->get();
+        $rd = Category::where('id', 6)->get();
+        $ml = Category::where('id', 7)->get();
+        $gv = Category::where('id', 8)->get();
+        $in = Category::where('id', 9)->get();
+
+
+
+
+
+        $fbaged_items = Item::where('cat_id', 1)->take(5)->get();
+        $insta_items = Item::where('cat_id', 2)->take(5)->get();
+        $ot_items = Item::where('cat_id', 3)->take(5)->get();
+        $tw_items = Item::where('cat_id', 5)->take(5)->get();
+        $rd_items = Item::where('cat_id', 6)->take(5)->get();
+        $ml_items = Item::where('cat_id', 7)->take(5)->get();
+        $gv_items = Item::where('cat_id', 8)->take(5)->get();
+        $in_items = Item::where('cat_id', 9)->take(5)->get();
+
+
+
+
+        return view('welcome', compact('fbaged', 'url', 'gv', 'tw', 'gv_items', 'tw_items', 'rd', 'rd_items',  'ot', 'ot_items',  'ml', 'ml_items',  'gv', 'gv_items',  'in', 'in_items', 'user', 'insta_items', 'fbaged_items', 'insta_cat'));
+
 
 
 

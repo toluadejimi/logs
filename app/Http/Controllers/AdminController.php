@@ -69,7 +69,9 @@ class AdminController extends Controller
         Item::where('id', $request->id)->first()->update([
             
             'amount' => $request->amount,
-            'title' => $request->title
+            'title' => $request->title,
+            'qty' => $request->qty
+
 
             
         ]);
@@ -142,7 +144,6 @@ class AdminController extends Controller
             User::where('id',$request->id)->decrement('wallet', $request->amount);
 
             return back()->with('error', 'Wallet Debited Successfully');
-
 
         }
 
@@ -293,6 +294,41 @@ class AdminController extends Controller
 
 
     }
+
+    public function delete_front_pr(request $request)
+	{
+
+        Item::where('id', $request->id)->delete();
+
+        return back()->with('message', "Item Deleted Successfully");
+
+
+    }
+
+
+    public function delete_pro(request $request)
+	{
+
+        Product::where('id', $request->id)->delete();
+
+        return back()->with('message', "Item Deleted Successfully");
+
+
+    }
+
+
+    public function delete_main(request $request)
+	{
+
+        MainItem::where('id', $request->id)->delete();
+
+        return back()->with('message', "Item Deleted Successfully");
+
+
+    }
+
+
+    
 
 
 

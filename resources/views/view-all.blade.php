@@ -122,14 +122,14 @@
                             @csrf
 
                             <div class="my-2">
-                                <label>Email</label>
+                                <label>Username</label>
                                 <input class="form-control" name="username" required type="text" autofocus
                                     placeholder="Enter your username">
                             </div>
 
                             <div class="my-2">
                                 <label>Email</label>
-                                <input class="form-control" name="email" required type="text" autofocus
+                                <input class="form-control" name="email" required type="email" autofocus
                                     placeholder="Enter your Email Address">
                             </div>
 
@@ -177,13 +177,13 @@
 
                             <div class="my-2">
                                 <label>Email</label>
-                                <input class="form-control" name="email" required type="text" autofocus
+                                <input class="form-control" name="email" required type="email" autofocus
                                     placeholder="Enter your Email">
                             </div>
 
                             <div class="my-2">
                                 <label>Password</label>
-                                <input class="form-control" name="password" required type="text" autofocus
+                                <input class="form-control" name="password" required type="password" autofocus
                                     placeholder="Enter your password">
                             </div>
 

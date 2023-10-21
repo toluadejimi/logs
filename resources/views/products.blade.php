@@ -389,7 +389,7 @@
 
 
 
-{{-- 
+                    {{--
 
                     <div class="ecommerce-widget">
 
@@ -462,7 +462,7 @@
 
 
                     </div>
- --}}
+                    --}}
 
 
                     <div class="row">
@@ -498,6 +498,8 @@
                                             <tr>
                                                 <th scope="col">Title</th>
                                                 <th scope="col">Product</th>
+                                                <th scope="col">Action</th>
+
 
                                             </tr>
                                         </thead>
@@ -513,6 +515,13 @@
                                             <td>
                                                 {{$data->product_id}}
                                             </td>
+
+
+                                            <td>
+                                                <a href="/delete-main?id={{ $data->id }}"
+                                                    class="btn btn-sm btn-danger">Delete</a>
+                                            </td>
+
 
 
                                             {{-- <td>
@@ -555,7 +564,9 @@
                                         All Items
                                     </div>
 
-                                    <table class="table table-sm table-responsive-sm">
+                               
+
+                                    <table id="myTabl" class="table table-sm table-responsive-sm">
                                         <thead class="thead-dark">
                                             <tr>
                                                 <th scope="col">ID</th>
@@ -569,6 +580,11 @@
 
 
                                             @foreach ($item as $data)
+
+                                            <tr>
+
+                                                
+                                            </tr>
 
                                             <td>
                                                 {{$data->id}}
@@ -620,10 +636,13 @@
                                         All Front Product
                                     </div>
 
-                                    <table class="table table-sm table-responsive-sm">
+                                    <input class="form-control my-3" type="text" id="searchInput"
+                                        placeholder="Search by Name">
+
+                                    <table id="myTable" class="table table-sm table-responsive-sm">
                                         <thead class="thead-dark">
                                             <tr>
-                                                <th scope="col">ID</th>
+                                                {{-- <th scope="col">ID</th> --}}
                                                 <th scope="col">Title</th>
                                                 <th scope="col">Price</th>
                                                 <th scope="col">Qty</th>
@@ -642,14 +661,19 @@
 
                                             @foreach ($front_pr as $data)
 
-                                            <td>
-                                                {{$data->id}}
-                                            </td>
+                                            <tr>
 
+                                                
+                                            </tr>
+
+                                              
+                                         
                                             <td>
                                                 {{$data->title}}
                                             </td>
 
+                                      
+                                     
                                             <td>
                                                 {{number_format($data->amount, 2)}}
                                             </td>
@@ -670,12 +694,12 @@
                                             </td>
 
 
-                                            <td><button type="button" data-toggle="modal" data-target="#register{{  $data->id }}"
-                                                class="btn btn-success">
-                                                <ion-icon name="person-add-outline"></ion-icon> Edit
-                                            </button>
+                                            <td><button type="button" data-toggle="modal"
+                                                    data-target="#register{{  $data->id }}" class="btn btn-success">
+                                                    <ion-icon name="person-add-outline"></ion-icon> Edit
+                                                </button>
 
-                                        </td>
+                                            </td>
 
 
 
@@ -692,18 +716,25 @@
                                                                 @csrf
 
                                                                 <label>Title</label>
-                                                                   <input class="form-control" name="title" required
-                                                                        type="text" value="{{ $data->title }}">
+                                                                <input class="form-control" name="title" required
+                                                                    type="text" value="{{ $data->title }}">
 
-                                                                        <input class="form-control" name="id" required
-                                                                        type="text" hidden value="{{ $data->id }}">
+                                                                <input class="form-control" name="id" required
+                                                                    type="text" hidden value="{{ $data->id }}">
 
 
                                                                 <div class="my-2">
 
                                                                     <label>Amount</label>
                                                                     <input class="form-control" name="amount" required
-                                                                        type="number"  value="{{ $data->amount }}">
+                                                                        type="number" value="{{ $data->amount }}">
+
+
+
+                                                                    <label>Quantity</label>
+                                                                    <input class="form-control" name="qty" required
+                                                                        type="number" value="{{ $data->qty }}">
+
 
                                                                     <input hidden class="form-control mb-5" name="id"
                                                                         value="{{ $data->id }}" required type="number"
@@ -727,6 +758,8 @@
 
 
                                                         </div>
+
+                                                        
 
                                                     </div>
                                                 </div>
@@ -812,6 +845,62 @@
     <script src="{{ url('') }}/public/concept/assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
     <script src="{{ url('') }}/public/concept/assets/vendor/charts/c3charts/C3chartjs.js"></script>
     <script src="{{ url('') }}/public/concept/assets/libs/js/dashboard-ecommerce.js"></script>
+
+
+    <script>
+        // Get the input element and table
+        const input = document.getElementById('searchInput');
+        const table = document.getElementById('myTable');
+        const rows = table.getElementsByTagName('tr');
+    
+        // Add an event listener to the input element
+        input.addEventListener('keyup', function() {
+            const filter = input.value.toLowerCase();
+            
+            // Loop through all table rows and hide those that don't match the search query
+            for (let i = 1; i < rows.length; i++) {
+                const row = rows[i];
+                const name = row.getElementsByTagName('td')[0];
+                if (name) {
+                    const text = name.textContent || name.innerText;
+                    if (text.toLowerCase().indexOf(filter) > -1) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                }
+            }
+        });
+    </script>
+
+
+    <script>
+        // Get the input element and table
+        const input = document.getElementById('searchInpu');
+        const table = document.getElementById('myTabl');
+        const rows = table.getElementsByTagName('tr');
+    
+        // Add an event listener to the input element
+        input.addEventListener('keyup', function() {
+            const filter = input.value.toLowerCase();
+            
+            // Loop through all table rows and hide those that don't match the search query
+            for (let i = 1; i < rows.length; i++) {
+                const row = rows[i];
+                const name = row.getElementsByTagName('td')[0];
+                if (name) {
+                    const text = name.textContent || name.innerText;
+                    if (text.toLowerCase().indexOf(filter) > -1) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                }
+            }
+        });
+    </script>
+
+
 </body>
 
 </html>

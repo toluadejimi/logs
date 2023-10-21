@@ -29,12 +29,14 @@ class ItemController extends Controller
         $bf = Output::where('id', 5)->first()->qty;
         $pl = Output::where('id', 6)->first()->qty;
 
+        $url = null;
 
 
 
 
 
-        return view('welcome', compact('output', 'gmesh', 'pl', 'cmesh', 'lmesh', 'bs', 'bf'));
+
+        return view('welcome', compact('output', 'url', 'gmesh', 'pl', 'cmesh', 'lmesh', 'bs', 'bf'));
     }
 
 
@@ -924,12 +926,11 @@ class ItemController extends Controller
         }
 
 
-
-
-
         $output = Output::select('name', 'sn', 'qty')->get();
 
-        return view('welcome', compact('output'));
+        $url = null;
+
+        return view('welcome', compact('output', 'url'));
     }
 
 

@@ -343,7 +343,7 @@
                                                 <div class="card-body p-3">
                                                     <label>Choose Option</label>
                                                     <select class="form-control" required name="trade">
-                                                        <option value="debit">Credit</option>
+                                                        <option value="credit">Credit</option>
                                                         <option value="debit">Debit</option>
                                                     </select>
                                                 </div>

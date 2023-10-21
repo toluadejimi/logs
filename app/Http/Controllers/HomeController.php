@@ -44,11 +44,12 @@ class HomeController extends Controller
         $in_items = Item::where('cat_id', 9)->take(5)->get();
 
 
+        $url = null;
 
 
 
 
-        return view('welcome', compact('fbaged', 'gv', 'tw', 'gv_items', 'tw_items', 'rd', 'rd_items',  'ot', 'ot_items',  'ml', 'ml_items',  'gv', 'gv_items',  'in', 'in_items', 'user', 'insta_items', 'fbaged_items', 'insta_cat'));
+        return view('welcome', compact('fbaged', 'url', 'gv', 'tw', 'gv_items', 'tw_items', 'rd', 'rd_items',  'ot', 'ot_items',  'ml', 'ml_items',  'gv', 'gv_items',  'in', 'in_items', 'user', 'insta_items', 'fbaged_items', 'insta_cat'));
     }
 
 
@@ -230,7 +231,7 @@ class HomeController extends Controller
 
 
         $user = Auth::id();
-        $orders = SoldLog::where('user_id', Auth::id())->get();
+        $orders = SoldLog::latest()->where('user_id', Auth::id())->paginate(5);
 
 
         return view('profile', compact('user', 'orders'));
