@@ -261,10 +261,10 @@
 
             @endif
 
-           
+
                   <strong>HI {{ Auth::user()->username  ?? "User"}}, </strong> <p class="text-muted">what are you buying today?</p>
 
-                
+
 
             {{-- Facebook --}}
 
