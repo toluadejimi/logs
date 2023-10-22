@@ -29,6 +29,10 @@ class HomeController extends Controller
         $ml = Category::where('id', 7)->get();
         $gv = Category::where('id', 8)->get();
         $in = Category::where('id', 9)->get();
+        $tk = Category::where('id', 12)->get();
+        $ln = Category::where('id', 13)->get();
+        $pv = Category::where('id', 14)->get();
+        $oth = Category::where('id', 15)->get();
 
 
 
@@ -42,14 +46,15 @@ class HomeController extends Controller
         $ml_items = Item::where('cat_id', 7)->take(5)->get();
         $gv_items = Item::where('cat_id', 8)->take(5)->get();
         $in_items = Item::where('cat_id', 9)->take(5)->get();
+        $tk_items = Item::where('cat_id', 12)->take(5)->get();
+        $ln_items = Item::where('cat_id', 13)->take(5)->get();
+        $pv_items = Item::where('cat_id', 14)->take(5)->get();
+        $oth_items = Item::where('cat_id', 15)->take(5)->get();
 
 
         $url = null;
 
-
-
-
-        return view('welcome', compact('fbaged', 'url', 'gv', 'tw', 'gv_items', 'tw_items', 'rd', 'rd_items',  'ot', 'ot_items',  'ml', 'ml_items',  'gv', 'gv_items',  'in', 'in_items', 'user', 'insta_items', 'fbaged_items', 'insta_cat'));
+        return view('welcome', compact('fbaged', 'url', 'gv', 'tw', 'gv_items', 'tw_items', 'rd', 'rd_items', 'oth', 'oth_items',  'pv', 'pv_items',  'ln', 'ln_items',  'tk', 'tk_items',  'ot', 'ot_items',  'ml', 'ml_items',  'gv', 'gv_items',  'in', 'in_items', 'user', 'insta_items', 'fbaged_items', 'insta_cat'));
     }
 
 
