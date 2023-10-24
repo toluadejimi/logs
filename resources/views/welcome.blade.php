@@ -333,10 +333,8 @@
                             <td class="small bold">{{ $data->qty }} pcs.</td>
                             <td>
                                 @if ($data->qty == 0)
-                                <div class="subscribe-cell" data-help="Subscribe to newsletter">
-                                    <button class="form-control" type="button" data-id="12005">
-                                        <img src="{{ url('') }}/public/img/ic-subscribe.png" height="18" width="21" alt>
-                                    </button>
+                                <div>
+                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
                                 </div>
 
 
@@ -442,12 +440,9 @@
                                 <td class="small bold">{{ $data->qty }} pcs.</td>
                                 <td>
                                     @if ($data->qty == 0)
-                                    <div class="subscribe-cell" data-help="Subscribe to newsletter">
-                                        <button class="form-control" type="button" data-id="12005">
-                                            <img src="{{ url('') }}/public/img/ic-subscribe.png" height="18" width="21"
-                                                alt>
-                                        </button>
-                                    </div>
+                                    <div>
+                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                </div>
 
 
 
@@ -559,12 +554,9 @@
                                 <td class="small bold">{{ $data->qty }} pcs.</td>
                                 <td>
                                     @if ($data->qty == 0)
-                                    <div class="subscribe-cell" data-help="Subscribe to newsletter">
-                                        <button class="form-control" type="button" data-id="12005">
-                                            <img src="{{ url('') }}/public/img/ic-subscribe.png" height="18" width="21"
-                                                alt>
-                                        </button>
-                                    </div>
+                                    <div>
+                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                </div>
 
 
 
@@ -668,12 +660,9 @@
                                 <td class="small bold">{{ $data->qty }} pcs.</td>
                                 <td>
                                     @if ($data->qty == 0)
-                                    <div class="subscribe-cell" data-help="Subscribe to newsletter">
-                                        <button class="form-control" type="button" data-id="12005">
-                                            <img src="{{ url('') }}/public/img/ic-subscribe.png" height="18" width="21"
-                                                alt>
-                                        </button>
-                                    </div>
+                                    <div>
+                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                </div>
 
 
 
@@ -781,12 +770,9 @@
                                 <td class="small bold">{{ $data->qty }} pcs.</td>
                                 <td>
                                     @if ($data->qty == 0)
-                                    <div class="subscribe-cell" data-help="Subscribe to newsletter">
-                                        <button class="form-control" type="button" data-id="12005">
-                                            <img src="{{ url('') }}/public/img/ic-subscribe.png" height="18" width="21"
-                                                alt>
-                                        </button>
-                                    </div>
+                                    <div>
+                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                </div>
 
 
 
@@ -887,12 +873,9 @@
                                 <td class="small bold">{{ $data->qty }} pcs.</td>
                                 <td>
                                     @if ($data->qty == 0)
-                                    <div class="subscribe-cell" data-help="Subscribe to newsletter">
-                                        <button class="form-control" type="button" data-id="12005">
-                                            <img src="{{ url('') }}/public/img/ic-subscribe.png" height="18" width="21"
-                                                alt>
-                                        </button>
-                                    </div>
+                                    <div>
+                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                </div>
 
 
 
@@ -994,12 +977,9 @@
                                 <td class="small bold">{{ $data->qty }} pcs.</td>
                                 <td>
                                     @if ($data->qty == 0)
-                                    <div class="subscribe-cell" data-help="Subscribe to newsletter">
-                                        <button class="form-control" type="button" data-id="12005">
-                                            <img src="{{ url('') }}/public/img/ic-subscribe.png" height="18" width="21"
-                                                alt>
-                                        </button>
-                                    </div>
+                                    <div>
+                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                </div>
 
 
 
@@ -1102,13 +1082,9 @@
                                 <td class="small bold">{{ $data->qty }} pcs.</td>
                                 <td>
                                     @if ($data->qty == 0)
-                                    <div class="subscribe-cell" data-help="Subscribe to newsletter">
-                                        <button class="form-control" type="button" data-id="12005">
-                                            <img src="{{ url('') }}/public/img/ic-subscribe.png" height="18" width="21"
-                                                alt>
-                                        </button>
-                                    </div>
-
+                                    <div>
+                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                </div>
 
 
                                     @else
@@ -1201,12 +1177,9 @@
                                 <td class="small bold">{{ $data->qty }} pcs.</td>
                                 <td>
                                     @if ($data->qty == 0)
-                                    <div class="subscribe-cell" data-help="Subscribe to newsletter">
-                                        <button class="form-control" type="button" data-id="12005">
-                                            <img src="{{ url('') }}/public/img/ic-subscribe.png" height="18" width="21"
-                                                alt>
-                                        </button>
-                                    </div>
+                                    <div>
+                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                </div>
 
 
 
@@ -1308,12 +1281,9 @@
                                 <td class="small bold">{{ $data->qty }} pcs.</td>
                                 <td>
                                     @if ($data->qty == 0)
-                                    <div class="subscribe-cell" data-help="Subscribe to newsletter">
-                                        <button class="form-control" type="button" data-id="12005">
-                                            <img src="{{ url('') }}/public/img/ic-subscribe.png" height="18" width="21"
-                                                alt>
-                                        </button>
-                                    </div>
+                                    <div>
+                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                </div>
 
 
 
@@ -1416,12 +1386,9 @@
                                 <td class="small bold">{{ $data->qty }} pcs.</td>
                                 <td>
                                     @if ($data->qty == 0)
-                                    <div class="subscribe-cell" data-help="Subscribe to newsletter">
-                                        <button class="form-control" type="button" data-id="12005">
-                                            <img src="{{ url('') }}/public/img/ic-subscribe.png" height="18" width="21"
-                                                alt>
-                                        </button>
-                                    </div>
+                                    <div>
+                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                </div>
 
 
 
@@ -1524,12 +1491,9 @@
                                 <td class="small bold">{{ $data->qty }} pcs.</td>
                                 <td>
                                     @if ($data->qty == 0)
-                                    <div class="subscribe-cell" data-help="Subscribe to newsletter">
-                                        <button class="form-control" type="button" data-id="12005">
-                                            <img src="{{ url('') }}/public/img/ic-subscribe.png" height="18" width="21"
-                                                alt>
-                                        </button>
-                                    </div>
+                                    <div>
+                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                </div>
 
 
 
