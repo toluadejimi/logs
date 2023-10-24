@@ -104,9 +104,8 @@
             </div>
 
             <h5>Terms and Conditions</h5>
-           <p class="small"> We provide services that makes it easier for our clients to connect to family and friends across the world,
-            have fun using the internet, educational purposes or any other personal use.<br><br>
-
+           <p class="small">
+            
             Don’t use our product to harm other people , bullying on social networks, comment spam, threats, etc and to
             commit other illegal actions – fraud, extortion, data theft, etc.<br><br>
 

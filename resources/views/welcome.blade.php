@@ -1625,30 +1625,14 @@
 
                     </div>
 
-                    <h5>WHAT TO ASK BEFORE BUYING ACCOUNTS</h5>
-                    <p class="small">First of all, you should ask:</p>
-                    <p class="small">- Where most of the target audiences are?</p>
-                    <p class="small">It is essential to determine where the target audiences are spending their time.
-                        This could
-                        be
-                        Instagram or Facebook or Twitter, whatever, but the thing is that purchased accounts with
-                        followers are to be profitable in marketing. They have to be true but not fake accounts.</p>
-                    <p class="small">- Where is the activity of accounts reflected?</p>
-                    <p class="small">The inactive accounts of Social Media are useless, even if they are accessible and
-                        well
-                        promoted.
-                        It is recommended to buy only active accounts. For example, lets take stats of Facebook,
-                        according to a search engine journal, only 1.20 billion users are active on this Social Media.
-                    </p>
-                    <p class="small">- What are the search results of followers?</p>
-                    <p class="small">Try to determine what the users are searching for on SOMIA. This will bring you
-                        closer to
-                        profit.
-                    </p>
-                    <p class="small">- What Social Media meets your niche better than others?</p>
-                    <p class="small">It is worth considering that you may not get leads from Social Media used by other
-                        business
-                        owners. Therefore, choose the Social Media sites that correspond to your niche.</p>
+
+            <h5>Why do people Buy social media accounts?</h5>
+            <p class="small">A solid social media account can be a powerful tool for branding and marketing.</p>
+            <p class="small">A good social media account has an active and responsive community fired up by the topic or niche that brought them together.</p>
+            <p class="small">Sometimes it makes sense to buy or sell a social media account depending on where you are with your business and how goals have changed and evolved.</p>
+            <p class="small">There is a thriving market for buying/selling social media accounts, but it’s important to know what the best platforms are. </p>
+
+            <p class="small"><strong>Let’s dig in!</strong></p>
 
                 </div>
 
