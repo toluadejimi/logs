@@ -279,7 +279,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="nav-link text-white">
+                                        <a href="https://t.me/logsmarkeplace" class="nav-link text-white">
                                             <ion-icon name="help-circle-outline"></ion-icon>
                                             Support
                                         </a>
