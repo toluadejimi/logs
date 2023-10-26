@@ -564,7 +564,7 @@
                                         All Items
                                     </div>
 
-                               
+
 
                                     <table id="myTabl" class="table table-sm table-responsive-sm">
                                         <thead class="thead-dark">
@@ -583,7 +583,7 @@
 
                                             <tr>
 
-                                                
+
                                             </tr>
 
                                             <td>
@@ -663,17 +663,17 @@
 
                                             <tr>
 
-                                                
+
                                             </tr>
 
-                                              
-                                         
+
+
                                             <td>
                                                 {{$data->title}}
                                             </td>
 
-                                      
-                                     
+
+
                                             <td>
                                                 {{number_format($data->amount, 2)}}
                                             </td>
@@ -759,7 +759,7 @@
 
                                                         </div>
 
-                                                        
+
 
                                                     </div>
                                                 </div>
@@ -852,11 +852,11 @@
         const input = document.getElementById('searchInput');
         const table = document.getElementById('myTable');
         const rows = table.getElementsByTagName('tr');
-    
+
         // Add an event listener to the input element
         input.addEventListener('keyup', function() {
             const filter = input.value.toLowerCase();
-            
+
             // Loop through all table rows and hide those that don't match the search query
             for (let i = 1; i < rows.length; i++) {
                 const row = rows[i];
@@ -879,11 +879,11 @@
         const input = document.getElementById('searchInpu');
         const table = document.getElementById('myTabl');
         const rows = table.getElementsByTagName('tr');
-    
+
         // Add an event listener to the input element
         input.addEventListener('keyup', function() {
             const filter = input.value.toLowerCase();
-            
+
             // Loop through all table rows and hide those that don't match the search query
             for (let i = 1; i < rows.length; i++) {
                 const row = rows[i];
@@ -899,6 +899,9 @@
             }
         });
     </script>
+
+
+    <script src="//code.tidio.co/ycuaokbggutscuhfj1r0d7fqovrh7we7.js" async></script>
 
 
 </body>

@@ -196,6 +196,7 @@
                 <li class="nav-item"><a href="terms" class="nav-link px-2 text-muted">Terms & Condition</a></li>
                 <li class="nav-item"><a href="policy" class="nav-link px-2 text-muted">Policy</a></li>
                 <li class="nav-item"><a href="rules" class="nav-link px-2 text-muted">Rules</a></li>
+                <script src="//code.tidio.co/ycuaokbggutscuhfj1r0d7fqovrh7we7.js" async></script>
             </ul>
             <p class="text-center text-muted">&copy; 2023 Log MarketPlace</p>
         </footer>
