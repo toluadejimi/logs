@@ -49,6 +49,9 @@ class ProductController extends Controller
         $get_item = MainItem::select('name')->where('product_id', $product_id)->take($request->quantity)->get();
 
 
+        $url =  url('')."/storage/app/$filename";
+
+        
         $formattedRow = [];
         foreach ($get_item as $value) {
                 $formattedRow[] = $value['name'];
@@ -67,7 +70,6 @@ class ProductController extends Controller
         $main_url = "<a href='$url'> CLICK HERE TO VIEW YOUR ORDER 👉🏽 DOWNLOAD </a>";
 
 
-        $url =  url('')."/storage/app/$filename";
 
         $ref= random_int(000, 999).date('ymdhis');
 
