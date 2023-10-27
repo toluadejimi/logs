@@ -79,7 +79,7 @@
                                 Menu
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link active" href="admin-dashboard" ><i
+                                <a class="nav-link" href="admin-dashboard" ><i
                                         class="fa fa-fw fa-user-circle"></i>Dashboard <span
                                         class="badge badge-success">6</span></a>
                                 <div id="submenu-1" class="collapse submenu" style="">
@@ -88,8 +88,8 @@
 
 
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="/users"  aria-controls="submenu-2"><i
+                            <li class="nav-item active">
+                                <a class="nav-link active" href="/users"  aria-controls="submenu-2"><i
                                         class="fa fa-fw fa-rocket"></i>Users</a>
 
                             </li>
@@ -141,7 +141,7 @@
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item"><a href="#"
                                                     class="breadcrumb-link">Dashboard</a></li>
-                                            <li class="breadcrumb-item active" aria-current="page">Admin Dashboard</li>
+                                            <li class="breadcrumb-item active" aria-current="page">Users</li>
                                         </ol>
                                     </nav>
                                 </div>
@@ -170,47 +170,30 @@
 
 
 
-
-
-
-
-
-
-
-
-
-                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="text-muted">Total In</h5>
-                                        <div class="metric-value d-inline-block">
-                                            <h3 class="mb-1">NGN {{ number_format($total_in, 2) }}</h3>
+                                        <h5 class="text-muted">Search user</h5>
+
+                                        <form action="search-user" method="POST">
+                                            @csrf
+                                            <label>Enter Email</label>
+                                            <input type="email" class="form-control" name="email" required autofocus>
+
+                                            <button class="btn btn-sm btn-success my-3">Submit</button>
+
+                                        </form>
+
+
+
+                                        <div
+                                            class="metric-label d-inline-block float-right text-success font-weight-bold">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="text-muted">Total Products</h5>
-                                        <div class="metric-value d-inline-block">
-                                            <h3 class="mb-1">{{ number_format($total_p, 2) }}</h3>
-                                        </div>
 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="text-muted">Total Front Product</h5>
-                                        <div class="metric-value d-inline-block">
-                                            <h3 class="mb-1">{{ number_format($total_f, 2) }}</h3>
-                                        </div>
 
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <div class="row">
                             <!-- ============================================================== -->
@@ -219,135 +202,32 @@
 
                             <!-- recent orders  -->
                             <!-- ============================================================== -->
-                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
-                                <div class="card">
-                                    <h5 class="card-header">Recent Orders</h5>
-                                    <div class="card-body p-0">
-                                        <div class="table-responsive">
-                                            <table class="table">
-                                                <thead class="bg-light">
-                                                    <tr class="border-0">
-                                                        <th class="border-0">User</th>
-                                                        <th class="border-0">Order ID</th>
-                                                        <th class="border-0">Url</th>
-                                                        <th class="border-0">Amount</th>
-                                                        <th class="border-0">Date</th>
-                                                        <th class="border-0">Time</th>
-
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @forelse ($orders as $data)
-
-                                                    <tr>
-                                                        <td>{{ $data->user_id }} </td>
-                                                        <td>{{ $data->ref_id }} </td>
-                                                        <td>{{ $data->item }} </td>
-                                                        <td>{{ $data->amount }} </td>
-                                                        <td>{{ date('d/m/y', strtotime($data->created_at)) }} </td>
-                                                        <td>{{ date('h:i', strtotime($data->created_at)) }} </td>
-
-
-
-
-
-                                                    </tr>
-
-                                                    @empty
-
-                                                    <tr>
-                                                        <td> No Record Found</td>
-                                                    </tr>
-
-                                                    @endforelse
-                                                </tbody>
-
-
-
-                                            </table>
-                                            {{ $orders->links() }}
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-3 col-lg-12 col-md-6 col-sm-12 col-12">
-
-                                <div class="card">
-                                    <h5 class="card-header">Logs Balance</h5>
-                                    <div class="card-body p-0">
-                                        <div class="table-responsive">
-                                            <table class="table no-wrap p-table">
-                                                <thead class="bg-light">
-                                                    <tr class="border-0">
-                                                        <th class="border-0">Items</th>
-                                                        <th class="border-0">Qty</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Google Voice</td>
-                                                        <td>{{ $gv }}</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>Facebook</td>
-                                                        <td>{{ $fb }}</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>Instgran</td>
-                                                        <td>{{ $insta }}</td>
-                                                    </tr>
-
-
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-
                             <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12 col-12">
                                 <div class="card">
-                                    <h5 class="card-header">Recent Transaction</h5>
+                                    <h5 class="card-header">All Users</h5>
                                     <div class="card-body p-0">
                                         <div class="table-responsive">
                                             <table class="table">
                                                 <thead class="bg-light">
                                                     <tr class="border-0">
-                                                        <th class="border-0">Transaction ID</th>
-                                                        <th class="border-0">User</th>
-                                                        <th class="border-0">Type</th>
-                                                        <th class="border-0">Amount</th>
-                                                        <th class="border-0">Date</th>
-                                                        <th class="border-0">Time</th>
+                                                        <th class="border-0">Username</th>
+                                                        <th class="border-0">Email</th>
+                                                        <th class="border-0">Wallet(NGN)</th>
+                                                        <th class="border-0">Action</th>
+                                                        <th class="border-0">Action</th>
+
 
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @forelse ($transaction as $data)
+                                                    @forelse ($users as $data)
 
                                                     <tr>
-                                                        <td>{{ $data->ref_id }} </td>
-                                                        <td>{{ $data->user->username }} </td>
-                                                        @if($data->type == 2)
-                                                        <td><span class="badge badge-success">Credit</span>
-                                                        </td>
-                                                        @else
-                                                         <td><span class="badge badge-danger">Debit</span>
-                                                        </td>
-                                                        @endif
-                                                        <td>{{ number_format($data->amount, 2) }} </td>
-                                                        <td>{{ date('d/m/y', strtotime($data->created_at)) }} </td>
-                                                        <td>{{ date('h:i', strtotime($data->created_at)) }} </td>
-
-
-
+                                                        <td><a href="view-user?id={{ $data->id }}">{{ $data->username }}</a> </td>
+                                                        <td><a href="view-user?id={{ $data->id }}">{{ $data->email }} </td></a>
+                                                        <td>{{ number_format($data->wallet, 2) }} </td>
+                                                        <td><a href="view-user?id={{ $data->id }}" class="btn btn-success btn-sm">View User</a> </td>
+                                                        <td><a href="remove-user?id={{ $data->id }}" class="btn btn-danger btn-sm">Delete User</a> </td>
 
 
                                                     </tr>
@@ -364,12 +244,13 @@
 
 
                                             </table>
-                                            {{ $transaction->links() }}
-
+                                       
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+
 
 
                         </div>

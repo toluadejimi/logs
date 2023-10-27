@@ -21,40 +21,46 @@ class HomeController extends Controller
 
         $user = Auth::id() ?? null;
 
-        $fbaged = Category::where('id', 1)->get();
-        $insta_cat = Category::where('id', 2)->get();
-        $ot = Category::where('id', 3)->get();
-        $tw = Category::where('id', 5)->get();
-        $rd = Category::where('id', 6)->get();
-        $ml = Category::where('id', 7)->get();
-        $gv = Category::where('id', 8)->get();
-        $in = Category::where('id', 9)->get();
-        $tk = Category::where('id', 12)->get();
-        $ln = Category::where('id', 13)->get();
-        $pv = Category::where('id', 14)->get();
-        $oth = Category::where('id', 15)->get();
+        $data['fbaged'] = Category::where('id', 1)->get();
+        $data['insta_cat'] = Category::where('id', 2)->get();
+        $data['ot'] = Category::where('id', 3)->get();
+        $data['tw'] = Category::where('id', 5)->get();
+        $data['rd'] = Category::where('id', 6)->get();
+        $data['ml'] = Category::where('id', 7)->get();
+        $data['gv'] = Category::where('id', 8)->get();
+        $data['in'] = Category::where('id', 9)->get();
+        $data['tk'] = Category::where('id', 12)->get();
+        $data['ln'] = Category::where('id', 13)->get();
+        $data['pv'] = Category::where('id', 14)->get();
+        $data['oth'] = Category::where('id', 15)->get();
+        $data['swr'] = Category::where('id', 16)->get();
+        $data['snap'] = Category::where('id', 17)->get();
+        $data['strem'] = Category::where('id', 18)->get();
 
 
 
 
 
-        $fbaged_items = Item::where('cat_id', 1)->take(5)->get();
-        $insta_items = Item::where('cat_id', 2)->take(5)->get();
-        $ot_items = Item::where('cat_id', 3)->take(5)->get();
-        $tw_items = Item::where('cat_id', 5)->take(5)->get();
-        $rd_items = Item::where('cat_id', 6)->take(5)->get();
-        $ml_items = Item::where('cat_id', 7)->take(5)->get();
-        $gv_items = Item::where('cat_id', 8)->take(5)->get();
-        $in_items = Item::where('cat_id', 9)->take(5)->get();
-        $tk_items = Item::where('cat_id', 12)->take(5)->get();
-        $ln_items = Item::where('cat_id', 13)->take(5)->get();
-        $pv_items = Item::where('cat_id', 14)->take(5)->get();
-        $oth_items = Item::where('cat_id', 15)->take(5)->get();
+        $data['fbaged_items'] = Item::where('cat_id', 1)->take(5)->get();
+        $data['insta_items'] = Item::where('cat_id', 2)->take(5)->get();
+        $data['ot_items'] = Item::where('cat_id', 3)->take(5)->get();
+        $data['tw_items'] = Item::where('cat_id', 5)->take(5)->get();
+        $data['rd_items'] = Item::where('cat_id', 6)->take(5)->get();
+        $data['ml_items'] = Item::where('cat_id', 7)->take(5)->get();
+        $data['gv_items'] = Item::where('cat_id', 8)->take(5)->get();
+        $data['in_items'] = Item::where('cat_id', 9)->take(5)->get();
+        $data['tk_items'] = Item::where('cat_id', 12)->take(5)->get();
+        $data['ln_items'] = Item::where('cat_id', 13)->take(5)->get();
+        $data['pv_items'] = Item::where('cat_id', 14)->take(5)->get();
+        $data['oth_items'] = Item::where('cat_id', 15)->take(5)->get();
+        $data['swr_items'] = Item::where('cat_id', 16)->take(5)->get();
+        $data['snap_items'] = Item::where('cat_id', 17)->take(5)->get();
+        $data['strem_items'] = Item::where('cat_id', 18)->take(5)->get();
 
 
-        $url = null;
+        $data['url'] = null;
 
-        return view('welcome', compact('fbaged', 'url', 'gv', 'tw', 'gv_items', 'tw_items', 'rd', 'rd_items', 'oth', 'oth_items',  'pv', 'pv_items',  'ln', 'ln_items',  'tk', 'tk_items',  'ot', 'ot_items',  'ml', 'ml_items',  'gv', 'gv_items',  'in', 'in_items', 'user', 'insta_items', 'fbaged_items', 'insta_cat'));
+        return view('welcome', $data);
     }
 
 
@@ -176,27 +182,8 @@ class HomeController extends Controller
 
 
             $user = Auth::id() ?? null;
-
-
-
-
             return redirect('/');
-            // $fbaged = Category::where('id', 1)->get();
-            // $insta_cat = Category::where('id', 2)->get();
-            // $gv = Category::where('id', 3)->get();
-            // $tw = Category::where('id', 5)->get();
 
-
-
-            // $fbaged_items = Item::where('cat_id', 1)->take(5)->get();
-            // $insta_items = Item::where('cat_id', 2)->take(5)->get();
-            // $gv_items = Item::where('cat_id', 3)->take(5)->get();
-            // $tw_items = Item::where('cat_id', 5)->take(5)->get();
-
-
-
-
-            // return view('welcome', compact('fbaged', 'gv', 'tw', 'gv_items', 'tw_items',  'user', 'insta_items', 'fbaged_items', 'insta_cat'));
         }
 
         return back()->with('error', "Email or Password Incorrect");
@@ -388,8 +375,7 @@ class HomeController extends Controller
 
             $user = Auth::id() ?? null;
             $email = $request->email;
-            return view ('expired', compact('user', 'email'));
-
+            return view('expired', compact('user', 'email'));
         } else {
 
             $user = Auth::id() ?? null;
@@ -423,8 +409,5 @@ class HomeController extends Controller
         ]);
 
         return redirect('/')->with('message', 'Password reset successful, Please login to continue');
-
-
-
     }
 }

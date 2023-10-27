@@ -67,13 +67,13 @@ class AdminController extends Controller
 
 
         Item::where('id', $request->id)->first()->update([
-            
+
             'amount' => $request->amount,
             'title' => $request->title,
             'qty' => $request->qty
 
 
-            
+
         ]);
 
 
@@ -328,7 +328,24 @@ class AdminController extends Controller
     }
 
 
-    
+    public function search_user(request $request)
+	{
+
+
+       $get_id = User::where('email', $request->email)->first()->id;
+
+       $data['users'] = User::where('id', $get_id)->get();
+       $data['user'] = User::all()->count();
+
+
+
+       return view('user-search', $data);
+
+
+    }
+
+
+
 
 
 

@@ -37,8 +37,8 @@
                 </button>
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto navbar-right-top">
-                      
-                   
+
+
                         <li class="nav-item dropdown nav-user">
                             <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
@@ -167,7 +167,32 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
+
+
+                            <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="text-muted">Search user</h5>
+
+                                        <form action="search-user" method="POST">
+                                            @csrf
+                                            <label>Enter Email</label>
+                                            <input type="email" class="form-control" name="email" required autofocus>
+
+                                            <button class="btn btn-sm btn-success my-3">Submit</button>
+
+                                        </form>
+
+
+
+                                        <div
+                                            class="metric-label d-inline-block float-right text-success font-weight-bold">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
 
                         </div>
                         <div class="row">
@@ -199,11 +224,11 @@
 
                                                     <tr>
                                                         <td><a href="view-user?id={{ $data->id }}">{{ $data->username }}</a> </td>
-                                                        <td>{{ $data->email }} </td>
+                                                        <td><a href="view-user?id={{ $data->id }}">{{ $data->email }} </td></a>
                                                         <td>{{ number_format($data->wallet, 2) }} </td>
                                                         <td><a href="view-user?id={{ $data->id }}" class="btn btn-success btn-sm">View User</a> </td>
                                                         <td><a href="remove-user?id={{ $data->id }}" class="btn btn-danger btn-sm">Delete User</a> </td>
-                                                    
+
 
                                                     </tr>
 
@@ -219,14 +244,14 @@
 
 
                                             </table>
-                                            {{ $users->links() }}
+                                        
 
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                        
+
 
 
                         </div>
