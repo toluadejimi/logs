@@ -59,6 +59,7 @@ class HomeController extends Controller
 
 
         $data['url'] = null;
+        $data['user'] = null;
 
         return view('welcome', $data);
     }
