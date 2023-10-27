@@ -49,9 +49,8 @@ class ProductController extends Controller
         $get_item = MainItem::select('name')->where('product_id', $product_id)->take($request->quantity)->get();
 
 
-        $url =  url('')."/storage/app/$filename";
 
-        
+
         $formattedRow = [];
         foreach ($get_item as $value) {
                 $formattedRow[] = $value['name'];
@@ -65,9 +64,10 @@ class ProductController extends Controller
 
         Item::where('product_id', $product_id)->decrement('qty', $request->quantity);
 
+        $url =  url('')."/storage/app/$filename";
+
         
 
-        $main_url = "<a href='$url'> CLICK HERE TO VIEW YOUR ORDER 👉🏽 DOWNLOAD </a>";
 
 
 
@@ -90,7 +90,7 @@ class ProductController extends Controller
         $sl->save();
 
 
-
+        $data['main_url'] = "<a href='$url'> CLICK HERE TO VIEW YOUR ORDER 👉🏽 DOWNLOAD </a>";
         $data['url'] =  url('')."/storage/app/$filename";
         $data['user'] = Auth::id() ?? null;
         $data['fbaged'] = Category::where('id', 1)->get();
