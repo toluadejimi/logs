@@ -19,8 +19,7 @@ class HomeController extends Controller
     public function index(request $request)
     {
 
-        $user = Auth::id() ?? null;
-
+        $data['user'] = Auth::id() ?? null;
         $data['fbaged'] = Category::where('id', 1)->get();
         $data['insta_cat'] = Category::where('id', 2)->get();
         $data['ot'] = Category::where('id', 3)->get();
@@ -59,7 +58,6 @@ class HomeController extends Controller
 
 
         $data['url'] = null;
-        $data['user'] = null;
 
         return view('welcome', $data);
     }
