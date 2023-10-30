@@ -474,7 +474,7 @@
 
                                                 <tr>
                                                     <td>{{ $data->ref_id }} </td>
-                                                    <td>{{ $data->time}} </td>
+                                                    <td>{{ $data->item}} </td>
                                                     <td>{{ $data->created_at}} </td>
 
                                                 </tr>
