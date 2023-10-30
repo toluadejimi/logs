@@ -162,7 +162,7 @@ class HomeController extends Controller
             resolve_complete($order_id);
 
 
-            
+
             $usr = User::where('id', Auth::id())->first() ?? null;
             return redirect('fund-wallet')->with('message', "Wallet has been funded with $amount");
         }
@@ -255,8 +255,10 @@ class HomeController extends Controller
 
 
         if ($status == true) {
-            User::where('id', Auth::id())->increment('balance', $amount);
+            User::where('id', Auth::id())->increment('wallet', $amount);
+            Transaction::where('ref_id', $request->ref_id)->update(['status' => 4]);
             return back()->with('message', "Transaction successfully Resolved, NGN $amount added to ur wallet");
+
         }
 
         if ($status == false) {
