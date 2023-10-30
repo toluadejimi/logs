@@ -373,7 +373,7 @@
                                         </td>
                                         @endif
 
-                                        if($data->status == 1)
+                                        @if($data->status == 1)
 
                                         <td> <button data-toggle="modal" data-target="#resolve-deposit{{ $data->id }}"
                                                 class="btn btn-sm btn-warning my-3" type="button">Resolve
