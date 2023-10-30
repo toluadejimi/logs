@@ -325,6 +325,7 @@
                                 <table class="table table-sm table-responsive-sm">
                                     <thead class="thead-dark">
                                         <tr>
+                                            <th scope="col"> </th>
                                             <th scope="col">Order Id</th>
                                             <th scope="col">Amount</th>
                                             <th scope="col">Status</th>
@@ -336,12 +337,20 @@
 
                                         @foreach ($transaction as $data)
 
+
+
                                         @if($data->status == 1)
 
                                         <td> <button data-toggle="modal" data-target="#resolve-deposit{{ $data->id }}"
                                                 class="btn btn-sm btn-warning my-3" type="button">Resolve
                                                 Deposit</button>
                                         </td>
+                                        @else
+
+                                        <td>
+                                            <span class="badge badge-pill badge-success">Trx Completed</span>
+                                        </td>
+
                                         @endif
 
                                         <td>
