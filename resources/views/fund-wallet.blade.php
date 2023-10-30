@@ -336,6 +336,14 @@
 
                                         @foreach ($transaction as $data)
 
+                                        @if($data->status == 1)
+
+                                        <td> <button data-toggle="modal" data-target="#resolve-deposit{{ $data->id }}"
+                                                class="btn btn-sm btn-warning my-3" type="button">Resolve
+                                                Deposit</button>
+                                        </td>
+                                        @endif
+
                                         <td>
                                             {{$data->ref_id}}
                                         </td>
@@ -362,7 +370,7 @@
 
                                         @elseif($data->status == 4)
                                         <td>
-                                            <span class="badge badge-pill badge-danger">Resolved</span>
+                                            <span class="badge badge-pill badge-success">Resolved</span>
                                         </td>
 
 
@@ -373,13 +381,7 @@
                                         </td>
                                         @endif
 
-                                        @if($data->status == 1)
 
-                                        <td> <button data-toggle="modal" data-target="#resolve-deposit{{ $data->id }}"
-                                                class="btn btn-sm btn-warning my-3" type="button">Resolve
-                                                Deposit</button>
-                                        </td>
-                                        @endif
 
 
 

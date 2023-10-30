@@ -247,6 +247,7 @@ class HomeController extends Controller
     {
 
 
+
         $resolve = session_resolve($request->session_id);
 
         $status = $resolve[0]['status'];
@@ -254,7 +255,8 @@ class HomeController extends Controller
         $message = $resolve[0]['message'];
 
 
-        if ($status == true) {
+        if ($status == 'true') {
+
             User::where('id', Auth::id())->increment('wallet', $amount);
             Transaction::where('ref_id', $request->ref_id)->update(['status' => 4]);
             return back()->with('message', "Transaction successfully Resolved, NGN $amount added to ur wallet");
