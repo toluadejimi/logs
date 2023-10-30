@@ -154,7 +154,7 @@
                     <div class="ecommerce-widget">
 
                         <div class="row">
-                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-body">
                                         <h5 class="text-muted">All User</h5>
@@ -170,7 +170,7 @@
 
 
 
-                            <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-body">
                                         <h5 class="text-muted">Search user</h5>
@@ -194,7 +194,7 @@
                             </div>
 
 
-                            <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-body">
                                         <h5 class="text-muted">Search user</h5>
