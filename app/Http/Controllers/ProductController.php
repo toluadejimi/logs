@@ -66,7 +66,7 @@ class ProductController extends Controller
 
         $url =  url('')."/storage/app/$filename";
 
-        
+
 
 
 
@@ -111,6 +111,8 @@ class ProductController extends Controller
 
 
 
+
+        
 
 
         $data['fbaged_items'] = Item::where('cat_id', 1)->take(5)->get();
