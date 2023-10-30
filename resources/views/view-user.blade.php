@@ -264,7 +264,7 @@
                                                 <h5 class="">Username</h5>
 
 
-                                                {{$data['user']->username}}
+                                                {{$user->username}}
 
 
                                             </div>
@@ -277,7 +277,7 @@
                                                 <h5 class="">Email</h5>
 
 
-                                                {{$data['user']->email}}
+                                                {{$user->email}}
 
 
                                             </div>
@@ -290,7 +290,7 @@
                                                 <h5 class="">Wallet</h5>
 
 
-                                                NGN {{number_format($data['user']->wallet, 2)}}
+                                                NGN {{number_format($user->wallet, 2)}}
 
 
                                             </div>
@@ -332,7 +332,7 @@
                                                     <label>Enter Amount (NGN)</label>
                                                     <input type="number" class="form-control" name="amount" required>
 
-                                                    <input type="text" hidden value="{{ $data['user']->id }}"
+                                                    <input type="text" hidden value="{{ $user->id }}"
                                                         class="form-control" name="id" required>
 
 
