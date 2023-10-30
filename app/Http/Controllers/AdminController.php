@@ -336,6 +336,8 @@ class AdminController extends Controller
 
        $data['users'] = User::where('id', $get_id)->get();
        $data['user'] = User::all()->count();
+       $data['transaction'] = Transaction::latest()->where('user_id', $get_id)->paginate();
+       $data['order'] = SoldLog::latest()->where('user_id', $get_id)->paginate();
 
 
 
