@@ -259,7 +259,15 @@ class HomeController extends Controller
 
             User::where('id', Auth::id())->increment('wallet', $amount);
             Transaction::where('ref_id', $request->ref_id)->update(['status' => 4]);
+
+
+            $message = Auth::user()->email. "| just resolved with $request->session_id";
+            send_notification($message);
+
+            
             return back()->with('message', "Transaction successfully Resolved, NGN $amount added to ur wallet");
+
+
 
         }
 
