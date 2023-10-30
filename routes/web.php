@@ -119,6 +119,10 @@ Route::get('delete-main',  [AdminController::class,'delete_main']);
 
 
 Route::post('search-user',  [AdminController::class,'search_user']);
+Route::post('search-username',  [AdminController::class,'search_username']);
+
+
+
 
 
 

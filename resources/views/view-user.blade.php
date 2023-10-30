@@ -189,7 +189,7 @@
                             {{ session()->get('error') }}
                         </div>
                         @endif
-                        
+
                         <div class="row">
                             <!-- ============================================================== -->
 
@@ -332,7 +332,8 @@
                                                     <label>Enter Amount (NGN)</label>
                                                     <input type="number" class="form-control" name="amount" required>
 
-                                                     <input type="text" hidden value="{{ $data['user']->id }}" class="form-control" name="id" required>
+                                                    <input type="text" hidden value="{{ $data['user']->id }}"
+                                                        class="form-control" name="id" required>
 
 
                                                 </div>
@@ -373,6 +374,129 @@
                             </div>
                         </div>
 
+                        <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">All Transaction</h5>
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead class="bg-light">
+                                                <tr class="border-0">
+                                                    <th class="border-0">Ref</th>
+                                                    <th class="border-0">Wallet(NGN)</th>
+                                                    <th class="border-0">Type</th>
+                                                    <th class="border-0">Status</th>
+                                                    <th class="border-0">Date/Time</th>
+
+
+
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @forelse ($transaction as $data)
+
+                                                <tr>
+                                                    <td>{{ $data->ref_id }} </td>
+                                                    <td>{{ number_format($data->amount, 2) }} </td>
+                                                    @if($data->type == 2)
+                                                    <td><span class="badge badge-success">Credit</span>
+                                                    </td>
+                                                    @else
+                                                    <td><span class="badge badge-danger">Debit</span>
+                                                    </td>
+                                                    @endif
+
+                                                    @if($data->status == 1)
+                                                    <td>
+                                                        <span class="badge badge-pill badge-warning">Intitated</span>
+                                                    </td>
+
+
+                                                    @elseif($data->status == 0)
+                                                    <td>
+                                                        <span class="badge badge-pill badge-warning">Pending</span>
+                                                    </td>
+
+                                                    @elseif($data->status == 3)
+                                                    <td>
+                                                        <span class="badge badge-pill badge-danger">Cancled</span>
+                                                    </td>
+
+                                                    @else
+                                                    <td>
+                                                        <span class="badge badge-pill badge-success">Completed</span>
+
+                                                    </td>
+                                                    @endif
+                                                    <td>{{ $data->created_at }} </td>
+
+
+                                                </tr>
+
+                                                @empty
+
+                                                <tr>
+                                                    <td> No Record Found</td>
+                                                </tr>
+
+                                                @endforelse
+                                            </tbody>
+
+
+                                            {{ $transaction->link() }}
+
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">All Orders</h5>
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead class="bg-light">
+                                                <tr class="border-0">
+                                                    <th class="border-0">Ref</th>
+                                                    <th class="border-0">Data</th>
+                                                    <th class="border-0">Date/Time</th>
+
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @forelse ($order as $data)
+
+                                                <tr>
+                                                    <td>{{ $data->ref_id }} </td>
+                                                    <td>{{ $data->time}} </td>
+                                                    <td>{{ $data->created_at}} </td>
+
+                                                </tr>
+
+                                                @empty
+
+                                                <tr>
+                                                    <td> No Record Found</td>
+                                                </tr>
+
+                                                @endforelse
+                                            </tbody>
+
+
+                                            {{ $order->link() }}
+
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
 
 

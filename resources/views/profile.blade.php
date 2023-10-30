@@ -285,6 +285,16 @@
                                         </a>
                                     </li>
 
+
+                                    <li>
+                                        <a href="https://palashsmm.com" class="nav-link text-white">
+                                            <ion-icon name="help-circle-outline"></ion-icon>
+                                            Boost account
+                                        </a>
+                                    </li>
+
+
+
                                 </ul>
                                 <hr>
 

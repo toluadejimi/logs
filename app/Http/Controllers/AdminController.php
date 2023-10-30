@@ -345,6 +345,23 @@ class AdminController extends Controller
     }
 
 
+    public function search_username(request $request)
+	{
+
+       $get_id = User::where('username', $request->username)->first()->id;
+
+       $data['users'] = User::where('id', $get_id)->get();
+       $data['user'] = User::all()->count();
+       $data['transaction'] = Transaction::latest()->where('user_id', $get_id)->paginate();
+       $data['order'] = SoldLog::latest()->where('user_id', $get_id)->paginate();
+
+
+       return view('user-search', $data);
+
+
+    }
+
+
 
 
 

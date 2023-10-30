@@ -194,6 +194,30 @@
                             </div>
 
 
+                            <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="text-muted">Search user</h5>
+
+                                        <form action="search-username" method="POST">
+                                            @csrf
+                                            <label>Enter Username</label>
+                                            <input type="text" class="form-control" name="username" required autofocus>
+
+                                            <button class="btn btn-sm btn-success my-3">Submit</button>
+
+                                        </form>
+
+
+
+                                        <div
+                                            class="metric-label d-inline-block float-right text-success font-weight-bold">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </div>
                         <div class="row">
                             <!-- ============================================================== -->
@@ -244,7 +268,7 @@
 
 
                                             </table>
-                                       
+
                                         </div>
                                     </div>
                                 </div>
