@@ -167,7 +167,7 @@ class AdminController extends Controller
         }
 
 
-        $data['user'] = User::where('id', $request->id)->first();
+        $user = User::where('id', $request->id)->first();
         $transaction= Transaction::latest()->where('user_id', $request->id)->paginate();
         $order = SoldLog::latest()->where('user_id', $request->id)->paginate();
 
