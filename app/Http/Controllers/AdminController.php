@@ -172,7 +172,7 @@ class AdminController extends Controller
         $data['order'] = SoldLog::latest()->where('user_id', $request->id)->paginate();
 
 
-        return view('view-user', compact('data'));
+        return view('view-user', $data);
 
 
     }
