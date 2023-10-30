@@ -444,7 +444,7 @@
                                             </tbody>
 
 
-                                            {{ $transaction->link() }}
+                                            {{ $transaction->links() }}
 
                                         </table>
 
@@ -489,7 +489,7 @@
                                             </tbody>
 
 
-                                            {{ $order->link() }}
+                                            {{ $order->links() }}
 
                                         </table>
 
