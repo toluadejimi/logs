@@ -22,11 +22,11 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
-</script>
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
+    </script>
 
 
 </head>
@@ -129,39 +129,6 @@
         {{-- Resolve Account --}}
 
 
-        <div class="modal fade" id="resolve-deposit" tabindex="-1" aria-labelledby="resolve-deposit" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Resolve Deposit</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-
-                        <p>Resolve pending transactions by using your bank session ID / Refrence No on your transaction
-                            recepit</p>
-
-                        <form action="/session-resolve" method="POST">
-                            @csrf
-
-                            <label class="my-3">Enter Session ID</label>
-                            <div>
-                                <input type="text" name="session_id" required class="form-control"
-                                    placeholder="Enter session ID">
-                            </div>
-
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-success">Verify</button>
-                    </div>
-
-                    </form>
-
-                </div>
-            </div>
-        </div>
 
 
 
@@ -351,11 +318,6 @@
 
                         <div class="card">
                             <div class="card-body ">
-
-
-                                <button data-toggle="modal" data-target="#resolve-deposit"
-                                    class="btn btn-sm btn-warning my-3" type="button">Resolve Deposit</button>
-
                                 <div class="card-title">
                                     All Transactions
                                 </div>
@@ -398,6 +360,12 @@
                                             <span class="badge badge-pill badge-danger">Cancled</span>
                                         </td>
 
+                                        @elseif($data->status == 4)
+                                        <td>
+                                            <span class="badge badge-pill badge-danger">Resolved</span>
+                                        </td>
+
+
                                         @else
                                         <td>
                                             <span class="badge badge-pill badge-success">Completed</span>
@@ -405,8 +373,62 @@
                                         </td>
                                         @endif
 
+                                        if($data->status == 1)
+
+                                        <td> <button data-toggle="modal" data-target="#resolve-deposit{{ $data->id }}"
+                                                class="btn btn-sm btn-warning my-3" type="button">Resolve
+                                                Deposit</button>
+                                        </td>
+                                        @endif
 
 
+
+
+
+
+
+
+
+                                        <div class="modal fade" id="resolve-deposit{{ $data->id }}" tabindex="-1"
+                                            aria-labelledby="resolve-deposit" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Resolve Deposit
+                                                        </h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+
+                                                        <p>Resolve pending transactions by using your bank session ID /
+                                                            Refrence No on your transaction
+                                                            recepit</p>
+
+                                                        <form action="/session-resolve" method="POST">
+                                                            @csrf
+
+                                                            <label class="my-3">Enter Session ID</label>
+                                                            <div>
+                                                                <input type="text" name="session_id" required
+                                                                    class="form-control" placeholder="Enter session ID">
+                                                                <input type="text" name="ref_id"
+                                                                    value="{{ $data->ref_id }}" hidden>
+                                                            </div>
+
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-success">Verify</button>
+                                                    </div>
+
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
 
 
 
@@ -469,7 +491,8 @@
     <div class="container">
         <footer class="py-3 my-4">
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                <li class="nav-item"><a href="https://t.me/logsmarkeplace" class="nav-link px-2 text-muted">Telegram</a></li>
+                <li class="nav-item"><a href="https://t.me/logsmarkeplace" class="nav-link px-2 text-muted">Telegram</a>
+                </li>
                 <li class="nav-item"><a href="faq" class="nav-link px-2 text-muted">FAQs</a></li>
             </ul>
             <p class="text-center text-muted">&copy; 2023 Log Market Place</p>

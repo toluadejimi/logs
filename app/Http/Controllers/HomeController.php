@@ -160,6 +160,9 @@ class HomeController extends Controller
             User::where('id', Auth::id())->increment('wallet', $amount);
             $order_id = $trx_id;
             resolve_complete($order_id);
+
+
+            
             $usr = User::where('id', Auth::id())->first() ?? null;
             return redirect('fund-wallet')->with('message', "Wallet has been funded with $amount");
         }
