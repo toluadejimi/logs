@@ -30,6 +30,8 @@ class ProductController extends Controller
 
 
 
+
+
         if($pamount > Auth::user()->wallet){
 
             return back()->with('error', 'Insufficient Funds, Fund your wallet');
@@ -44,7 +46,7 @@ class ProductController extends Controller
         }
 
 
-        User::where('id', Auth::id())->decrement('wallet', $amount);
+        User::where('id', Auth::id())->decrement('wallet', $pamount);
 
         $get_item = MainItem::select('name')->where('product_id', $product_id)->take($request->quantity)->get();
 
@@ -112,7 +114,7 @@ class ProductController extends Controller
 
 
 
-        
+
 
 
         $data['fbaged_items'] = Item::where('cat_id', 1)->take(5)->get();
