@@ -105,7 +105,7 @@ class AdminController extends Controller
         $transaction = Transaction::latest()->paginate(10);
         $total_in_d = Transaction::where(['type' => 2, 'status' => 2])->whereday('created_at', Carbon::today())->sum('amount');
         $total_out = Transaction::where('type', 1)->sum('amount');
-        $user_wallet = User::where('type', 2)->sum('wallet');
+        $user_wallet = User::where('role_id', 2)->sum('wallet');
 
 
         return view('admin-dashboard', compact('user','user_wallet','total_out','total_in_d','transaction','insta','fb', 'gv', 'orders', 'total_in', 'total_p', 'total_f'));
