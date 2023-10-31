@@ -95,7 +95,7 @@ class AdminController extends Controller
 
 
         $user = User::all()->count();
-        $total_in = Transaction::where('type', 2)->sum('amount');
+        $total_in = Transaction::where('type', 2)->where('status', 2)->sum('amount');
         $total_p = MainItem::count();
         $total_f = Item::count();
         $orders = SoldLog::latest()->paginate(10);
