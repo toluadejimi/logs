@@ -317,6 +317,7 @@
                                             <tr>
                                                 <th scope="col">Data</th>
                                                 <th scope="col">Amount</th>
+                                                <th scope="col">QTY</th>
                                                 <th scope="col">Status</th>
                                                 <th scope="col">Date/Time</th>
 
@@ -334,6 +335,10 @@
 
                                             <td class="small">
                                                 NGN{{ number_format($data->amount, 2) }}
+                                            </td>
+
+                                            <td class="small">
+                                                {{ number_format($data->qty) }}
                                             </td>
 
                                             <td>

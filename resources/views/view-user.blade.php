@@ -464,6 +464,8 @@
                                                 <tr class="border-0">
                                                     <th class="border-0">Ref</th>
                                                     <th class="border-0">Data</th>
+                                                    <th class="border-0">Amount</th>
+                                                    <th class="border-0">QTY</th>
                                                     <th class="border-0">Date/Time</th>
 
 
@@ -475,6 +477,8 @@
                                                 <tr>
                                                     <td>{{ $data->ref_id }} </td>
                                                     <td>{{ $data->item}} </td>
+                                                    <td>{{ number_format($data->amount, 2)}} </td>
+                                                    <td>{{ $data->qty}} </td>
                                                     <td>{{ $data->created_at}} </td>
 
                                                 </tr>

@@ -231,9 +231,9 @@
                                                         <th class="border-0">Order ID</th>
                                                         <th class="border-0">Url</th>
                                                         <th class="border-0">Amount</th>
+                                                        <th class="border-0">QTY</th>
                                                         <th class="border-0">Date</th>
                                                         <th class="border-0">Time</th>
-
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -244,6 +244,7 @@
                                                         <td>{{ $data->ref_id }} </td>
                                                         <td>{{ $data->item }} </td>
                                                         <td>{{ $data->amount }} </td>
+                                                        <td>{{ $data->qty }} </td>
                                                         <td>{{ date('d/m/y', strtotime($data->created_at)) }} </td>
                                                         <td>{{ date('h:i', strtotime($data->created_at)) }} </td>
 
