@@ -88,6 +88,7 @@ class ProductController extends Controller
         $sl->ref_id = $ref;
         $sl->amount = $pamount;
         $sl->status = 1;
+        $sl->qty = $request->quantity;
         $sl->item = $url;
         $sl->save();
 
@@ -134,7 +135,7 @@ class ProductController extends Controller
         $data['strem_items'] = Item::where('cat_id', 18)->take(5)->get();
 
 
-        return redirect('welcome', $data);
+        return view('welcome', $data);
 
 
     }
