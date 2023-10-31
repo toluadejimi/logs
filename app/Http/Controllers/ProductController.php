@@ -134,7 +134,7 @@ class ProductController extends Controller
         $data['strem_items'] = Item::where('cat_id', 18)->take(5)->get();
 
 
-        return view('welcome', $data);
+        return redirect('welcome');
 
 
     }
