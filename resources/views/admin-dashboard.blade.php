@@ -191,6 +191,36 @@
                                     </div>
                                 </div>
                             </div>
+
+
+
+                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="text-muted"> All Total Out</h5>
+                                        <div class="metric-value d-inline-block">
+                                            <h3 class="mb-1">NGN {{ number_format($total_out, 2) }}</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="text-muted"> Total Wallet Amount</h5>
+                                        <div class="metric-value d-inline-block">
+                                            <h3 class="mb-1">NGN {{ number_format($user_wallet, 2) }}</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
                             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-body">
