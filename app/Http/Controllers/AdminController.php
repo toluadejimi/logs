@@ -10,6 +10,7 @@ use App\Models\SoldLog;
 use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
@@ -102,9 +103,10 @@ class AdminController extends Controller
         $fb = MainItem::where('product_id', 1)->count();
         $gv = MainItem::where('product_id', 4)->count();
         $transaction = Transaction::latest()->paginate(10);
+        $total_in_d = Transaction::where('type', 2)->whereday('created_at', Carbon::today())->sum('amount');
 
 
-        return view('admin-dashboard', compact('user', 'transaction', 'insta', 'fb', 'gv', 'orders', 'total_in', 'total_p', 'total_f'));
+        return view('admin-dashboard', compact('user','total_in_d', 'transaction', 'insta', 'fb', 'gv', 'orders', 'total_in', 'total_p', 'total_f'));
 
 	}
 
