@@ -163,6 +163,7 @@ class AdminController extends Controller
 	{
 
         $role = User::where('id', Auth::id())->first()->role_id ?? null;
+        
         if($role != 2){
 
             Auth::logout();

@@ -155,7 +155,7 @@ class HomeController extends Controller
             Transaction::where('ref_id', $trx_id)->update(['status' => 2]);
             User::where('id', Auth::id())->increment('wallet', $amount);
 
-            $message =  Auth::user()->name . "| just funded NGN" . number_format($request->amount, 2). " on Log market";
+            $message =  Auth::user()->email . "| just funded NGN" . number_format($request->amount, 2). " on Log market";
             send_notification($message);
 
             return redirect('fund-wallet')->with('message', "Wallet has been funded with $amount");
