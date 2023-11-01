@@ -282,7 +282,7 @@ class HomeController extends Controller
             $data->user_id         = Auth::id();
             $data->amount          = $amount;
             $data->ref_id          = $ref;
-            $data->type            = 1;
+            $data->type            = 2;
             $data->status          = 2; 
             $data->save();
 
