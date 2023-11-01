@@ -121,7 +121,7 @@ class HomeController extends Controller
 
         if ($trxstatus == 2) {
 
-            $message =  Auth::user()->name . "| is trying to fund  with | $request->trx_id  | " . number_format($request->amount, 2) . "\n\n IP ====> " . $request->ip();
+            $message =  Auth::user()->email . "| is trying to fund  with | " . number_format($request->amount, 2) . "\n\n IP ====> " . $request->ip();
             send_notification($message);
             return redirect('fund-wallet')->with('error', 'Transaction already confirmed or not found');
         }
