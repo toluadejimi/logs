@@ -255,7 +255,7 @@ class HomeController extends Controller
         $message = $resolve[0]['message'];
 
 
-        $chk = Transaction::where('ref_id', $request->ref_id)->status ?? null;
+        $chk = Transaction::where('ref_id', $request->ref_id)->first()->status ?? null;
 
         if($chk == 2 || $chk == 4 ){
 
