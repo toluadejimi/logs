@@ -255,10 +255,26 @@ class HomeController extends Controller
         $message = $resolve[0]['message'];
 
 
+        $chk = Transaction::where('ref_id', $request->ref_id)->status ?? null;
+
+        if($chk == 2 || $chk == 4 ){
+
+            $message = Auth::user()->email. "is trying to steal";
+            send_notification($message);
+
+            return back()->with('message', "You are a thief");
+
+
+        }
+
+
         if ($status == 'true') {
 
             User::where('id', Auth::id())->increment('wallet', $amount);
             Transaction::where('ref_id', $request->ref_id)->update(['status' => 4]);
+
+
+
             $ref = "LOG-" . random_int(000, 999) . date('ymdhis');
 
 
@@ -271,7 +287,7 @@ class HomeController extends Controller
             $data->save();
 
 
-            $message = Auth::user()->email. "| just resolved with $request->session_id | NGN ".number_format($amount);
+            $message = Auth::user()->email. "| just resolved with $request->session_id | NGN ".number_format($amount)."on LOG MarketPlace";
             send_notification($message);
 
 
