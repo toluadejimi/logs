@@ -280,7 +280,7 @@ class HomeController extends Controller
 
             $data                  = new Transaction();
             $data->user_id         = Auth::id();
-            $data->amount          = $request->amount;
+            $data->amount          = $amount;
             $data->ref_id          = $ref;
             $data->type            = 2;
             $data->status          = 2; 
