@@ -111,10 +111,6 @@ class HomeController extends Controller
         if ($status == 'failed') {
 
             Transaction::where('ref_id', $trx_id)->where('status', 1)->update(['status' => 3]);
-
-            // $message =  Auth::user()->name . "| canceled funding |";
-            // send_notification($message);
-
             return redirect('fund-wallet')->with('error', 'Transaction Declined');
         }
 
@@ -125,8 +121,8 @@ class HomeController extends Controller
 
         if ($trxstatus == 2) {
 
-            // $message =  Auth::user()->name . "| is trying to fund  with | $request->trx_id  | " . number_format($request->amount, 2) . "\n\n IP ====> " . $request->ip();
-            // send_notification($message);
+            $message =  Auth::user()->name . "| is trying to fund  with | $request->trx_id  | " . number_format($request->amount, 2) . "\n\n IP ====> " . $request->ip();
+            send_notification($message);
             return redirect('fund-wallet')->with('error', 'Transaction already confirmed or not found');
         }
 
@@ -158,17 +154,15 @@ class HomeController extends Controller
 
             Transaction::where('ref_id', $trx_id)->update(['status' => 2]);
             User::where('id', Auth::id())->increment('wallet', $amount);
-            $order_id = $trx_id;
-            resolve_complete($order_id);
 
+            $message =  Auth::user()->name . "| just funded NGN" . number_format($request->amount, 2). " on Log market";
+            send_notification($message);
 
-
-            $usr = User::where('id', Auth::id())->first() ?? null;
             return redirect('fund-wallet')->with('message', "Wallet has been funded with $amount");
+
         }
 
-        // $message =  Auth::user()->name . "| is trying to fund  with | $request->trx_id  | " . number_format($request->amount, 2) . "\n\n IP ====> " . $request->ip();
-        // send_notification($message);
+
 
         return redirect('fund-wallet')->with('error', 'Transaction already confirmed or not found');
     }
@@ -283,7 +277,7 @@ class HomeController extends Controller
             $data->amount          = $amount;
             $data->ref_id          = $ref;
             $data->type            = 2;
-            $data->status          = 2; 
+            $data->status          = 2;
             $data->save();
 
 
