@@ -169,6 +169,11 @@ class HomeController extends Controller
 
         if ($status1 == 'success') {
 
+            $chk_trx = Transaction::where('trx_ref', $trx_id)->first() ?? null;
+            if($chk_trx == null){
+                return back()->with('error', 'Transaction not processed, Contact Admin');
+            }
+
             Transaction::where('ref_id', $trx_id)->update(['status' => 2]);
             User::where('id', Auth::id())->increment('wallet', $amount);
 
