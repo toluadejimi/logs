@@ -81,6 +81,23 @@ class HomeController extends Controller
             'amount'      => 'required|numeric|gt:0',
         ]);
 
+
+        Transaction::where('user_id', Auth::id())->where('status', 1)->delete() ?? null;
+
+
+
+        if($request->amount < 100){
+            return back()->with('error', 'You can not fund less than NGN 100');
+        }
+
+
+        if($request->amount > 100000){
+            return back()->with('error', 'You can not fund more than NGN 100,000');
+        }
+
+
+
+
         $key = env('WEBKEY');
         $ref = "LOG-" . random_int(000, 999) . date('ymdhis');
         $email = Auth::user()->email;
