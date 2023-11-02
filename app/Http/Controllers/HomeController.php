@@ -266,6 +266,17 @@ class HomeController extends Controller
         $message = $resolve[0]['message'];
 
 
+
+        $trx = Transaction::where('ref_id', $request->ref_id)->first()->status ?? null;
+        if($trx == null){
+
+            $message = Auth::user()->email. "is trying to steal";
+            send_notification($message);
+            return back()->with('error', "Transaction has been deleted");
+
+        }
+
+
         $chk = Transaction::where('ref_id', $request->ref_id)->first()->status ?? null;
 
         if($chk == 2 || $chk == 4 ){
