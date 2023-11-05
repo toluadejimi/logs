@@ -41,7 +41,7 @@
         margin-top: -50px;
     }
 
-    
+
 </style>
 
 
@@ -61,7 +61,7 @@
                             Look your session is expired
                         </h3>
 
-                        <p>the page you are looking for not avaible!</p>
+                        <p>Click home to Login to contine</p>
 
                         <a href="/" class="link_404">Go to Home</a>
                     </div>
