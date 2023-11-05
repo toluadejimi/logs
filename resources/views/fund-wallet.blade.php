@@ -311,10 +311,19 @@
                                 </form>
                             </div>
                         </div>
+
+
+                            <a  class="btn btn-primary" href="https://streamable.com/1q7lzo">🎥🎬▶ How to deposit on Log MarketPlace</a>
+
+
+                        
                     </div>
 
 
+
                     <div class="col-lg-12 my-5">
+
+
 
                         <div class="card">
                             <div class="card-body ">
@@ -534,7 +543,7 @@
         box-shadow: 2px 2px 3px #999;
       z-index:100;
     }
-    
+
     .my-float{
         margin-top:16px;
     }

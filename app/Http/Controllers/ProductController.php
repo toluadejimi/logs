@@ -111,6 +111,10 @@ class ProductController extends Controller
         $data['swr'] = Category::where('id', 16)->get();
         $data['snap'] = Category::where('id', 17)->get();
         $data['strem'] = Category::where('id', 18)->get();
+        $data['resell'] = Category::where('id', 19)->get();
+        $data['special'] = Category::where('id', 20)->get();
+
+
 
 
 
@@ -133,6 +137,10 @@ class ProductController extends Controller
         $data['swr_items'] = Item::where('cat_id', 16)->take(5)->get();
         $data['snap_items'] = Item::where('cat_id', 17)->take(5)->get();
         $data['strem_items'] = Item::where('cat_id', 18)->take(5)->get();
+        $data['resell_items'] = Item::where('cat_id', 19)->take(5)->get();
+        $data['special_items'] = Item::where('cat_id', 20)->take(5)->get();
+
+
 
 
         return view('welcome', $data);
