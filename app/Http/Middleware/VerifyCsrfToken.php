@@ -14,7 +14,10 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        //
+        '/fund-wallet',
+        '/fund-account',
+        '/profile',
+        '/admin-dashboard',
     ];
 
     public function handle($request, Closure $next)
