@@ -355,7 +355,7 @@ class HomeController extends Controller
         $trx = Transaction::where('ref_id', $request->ref_id)->first()->status ?? null;
         if($trx == null){
 
-            $message = Auth::user()->email. "is trying to steal";
+            $message = Auth::user()->email. "is trying to steal from deleted transaction";
             send_notification($message);
             return back()->with('error', "Transaction has been deleted");
 
@@ -366,7 +366,7 @@ class HomeController extends Controller
 
         if($chk == 2 || $chk == 4 ){
 
-            $message = Auth::user()->email. "is trying to steal";
+            $message = Auth::user()->email. "is trying to steal hits the endpoint twice";
             send_notification($message);
 
             return back()->with('message', "You are a thief");
