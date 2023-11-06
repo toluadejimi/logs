@@ -60,13 +60,10 @@
 
 
         <ul class="nav col-md-auto mb-2  justify-content-center">
-            <li> <button type="button" data-toggle="modal" data-target="#login"
-                    class="btn btn-outline-dark mr-2 me-2">Login</button></li>
-            <li><button type="button" data-toggle="modal" data-target="#register" class="btn btn-dark">
-                    <ion-icon name="person-add-outline"></ion-icon> Sign-up
-                </button>
-            </li>
+            <li> <a href="/login" class="btn btn-outline-dark mr-2"> Login </a></li>
+            <li> <a href="/register" class="btn btn-dark">Register</a></li>
         </ul>
+
 
 
 

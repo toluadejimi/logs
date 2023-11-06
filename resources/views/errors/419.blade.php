@@ -58,7 +58,7 @@
 
                     <div class="contant_box_404">
                         <h3 class="h2">
-                            Look your session is expired
+                            Looks like your session is expired
                         </h3>
 
                         <p>Click home to Login to contine</p>

@@ -23,72 +23,82 @@ use App\Http\Controllers\ItemController;
 // });
 
 
-Route::get('/',  [HomeController::class,'index']);
-Route::get('item',  [ItemController::class,'item']);
 
 
 
 //auth
 
+Route::get('/',  [HomeController::class,'index']);
+
 
 Route::post('login',  [HomeController::class,'login']);
+// Route::get('login',  [HomeController::class,'login_index']);
+Route::get('login',  [HomeController::class,'login_index'])->name('login');
 Route::post('register',  [HomeController::class,'register']);
+Route::get('register',  [HomeController::class,'register_index']);
 Route::get('log-out',  [HomeController::class,'logout']);
-
-Route::get('fund-wallet',  [HomeController::class,'fund_wallet']);
-Route::get('fund-account',  [HomeController::class,'fund_wallet']);
-
-Route::get('profile',  [HomeController::class,'profile']);
-
-Route::post('fund-now',  [HomeController::class,'fund_now']);
-
-Route::get('verify',  [HomeController::class,'verify_payment']);
-
-Route::get('forgot-password',  [HomeController::class,'forget_password']);
-
-Route::post('reset-password',  [HomeController::class,'reset_password']);
-
-Route::get('expired',  [HomeController::class,'expired']);
-
-
 Route::post('reset-password-now',  [HomeController::class,'reset_password_now']);
-
+Route::post('reset-password',  [HomeController::class,'reset_password']);
+Route::get('expired',  [HomeController::class,'expired']);
 Route::get('verify-password',  [HomeController::class,'verify_password']);
-
-
-
-
-
-
-
-
-
-
-
-
-Route::post('session-resolve',  [HomeController::class,'session_resolve']);
-
-
-
-
-Route::get('change-password',  [HomeController::class,'change_password']);
-
-
+Route::get('forgot-password',  [HomeController::class,'forget_password']);
 Route::get('faq',  [HomeController::class,'faq']);
-
 Route::get('terms',  [HomeController::class,'terms']);
 Route::get('policy',  [HomeController::class,'policy']);
 Route::get('rules',  [HomeController::class,'rules']);
-
-
-
-
-
-
-
-
-
 Route::post('update-password-now',  [HomeController::class,'update_password_now']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+Route::group(['middleware' => ['auth', 'user', 'session.timeout']], function () {
+
+
+Route::get('welcome',  [HomeController::class,'welcome_index']);
+Route::get('fund-wallet',  [HomeController::class,'fund_wallet']);
+Route::get('fund-account',  [HomeController::class,'fund_wallet']);
+Route::get('profile',  [HomeController::class,'profile']);
+Route::post('fund-now',  [HomeController::class,'fund_now']);
+Route::get('verify',  [HomeController::class,'verify_payment']);
+Route::post('session-resolve',  [HomeController::class,'session_resolve']);
+Route::get('change-password',  [HomeController::class,'change_password']);
+Route::get('item',  [ItemController::class,'item']);
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

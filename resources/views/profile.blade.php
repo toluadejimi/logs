@@ -59,13 +59,10 @@
 
 
             <ul class="nav col-md-auto mb-2  justify-content-center">
-                <li> <button type="button" data-toggle="modal" data-target="#login"
-                        class="btn btn-outline-dark mr-2 me-2">Login</button></li>
-                <li><button type="button" data-toggle="modal" data-target="#register" class="btn btn-dark">
-                        <ion-icon name="person-add-outline"></ion-icon> Sign-up
-                    </button>
-                </li>
+                <li> <a href="/login" class="btn btn-outline-dark mr-2"> Login </a></li>
+                <li> <a href="/register" class="btn btn-dark">Register</a></li>
             </ul>
+    
 
 
 
@@ -94,107 +91,7 @@
 
         </header>
 
-        {{-- Register Modal --}}
-
-        <!-- Modal -->
-        <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-
-                    <div class="modal-body">
-                        <h5>Register</h5>
-
-                        <form action="/register" method="POST">
-                            @csrf
-
-                            <div class="my-2">
-                                <label>Usename</label>
-                                <input class="form-control" name="username" required type="text" autofocus
-                                    placeholder="Enter your username">
-                            </div>
-
-                            <div class="my-2">
-                                <label>Email</label>
-                                <input class="form-control" name="email" required type="email" autofocus
-                                    placeholder="Enter your Email Address">
-                            </div>
-
-                            <div class="my-2">
-                                <label>Password</label>
-                                <input class="form-control" name="password" required type="text" autofocus
-                                    placeholder="Enter your Password">
-                            </div>
-
-                            <div class="my-2">
-                                <label>Confirm Password</label>
-                                <input class="form-control" name="password_confirmation" required type="text" autofocus
-                                    placeholder="Confirm your Password">
-                            </div>
-
-
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-success">Register</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
-
-
-                        </form>
-
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        {{-- Login Modal --}}
-
-        <!-- Modal -->
-        <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-
-                    <div class="modal-body">
-
-                        <h2>Login</h2>
-                        <form action="/login" method="POST">
-                            @csrf
-
-                            <div class="my-2">
-                                <label>Email</label>
-                                <input class="form-control" name="email" required type="email" autofocus
-                                    placeholder="Enter your Email">
-                            </div>
-
-                            <div class="my-2">
-                                <label>Password</label>
-                                <input class="form-control" name="password" required type="text" autofocus
-                                    placeholder="Enter your password">
-                            </div>
-
-
-
-                            <a href="/forgot-password" class="mt-3 mb-3 text-dark">Forgot password</a>
-
-
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-success">Login</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
-
-
-                        </form>
-
-
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
+       
 
 
         <div class="shadow"></div>

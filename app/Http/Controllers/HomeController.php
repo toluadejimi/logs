@@ -74,6 +74,64 @@ class HomeController extends Controller
     }
 
 
+    public function welcome_index(request $request)
+    {
+
+        $data['user'] = Auth::id() ?? null;
+        $data['fbaged'] = Category::where('id', 1)->get();
+        $data['insta_cat'] = Category::where('id', 2)->get();
+        $data['ot'] = Category::where('id', 3)->get();
+        $data['tw'] = Category::where('id', 5)->get();
+        $data['rd'] = Category::where('id', 6)->get();
+        $data['ml'] = Category::where('id', 7)->get();
+        $data['gv'] = Category::where('id', 8)->get();
+        $data['in'] = Category::where('id', 9)->get();
+        $data['tk'] = Category::where('id', 12)->get();
+        $data['ln'] = Category::where('id', 13)->get();
+        $data['pv'] = Category::where('id', 14)->get();
+        $data['oth'] = Category::where('id', 15)->get();
+        $data['swr'] = Category::where('id', 16)->get();
+        $data['snap'] = Category::where('id', 17)->get();
+        $data['strem'] = Category::where('id', 18)->get();
+        $data['resell'] = Category::where('id', 19)->get();
+        $data['special'] = Category::where('id', 20)->get();
+
+
+        
+        
+        
+
+
+
+
+
+        $data['fbaged_items'] = Item::where('cat_id', 1)->take(5)->get();
+        $data['insta_items'] = Item::where('cat_id', 2)->take(5)->get();
+        $data['ot_items'] = Item::where('cat_id', 3)->take(5)->get();
+        $data['tw_items'] = Item::where('cat_id', 5)->take(5)->get();
+        $data['rd_items'] = Item::where('cat_id', 6)->take(5)->get();
+        $data['ml_items'] = Item::where('cat_id', 7)->take(5)->get();
+        $data['gv_items'] = Item::where('cat_id', 8)->take(5)->get();
+        $data['in_items'] = Item::where('cat_id', 9)->take(5)->get();
+        $data['tk_items'] = Item::where('cat_id', 12)->take(5)->get();
+        $data['ln_items'] = Item::where('cat_id', 13)->take(5)->get();
+        $data['pv_items'] = Item::where('cat_id', 14)->take(5)->get();
+        $data['oth_items'] = Item::where('cat_id', 15)->take(5)->get();
+        $data['swr_items'] = Item::where('cat_id', 16)->take(5)->get();
+        $data['snap_items'] = Item::where('cat_id', 17)->take(5)->get();
+        $data['strem_items'] = Item::where('cat_id', 18)->take(5)->get();
+        $data['resell_items'] = Item::where('cat_id', 19)->take(5)->get();
+        $data['special_items'] = Item::where('cat_id', 20)->take(5)->get();
+
+
+
+
+        $data['url'] = null;
+
+        return view('welcome', $data);
+    }
+
+
 
     public function fund_wallet(Request $request)
     {
@@ -195,8 +253,6 @@ class HomeController extends Controller
 
         }
 
-
-
         return redirect('fund-wallet')->with('error', 'Transaction already confirmed or not found');
     }
 
@@ -212,13 +268,26 @@ class HomeController extends Controller
 
 
             $user = Auth::id() ?? null;
-            return redirect('/');
+            return redirect('welcome');
 
         }
 
         return back()->with('error', "Email or Password Incorrect");
     }
 
+
+    public function register_index(Request $request)
+    {
+        return view('register');
+
+    }
+
+
+     public function login_index(Request $request)
+     {
+         return view('login');
+ 
+    }
 
 
     public function register(Request $request)
