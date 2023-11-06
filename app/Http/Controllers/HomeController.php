@@ -39,9 +39,9 @@ class HomeController extends Controller
         $data['special'] = Category::where('id', 20)->get();
 
 
-        
-        
-        
+
+
+
 
 
 
@@ -97,9 +97,9 @@ class HomeController extends Controller
         $data['special'] = Category::where('id', 20)->get();
 
 
-        
-        
-        
+
+
+
 
 
 
@@ -238,7 +238,7 @@ class HomeController extends Controller
 
         if ($status1 == 'success') {
 
-            $chk_trx = Transaction::where('trx_ref', $trx_id)->first() ?? null;
+            $chk_trx = Transaction::where('ref_id', $trx_id)->first() ?? null;
             if($chk_trx == null){
                 return back()->with('error', 'Transaction not processed, Contact Admin');
             }
@@ -286,7 +286,7 @@ class HomeController extends Controller
      public function login_index(Request $request)
      {
          return view('login');
- 
+
     }
 
 
