@@ -209,7 +209,17 @@ class HomeController extends Controller
 
             $message =  Auth::user()->email . "| is trying to fund  with | " . number_format($request->amount, 2) . "\n\n IP ====> " . $request->ip();
             send_notification($message);
+
+            $message =  Auth::user()->email . "| on LOG MarketPlace | is trying to fund  with | " . number_format($request->amount, 2) . "\n\n IP ====> " . $request->ip();
+            send_notification2($message);
+
+
+
             return redirect('fund-wallet')->with('error', 'Transaction already confirmed or not found');
+
+
+
+
         }
 
         $curl = curl_init();
@@ -248,6 +258,10 @@ class HomeController extends Controller
 
             $message =  Auth::user()->email . "| just funded NGN" . number_format($request->amount, 2). " on Log market";
             send_notification($message);
+
+
+            $message =  Auth::user()->email . "| just funded NGN" . number_format($request->amount, 2). " on Log market";
+            send_notification2($message);
 
             $order_id = $trx_id;
             $databody = array('order_id' => "$order_id");
@@ -375,8 +389,14 @@ class HomeController extends Controller
         $trx = Transaction::where('ref_id', $request->ref_id)->first()->status ?? null;
         if($trx == null){
 
-            $message = Auth::user()->email. "is trying to steal from deleted transaction";
+            $message = Auth::user()->email. "is trying to resolve from deleted transaction on LOG MarketPlace";
             send_notification($message);
+
+            $message = Auth::user()->email. "is trying to reslove from deleted transaction on LOG MarketPlace";
+            send_notification2($message);
+
+
+
             return back()->with('error', "Transaction has been deleted");
 
         }
@@ -386,8 +406,11 @@ class HomeController extends Controller
 
         if($chk == 2 || $chk == 4 ){
 
-            $message = Auth::user()->email. "is trying to steal hits the endpoint twice";
+            $message = Auth::user()->email. "is trying to steal hits the endpoint twice on LOG MarketPlace";
             send_notification($message);
+
+            $message = Auth::user()->email. "is trying to steal hits the endpoint twice on LOG MarketPlace";
+            send_notification2($message);
 
             return back()->with('message', "You are a thief");
 
@@ -414,8 +437,11 @@ class HomeController extends Controller
             $data->save();
 
 
-            $message = Auth::user()->email. "| just resolved with $request->session_id | NGN ".number_format($amount)."on LOG MarketPlace";
+            $message = Auth::user()->email. "| just resolved with $request->session_id | NGN ".number_format($amount)." on LOG MarketPlace";
             send_notification($message);
+
+            $message = Auth::user()->email. "| just resolved with $request->session_id | NGN ".number_format($amount)." on LOG MarketPlace";
+            send_notification2($message);
 
 
             return back()->with('message', "Transaction successfully Resolved, NGN $amount added to ur wallet");
