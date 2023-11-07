@@ -182,6 +182,10 @@ class HomeController extends Controller
         $data->status          = 1; //initiate
         $data->save();
 
+
+        $message = Auth::user()->email. "| wants to fund |  NGN ".number_format($request->amount)." | with ref | $ref |  on LOG MARKETPLACE";
+        send_notification2($message);
+
         return Redirect::to($url);
     }
 
@@ -195,6 +199,10 @@ class HomeController extends Controller
 
 
         if ($status == 'failed') {
+
+
+            $message = Auth::user()->email. "| Cancled |  NGN ".number_format($request->amount)." | with ref | $trx_id |  on LOG MARKETPLACE";
+            send_notification2($message);
 
             Transaction::where('ref_id', $trx_id)->where('status', 1)->update(['status' => 3]);
             return redirect('fund-wallet')->with('error', 'Transaction Declined');
@@ -260,8 +268,6 @@ class HomeController extends Controller
             send_notification($message);
 
 
-            $message =  Auth::user()->email . "| just funded NGN" . number_format($request->amount, 2). " on Log market";
-            send_notification2($message);
 
             $order_id = $trx_id;
             $databody = array('order_id' => "$order_id");
@@ -281,6 +287,10 @@ class HomeController extends Controller
             $var = curl_exec($curl);
             curl_close($curl);
             $var = json_decode($var);
+
+
+            $message = Auth::user()->email. "| Just funded |  NGN ".number_format($request->amount)." | with ref | $order_id |  on LOG MARKETPLACE";
+            send_notification2($message);
 
 
             return redirect('fund-wallet')->with('message', "Wallet has been funded with $amount");
