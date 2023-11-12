@@ -89,14 +89,11 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
 
-                <div class="modal-body">
-
-
+                <div class="modal-body border-0">
 
                     <div class="card border-0">
 
                         <div class="card-body border-0">
-
 
                             <h4 class="my-3 text-center"> Welcome to Log Marketplace</h4>
                             <p class="text-center"> Your no 1 site for social/ digital accounts at the best prices to
