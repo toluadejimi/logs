@@ -96,7 +96,7 @@
                         <div class="card-body border-0">
 
                             <h4 class="my-3 text-center"> Welcome to Log Marketplace</h4>
-                            <p class="text-center"> Your no 1 site for social/ digital accounts at the best prices to
+                            <p class="text-center"> Your no 1 site for social/ digital accounts at the best prices
                             </p>
                             <p class="text-center"> DO NOT MISS AN UPDATE </p>
                             <p class="text-center"> Join our announcement group: </p>
