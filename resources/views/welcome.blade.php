@@ -43,9 +43,122 @@
     })();
     </script>
 
+
+    <style>
+        .modal {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1050;
+            display: none;
+            overflow: hidden;
+            outline: 0;
+            background-color: rgba(0, 0, 0, 0.343);
+        }
+
+        i {
+            padding: 2px;
+        }
+
+        .child {
+            width: 30px;
+            height: 30px;
+            /* Center horizontally*/
+            position: center;
+            margin: 0 auto;
+        }
+    </style>
+
+
+    <script type="text/javascript">
+        $(window).on('load', function() {
+            $('#warning').modal('show');
+        });
+    </script>
+
+
 </head>
 
 <body>
+
+
+    <div class="modal fade" id="warning" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+
+
+
+                    <div class="card border-0">
+
+                        <div class="card-body border-0">
+
+
+                            <h4 class="my-3 text-center"> Welcome to Log Marketplace</h4>
+                            <p class="text-center"> Your no 1 site for social/ digital accounts at the best prices to
+                            </p>
+                            <p class="text-center"> DO NOT MISS AN UPDATE </p>
+                            <p class="text-center"> Join our announcement group: </p>
+
+
+                            <div class="d-flex justify-content-center">
+
+                                <link
+                                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+                                    rel="stylesheet" />
+                                <table class="">
+                                    <tr class="mr-2">
+                                        <td class="ml-2"><a href="https://t.me/logsmarkeplace"><i class="fa fa-telegram"
+                                                    style="font-size:40px"></i></a></td>
+                                        <td><a href="https://chat.whatsapp.com/I1DAA6YDWC8GjuQMU4Tn8I"><i class="fa fa-whatsapp fa-3x"
+                                                    aria-hidden="true"></i></a></td>
+                                    </tr>
+                                </table>
+
+
+                            </div>
+
+
+
+
+
+
+
+                        </div>
+
+
+
+
+
+                        </p>
+
+
+                        <button type="button" class="test-white btn btn-danger btn-sm my-1" data-dismiss="modal">I
+                            Understand</button>
+
+
+                    </div>
+
+
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+    </div>
+    </div>
 
 
 
@@ -133,9 +246,9 @@
 
 
 
-    
 
-   
+
+
 
 
 
@@ -236,7 +349,7 @@
                             <td>
                                 @if ($data->qty == 0)
                                 <div>
-                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                    <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
                                 </div>
 
 
@@ -344,7 +457,7 @@
                                     @if ($data->qty == 0)
                                     <div>
                                         <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
-                                </div>
+                                    </div>
 
 
 
@@ -458,7 +571,7 @@
                                     @if ($data->qty == 0)
                                     <div>
                                         <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
-                                </div>
+                                    </div>
 
 
 
@@ -564,7 +677,7 @@
                                     @if ($data->qty == 0)
                                     <div>
                                         <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
-                                </div>
+                                    </div>
 
 
 
@@ -674,7 +787,7 @@
                                     @if ($data->qty == 0)
                                     <div>
                                         <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
-                                </div>
+                                    </div>
 
 
 
@@ -777,7 +890,7 @@
                                     @if ($data->qty == 0)
                                     <div>
                                         <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
-                                </div>
+                                    </div>
 
 
 
@@ -881,7 +994,7 @@
                                     @if ($data->qty == 0)
                                     <div>
                                         <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
-                                </div>
+                                    </div>
 
 
 
@@ -986,7 +1099,7 @@
                                     @if ($data->qty == 0)
                                     <div>
                                         <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
-                                </div>
+                                    </div>
 
 
                                     @else
@@ -1081,7 +1194,7 @@
                                     @if ($data->qty == 0)
                                     <div>
                                         <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
-                                </div>
+                                    </div>
 
 
 
@@ -1185,7 +1298,7 @@
                                     @if ($data->qty == 0)
                                     <div>
                                         <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
-                                </div>
+                                    </div>
 
 
 
@@ -1290,7 +1403,7 @@
                                     @if ($data->qty == 0)
                                     <div>
                                         <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
-                                </div>
+                                    </div>
 
 
 
@@ -1395,7 +1508,7 @@
                                     @if ($data->qty == 0)
                                     <div>
                                         <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
-                                </div>
+                                    </div>
 
 
 
@@ -1500,7 +1613,7 @@
                                     @if ($data->qty == 0)
                                     <div>
                                         <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
-                                </div>
+                                    </div>
 
 
 
@@ -1603,7 +1716,7 @@
                                     @if ($data->qty == 0)
                                     <div>
                                         <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
-                                </div>
+                                    </div>
 
 
 
@@ -1708,7 +1821,7 @@
                                     @if ($data->qty == 0)
                                     <div>
                                         <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
-                                </div>
+                                    </div>
 
 
 
@@ -1813,7 +1926,7 @@
                                     @if ($data->qty == 0)
                                     <div>
                                         <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
-                                </div>
+                                    </div>
 
 
 
@@ -1917,7 +2030,7 @@
                                     @if ($data->qty == 0)
                                     <div>
                                         <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
-                                </div>
+                                    </div>
 
 
 
@@ -2019,13 +2132,16 @@
                     </div>
 
 
-            <h5>Why do people Buy social media accounts?</h5>
-            <p class="small">A solid social media account can be a powerful tool for branding and marketing.</p>
-            <p class="small">A good social media account has an active and responsive community fired up by the topic or niche that brought them together.</p>
-            <p class="small">Sometimes it makes sense to buy or sell a social media account depending on where you are with your business and how goals have changed and evolved.</p>
-            <p class="small">There is a thriving market for buying/selling social media accounts, but it’s important to know what the best platforms are. </p>
+                    <h5>Why do people Buy social media accounts?</h5>
+                    <p class="small">A solid social media account can be a powerful tool for branding and marketing.</p>
+                    <p class="small">A good social media account has an active and responsive community fired up by the
+                        topic or niche that brought them together.</p>
+                    <p class="small">Sometimes it makes sense to buy or sell a social media account depending on where
+                        you are with your business and how goals have changed and evolved.</p>
+                    <p class="small">There is a thriving market for buying/selling social media accounts, but it’s
+                        important to know what the best platforms are. </p>
 
-            <p class="small"><strong>Let’s dig in!</strong></p>
+                    <p class="small"><strong>Let’s dig in!</strong></p>
 
                 </div>
 
@@ -2060,31 +2176,30 @@
 
 
         <style>
-            .float{
-            position:fixed;
-            width:60px;
-            height:60px;
-            bottom:40px;
-            right:40px;
-            background-color:#000000;
-            color:#FFF;
-            border-radius:50px;
-            text-align:center;
-          font-size:30px;
-            box-shadow: 2px 2px 3px #999;
-          z-index:100;
-        }
-        
-        .my-float{
-            margin-top:16px;
-        }
-    
-    </style>
+            .float {
+                position: fixed;
+                width: 60px;
+                height: 60px;
+                bottom: 40px;
+                right: 40px;
+                background-color: #000000;
+                color: #FFF;
+                border-radius: 50px;
+                text-align: center;
+                font-size: 30px;
+                box-shadow: 2px 2px 3px #999;
+                z-index: 100;
+            }
 
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<a href="https://t.me/logmarketplacee" class="float" target="_blank">
-<i class="fa fa-comment my-float"></i>
-</a>
+            .my-float {
+                margin-top: 16px;
+            }
+        </style>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <a href="https://t.me/logmarketplacee" class="float" target="_blank">
+            <i class="fa fa-comment my-float"></i>
+        </a>
 
 
 
