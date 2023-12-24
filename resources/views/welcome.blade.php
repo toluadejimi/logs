@@ -51,9 +51,7 @@
             document.querySelector(".loader-wrapper").style.display = "none";
                      $('#warning').modal('show');
 
-        }, 3000);
-
-
+        }, 1000);
 
     });
 
