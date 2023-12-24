@@ -51,7 +51,7 @@
             document.querySelector(".loader-wrapper").style.display = "none";
                      $('#warning').modal('show');
 
-        }, 5000);
+        }, 3000);
 
 
 
@@ -117,7 +117,7 @@
     </style>
 
 
- 
+
 
 </head>
 
