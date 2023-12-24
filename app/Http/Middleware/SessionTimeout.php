@@ -13,7 +13,7 @@ class SessionTimeout
         $lastActivity = session('last_activity');
 
         if (Auth::check() && $lastActivity) {
-            $timeout = config('session.lifetime') * 60; // Convert to seconds
+            $timeout = config('session.lifetime') * 60; 
 
             if (time() - $lastActivity > $timeout) {
                 Auth::logout();
