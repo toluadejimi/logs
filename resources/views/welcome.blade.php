@@ -121,9 +121,9 @@
 
 <body>
 
-<div class="loader-wrapper">
+{{-- <div class="loader-wrapper">
         <img src="{{url('')}}/public/img/loader.gif" alt="Loading..." class="loader">
- </div>
+ </div> --}}
 
 
 
@@ -303,30 +303,11 @@
 
 
     <div class="container">
+
+
+
+
         <div class="flex">
-
-            @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
-            @if (session()->has('message'))
-            <div class="alert alert-success">
-                {{ session()->get('message') }}
-            </div>
-            @endif
-            @if (session()->has('error'))
-            <div class="alert alert-danger">
-                {{ session()->get('error') }}
-            </div>
-            @endif
-
-
-
 
             @if($url != null)
 
