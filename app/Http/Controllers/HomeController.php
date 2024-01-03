@@ -387,8 +387,11 @@ class HomeController extends Controller
     {
 
 
+        $session_id = $request->session_id;
+        $ref = $request->ref_id;
 
-        $resolve = session_resolve($request->session_id);
+
+        $resolve = session_resolve($session_id, $ref);
 
         $status = $resolve[0]['status'];
         $amount = $resolve[0]['amount'];
