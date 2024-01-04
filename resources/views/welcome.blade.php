@@ -48,7 +48,6 @@
         // Simulate a 5-second delay
         setTimeout(function () {
             // Remove the loader after 5 seconds
-            document.querySelector(".loader-wrapper").style.display = "none";
                      $('#warning').modal('show');
 
         }, 1000);
@@ -137,13 +136,21 @@
                     <div class="card border-0">
 
                         <div class="card-body border-0">
-
+                            
                             <h4 class="my-3 text-center"> Welcome to Log Marketplace</h4>
-                            <p class="text-center"> Your no 1 site for social/ digital accounts at the best prices
+                            <p class="text-center"> The best site to shop social media accounts and services.
                             </p>
+                            <p class="text-center"> For complaints/suggestions, text customer care here:
+                            </p>
+                            <p class="text-center"> Customer Care:<a href="https://t.me/logmarketplacee">Chat Customer Care</a> 
+                            <p class="text-center"> WhatsApp Group:<a href="https://chat.whatsapp.com/I1DAA6YDWC8GjuQMU4Tn8I">Join Whatsapp Group</a> 
+                            </p>
+
+                            <p class="text-center"> Telegram Group:<a href="https://t.me/logsmarkeplace">Join Telegram Group</a> 
+                            </p>
+                            
                             <p class="text-center"> DO NOT MISS AN UPDATE </p>
                             <p class="text-center"> Join our announcement group: </p>
-
 
                             <div class="d-flex justify-content-center">
 
