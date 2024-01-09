@@ -136,19 +136,19 @@
                     <div class="card border-0">
 
                         <div class="card-body border-0">
-                            
+
                             <h4 class="my-3 text-center"> Welcome to Log Marketplace</h4>
                             <p class="text-center"> The best site to shop social media accounts and services.
                             </p>
                             <p class="text-center"> For complaints/suggestions, text customer care here:
                             </p>
-                            <p class="text-center"> Customer Care:<a href="https://t.me/logmarketplacee">Chat Customer Care</a> 
-                            <p class="text-center"> WhatsApp Group:<a href="https://chat.whatsapp.com/I1DAA6YDWC8GjuQMU4Tn8I">Join Whatsapp Group</a> 
+                            <p class="text-center"> Customer Care:<a href="https://t.me/logmarketplacee">Chat Customer Care</a>
+                            <p class="text-center"> WhatsApp Group:<a href="https://chat.whatsapp.com/I1DAA6YDWC8GjuQMU4Tn8I">Join Whatsapp Group</a>
                             </p>
 
-                            <p class="text-center"> Telegram Group:<a href="https://t.me/logsmarkeplace">Join Telegram Group</a> 
+                            <p class="text-center"> Telegram Group:<a href="https://t.me/logsmarkeplace">Join Telegram Group</a>
                             </p>
-                            
+
                             <p class="text-center"> DO NOT MISS AN UPDATE </p>
                             <p class="text-center"> Join our announcement group: </p>
 
@@ -387,7 +387,9 @@
                             <td>
                                 @if ($data->qty == 0)
                                 <div>
-                                    <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                    <button type="submit" class="form-control" type="button" data-id="12005">
+                                        <ion-icon class="text-secondary" disabled name="cart-outline"></ion-icon>
+                                    </button>
                                 </div>
 
 
@@ -494,7 +496,9 @@
                                 <td>
                                     @if ($data->qty == 0)
                                     <div>
-                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                        <button type="submit" class="form-control" type="button" data-id="12005">
+                                            <ion-icon class="text-grey" disabled name="cart-outline"></ion-icon>
+                                        </button>
                                     </div>
 
 
@@ -509,7 +513,6 @@
                                             <button type="submit" class="form-control" type="button" data-id="12005">
                                                 {{-- <img src="{{ url('') }}/public/img/ic-basket.png" height="18"
                                                     width="21" alt> --}}
-
                                                 <ion-icon class="text-success" name="cart-outline"></ion-icon>
 
                                             </button>
@@ -608,7 +611,9 @@
                                 <td>
                                     @if ($data->qty == 0)
                                     <div>
-                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                        <button type="submit" class="form-control" type="button" data-id="12005">
+                                            <ion-icon class="text-grey" disabled name="cart-outline"></ion-icon>
+                                        </button>
                                     </div>
 
 
@@ -714,7 +719,9 @@
                                 <td>
                                     @if ($data->qty == 0)
                                     <div>
-                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                        <button type="submit" class="form-control" type="button" data-id="12005">
+                                            <ion-icon class="text-grey" disabled name="cart-outline"></ion-icon>
+                                        </button>
                                     </div>
 
 
@@ -824,7 +831,9 @@
                                 <td>
                                     @if ($data->qty == 0)
                                     <div>
-                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                        <button type="submit" class="form-control" type="button" data-id="12005">
+                                            <ion-icon class="text-grey" disabled name="cart-outline"></ion-icon>
+                                        </button>
                                     </div>
 
 
@@ -927,7 +936,9 @@
                                 <td>
                                     @if ($data->qty == 0)
                                     <div>
-                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                        <button type="submit" class="form-control" type="button" data-id="12005">
+                                            <ion-icon class="text-grey" disabled name="cart-outline"></ion-icon>
+                                        </button>
                                     </div>
 
 
@@ -1031,7 +1042,9 @@
                                 <td>
                                     @if ($data->qty == 0)
                                     <div>
-                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                        <button type="submit" class="form-control" type="button" data-id="12005">
+                                            <ion-icon class="text-grey" disabled name="cart-outline"></ion-icon>
+                                        </button>
                                     </div>
 
 
@@ -1136,7 +1149,9 @@
                                 <td>
                                     @if ($data->qty == 0)
                                     <div>
-                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                        <button type="submit" class="form-control" type="button" data-id="12005">
+                                            <ion-icon class="text-grey" disabled name="cart-outline"></ion-icon>
+                                        </button>
                                     </div>
 
 
@@ -1231,7 +1246,9 @@
                                 <td>
                                     @if ($data->qty == 0)
                                     <div>
-                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                        <button type="submit" class="form-control" type="button" data-id="12005">
+                                            <ion-icon class="text-grey" disabled name="cart-outline"></ion-icon>
+                                        </button>
                                     </div>
 
 
@@ -1335,7 +1352,9 @@
                                 <td>
                                     @if ($data->qty == 0)
                                     <div>
-                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                        <button type="submit" class="form-control" type="button" data-id="12005">
+                                            <ion-icon class="text-grey" disabled name="cart-outline"></ion-icon>
+                                        </button>
                                     </div>
 
 
@@ -1440,7 +1459,9 @@
                                 <td>
                                     @if ($data->qty == 0)
                                     <div>
-                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                        <button type="submit" class="form-control" type="button" data-id="12005">
+                                            <ion-icon class="text-grey" disabled name="cart-outline"></ion-icon>
+                                        </button>
                                     </div>
 
 
@@ -1545,7 +1566,9 @@
                                 <td>
                                     @if ($data->qty == 0)
                                     <div>
-                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                        <button type="submit" class="form-control" type="button" data-id="12005">
+                                            <ion-icon class="text-grey" disabled name="cart-outline"></ion-icon>
+                                        </button>
                                     </div>
 
 
@@ -1650,7 +1673,9 @@
                                 <td>
                                     @if ($data->qty == 0)
                                     <div>
-                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                        <button type="submit" class="form-control" type="button" data-id="12005">
+                                            <ion-icon class="text-grey" disabled name="cart-outline"></ion-icon>
+                                        </button>
                                     </div>
 
 
@@ -1753,7 +1778,9 @@
                                 <td>
                                     @if ($data->qty == 0)
                                     <div>
-                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                        <button type="submit" class="form-control" type="button" data-id="12005">
+                                            <ion-icon class="text-grey" disabled name="cart-outline"></ion-icon>
+                                        </button>
                                     </div>
 
 
@@ -1858,7 +1885,9 @@
                                 <td>
                                     @if ($data->qty == 0)
                                     <div>
-                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                        <button type="submit" class="form-control" type="button" data-id="12005">
+                                            <ion-icon class="text-grey" disabled name="cart-outline"></ion-icon>
+                                        </button>
                                     </div>
 
 
@@ -1963,7 +1992,9 @@
                                 <td>
                                     @if ($data->qty == 0)
                                     <div>
-                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                        <button type="submit" class="form-control" type="button" data-id="12005">
+                                            <ion-icon class="text-grey" disabled name="cart-outline"></ion-icon>
+                                        </button>
                                     </div>
 
 
@@ -2067,7 +2098,9 @@
                                 <td>
                                     @if ($data->qty == 0)
                                     <div>
-                                        <img src="{{ url('') }}/public/img/out.png" height="45" width="120" alt>
+                                        <button type="submit" class="form-control" type="button" data-id="12005">
+                                            <ion-icon class="text-grey" disabled name="cart-outline"></ion-icon>
+                                        </button>
                                     </div>
 
 
