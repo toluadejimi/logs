@@ -313,11 +313,38 @@
 
 
 
+        <div class="container">
+            <div class="flex">
+
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+                @if (session()->has('message'))
+                <div class="alert alert-success">
+                    {{ session()->get('message') }}
+                </div>
+                @endif
+                @if (session()->has('error'))
+                <div class="alert alert-danger">
+                    {{ session()->get('error') }}
+                </div>
+                @endif
+
+
+            </div>
+
+        </div>
+
 
         <div class="flex">
 
             @if($url != null)
-
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>Item purchased successfully!</strong><a href="{{ $url }}"> CLICK HERE TO VIEW YOUR ORDER 👉🏽
                     DOWNLOAD.</a>
@@ -325,8 +352,10 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-
             @endif
+
+
+         
 
 
             <strong>HI {{ Auth::user()->username ?? "User"}}, </strong>
@@ -388,10 +417,9 @@
                                 @if ($data->qty == 0)
                                 <div>
                                     <button type="submit" class="form-control" type="button" data-id="12005">
-                                        <ion-icon class="text-secondary" disabled name="cart-outline"></ion-icon>
+                                        <ion-icon class="text-grey" disabled name="cart-outline"></ion-icon>
                                     </button>
                                 </div>
-
 
 
                                 @else
