@@ -69,8 +69,10 @@ Route::get('fund-account',  [HomeController::class,'fund_wallet']);
 Route::get('profile',  [HomeController::class,'profile']);
 Route::post('fund-now',  [HomeController::class,'fund_now']);
 Route::get('verify',  [HomeController::class,'verify_payment']);
-Route::post('session-resolve',  [HomeController::class,'session_resolve']);
+Route::get('resolve-page',  [HomeController::class,'resloveDeposit']);
+Route::any('resolve-now',  [HomeController::class,'resolveNow']);
 Route::get('change-password',  [HomeController::class,'change_password']);
+
 Route::get('item',  [ItemController::class,'item']);
 
 

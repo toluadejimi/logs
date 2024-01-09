@@ -141,25 +141,6 @@
 
 
 
-        {{-- Resolve Account --}}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        {{-- Register Modal --}}
-
-
-
 
         @if($user == null)
 
@@ -205,155 +186,33 @@
 
 
 
-                    <div class="col-lg-6 my-3">
-
-                        <div class="card">
-                            <div class="card-body ">
-
-
-
-                                <form action="/fund-now" method="POST">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex flex-wrap justify-content-center px-0">
+                            <div class="card-body p-5">
+                                <form action="resolve-now" method="POST">
                                     @csrf
-                                    <label>Amount to Fund (NGN)</label>
-                                    <input class="form-control" name="amount" required autofocus>
 
+                                   <h3> Reslove Deposit </h3>
+                                   <p> Resolve pending transactions by using your bank session ID / Refrence No on your transaction recepit<p>
 
-                                    <button class="btn btn-lg btn-dark my-3" type="submit">Pay Now</button>
+                                    <label>Refrence</label>
+                                    <h6>{{$ref}}</h6>
 
+                                    <label>Enter Session ID</label>
+                                    <input class="form-control" name="session_id" required autofocus>
+                                    <input hidden value="{{ $ref }}" name="trx_ref">
 
-
-
-
-
+                                    <button class="btn btn-lg btn-dark my-3" type="submit">Continue</button>
 
                                 </form>
                             </div>
-                        </div>
+                        </ul>
 
-
-                        <a class="btn btn-primary" href="https://streamable.com/1q7lzo">🎥🎬▶ How to deposit on Log
-                            MarketPlace</a>
-
-
-
-                    </div>
+            
 
 
 
-                    <div class="col-lg-12 my-5">
-
-
-
-                        <div class="card">
-                            <div class="card-body ">
-                                <div class="card-title">
-                                    All Transactions
-                                </div>
-
-                                <table class="table table-sm table-responsive-sm">
-                                    <thead class="thead-dark">
-                                        <tr>
-                                            <th scope="col"> </th>
-                                            <th scope="col">Order Id</th>
-                                            <th scope="col">Amount</th>
-                                            <th scope="col">Status</th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-
-
-                                        @foreach ($transaction as $data)
-
-
-
-                                        @if($data->status == 1)
-
-                                        <td> <a href="resolve-page?trx_ref={{ $data->ref_id }}"
-                                                class="btn btn-sm btn-warning my-3" type="button">Resolve
-                                                Deposit</a>
-                                        </td>
-                                        @else
-
-                                        <td>
-                                            <span class="badge badge-pill badge-success">Trx Completed</span>
-                                        </td>
-
-                                        @endif
-
-                                        <td>
-                                            {{$data->ref_id}}
-                                        </td>
-
-                                        <td>
-                                            NGN{{ number_format($data->amount, 2) }}
-                                        </td>
-
-                                        @if($data->status == 1)
-                                        <td>
-                                            <span class="badge badge-pill badge-warning">Intitated</span>
-                                        </td>
-
-
-                                        @elseif($data->status == 0)
-                                        <td>
-                                            <span class="badge badge-pill badge-warning">Pending</span>
-                                        </td>
-
-                                        @elseif($data->status == 3)
-                                        <td>
-                                            <span class="badge badge-pill badge-danger">Cancled</span>
-                                        </td>
-
-                                        @elseif($data->status == 4)
-                                        <td>
-                                            <span class="badge badge-pill badge-success">Resolved</span>
-                                        </td>
-
-
-                                        @else
-                                        <td>
-                                            <span class="badge badge-pill badge-success">Completed</span>
-
-                                        </td>
-                                        @endif
-
-
-
-
-                                    </tbody>
-
-
-
-                                    @endforeach
-
-
-                                </table>
-
-                                <div class="d-flex">
-                                    {!! $transaction->links() !!}
-                                </div>
-
-
-                            </div>
-
-
-                        </div>
-
-
-
-                    </div>
-
-
-
-
-
-
-
-
-
-
-
+            
 
                 </div>
 
