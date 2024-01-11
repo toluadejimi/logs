@@ -355,7 +355,7 @@
             @endif
 
 
-         
+
 
 
             <strong>HI {{ Auth::user()->username ?? "User"}}, </strong>

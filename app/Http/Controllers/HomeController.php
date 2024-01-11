@@ -764,7 +764,7 @@ class HomeController extends Controller
 
 
                 $user_email = Auth::user()->email;
-                $message = "$user_email | $request->trx_ref | $session_id | $var->amount | just resolved deposit | Oprime Access";
+                $message = "$user_email | $request->trx_ref | $session_id | $var->amount | just resolved deposit | Log Market Place ";
                 send_notification($message);
                 send_notification2($message);
                 return redirect('/')->with('message',"Transaction successfully Resolved, NGN $amount added to ur wallet");
