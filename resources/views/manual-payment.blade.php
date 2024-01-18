@@ -105,8 +105,16 @@
 
 
                             <li class="nav-item ">
-                                <a class="nav-link active" href="caterogies"><i
+                                <a class="nav-link " href="caterogies"><i
                                         class="fab fa-fw fa-wpforms"></i>Categories</a>
+
+
+                            </li>
+
+
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="manual-payment"><i
+                                        class="fab fa-fw fa-wpforms"></i>Manual Payment</a>
 
 
                             </li>
@@ -137,13 +145,13 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="page-header">
-                                <h2 class="pageheader-title">Categories </h2>
+                                <h2 class="pageheader-title">Manual Payment </h2>
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item"><a href="#"
                                                     class="breadcrumb-link">Dashboard</a></li>
-                                            <li class="breadcrumb-item active" aria-current="page">Categories</li>
+                                            <li class="breadcrumb-item active" aria-current="page">Manual Payment</li>
                                         </ol>
                                     </nav>
                                 </div>
@@ -185,20 +193,31 @@
                         <div class="modal-content">
         
                             <div class="modal-body">
-                                <h5>Add new Category</h5>
+                                <h5>Update Account</h5>
         
-                                <form action="/add-new-cat" method="POST">
+                                <form action="update-acct-name" method="POST">
                                     @csrf
         
                                     <div class="my-2">
-                                        <label>Title</label>
-                                        <input class="form-control" name="title" required type="text" autofocus
-                                            placeholder="Enter your title">
+                                        <label class="text-muted">Account Name</label>
+                                        <input class="form-control2" name="account_name" required type="text" autofocus
+                                        placeholder="Enter your title" value="{{ $acc->account_name }}">
+
+
+                                        <label class="text-muted" >Account Name</label>
+                                        <input class="form-control2" name="bank_name" required type="text" autofocus
+                                        placeholder="Enter your title" value="{{ $acc->bank_name }}" >
+                                       
+
+                                        <label class="text-muted">Account Number</label>
+                                        <input class="form-control2" name="bank_account" required type="text" autofocus
+                                        placeholder="Enter your title" value="{{ $acc->bank_account }}">
+                                    
                                     </div>
         
                                     
                                     <div class="modal-footer">
-                                        <button type="submit" class="btn btn-success">Add</button>
+                                        <button type="submit" class="btn btn-success">Update</button>
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     </div>
         
@@ -233,15 +252,24 @@
                             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                            <h5 class="text-muted">Total Categories</h5>
-                                            <div class="metric-value d-inline-block">
-                                                <h1 class="mb-1">{{ $categories }}</h1>
-                                            </div>
+                                            <h5 class="text-muted">Account Details</h5>
+
+                                            <label>Account Name</label>
+                                            <h6>{{ $acc->account_name }}</h6>
+
+                                            <label>Bank Name</label>
+                                            <h6>{{ $acc->bank_name }}</h6>
+
+                                            <label>Account Number</label>
+                                            <h6>{{ $acc->bank_account }}</h6>
+
+                                         
+
 
                                         
                                     </div>
                                        
-                                        <button type="button" data-toggle="modal" data-target="#addnew" class="btn btn-sm btn-dark"> Add New</button>
+                                        <button type="button" data-toggle="modal" data-target="#addnew" class="btn btn-sm btn-dark">Update Account Info</button>
                                 </div>
                             </div>
 
@@ -255,40 +283,83 @@
 
                         <div class="row">
 
-                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                            <div class="col-xl-6 col-lg-12 col-md-6 col-sm-12 col-12">
                                
-
-
                                 <div class="card">
                                     <div class="card-body ">
         
         
         
                                         <div class="card-title">
-                                            All Categories
+                                            All Manual Payment
                                         </div>
         
-                                        <table class="table table-sm table-responsive-sm">
+                                        <table class="table table-responsive">
                                             <thead class="thead-dark">
                                                 <tr>
-                                                    <th scope="col">Title</th>
+                                                    <th scope="col">User</th>
+                                                    <th scope="col">Amount</th>
+                                                    <th scope="col">Status</th>
+                                                    <th scope="col">Recepit</th>
+                                                    <th scope="col">Date / Time</th>
+                                                    <th scope="col"></th>
                                                     <th scope="col">Action</th>
+
+
+
         
                                                 </tr>
                                             </thead>
                                             <tbody>
         
         
-                                                @foreach ($categoriess as $data)
+                                                @foreach ($payment as $data)
         
                                                 <td>
-                                                    {{$data->title}}
+                                                    {{$data->user->email}}
                                                 </td>
 
 
                                                 <td>
-                                                    <a href="/delete-cat?id={{ $data->id }}" class="btn btn-sm btn-danger">Delete</a>
+                                                    {{number_format($data->amount,2)}}
                                                 </td>
+
+
+                                                <td>
+                                                    @if($data->status == 0)
+                                                    <span class="badge text-white rounded-pill badge-warning">Pending</span>
+                                                    @else
+                                                    <span class="badge rounded-pill badge-success">Success</span>
+                                                    @endif
+                                                </td>
+
+                                                <td>
+                                                    <a href="{{url('')}}/public/upload/receipt/{{$data->receipt}}">View Recepit</a>
+                                                </td>
+
+
+                                                <td>
+                                                    {{$data->created_at}}
+                                                </td>
+
+                                                <td>
+                                                    
+                                                </td>
+
+
+
+                                                @if($data->status == 0)
+                                                <td>
+                                                    <a href="/verify-payment?id={{ $data->id }}&user_id={{ $data->user_id }}&amount={{ $data->amount }}" class="btn btn-sm btn-success">Approve</a>
+                                                </td>
+                                                @endif
+
+                                                <td>
+                                                    <a href="/delete-payment?id={{ $data->id }}" class="btn btn-sm btn-danger">Delete</a>
+                                                </td>
+
+
+                                               
         
                         
                                         
@@ -301,6 +372,8 @@
         
         
                                         </table>
+
+                                        {{ $payment->links() }}
         
                                       
         

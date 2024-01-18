@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\Item;
-use App\Models\MainItem;
+use App\Models\User;
 use App\Models\Product;
 use App\Models\SoldLog;
+use App\Models\Category;
+use App\Models\MainItem;
 use App\Models\Transaction;
-use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\AccountDetail;
+use App\Models\ManualPayment;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 
@@ -333,6 +335,100 @@ class AdminController extends Controller
 
 
     }
+
+
+    public function manual_payment_view(request $request)
+	{
+
+
+        $role = User::where('id', Auth::id())->first()->role_id ?? null;
+        if($role != 2){
+
+            Auth::logout();
+            return redirect('/admin')->with('error', "You do not have permission");
+
+        }
+
+
+
+        $payment = ManualPayment::latest()->paginate(20);
+        $acc = AccountDetail::where('id', 1)->first();
+
+        return view('manual-payment', compact('payment', 'acc'));
+
+
+    }
+
+
+    public function approve_payment(request $request)
+	{
+
+
+        $pay = ManualPayment::where('id', $request->id)->first()->status ?? null;
+
+        if($pay == 1){
+            return back()->with('error', 'Transaction already approved');
+        }
+
+
+
+       ManualPayment::where('id', $request->id)->update(['status' => 1]);
+
+       User::where('id', $request->user_id)->increment('wallet', $request->amount);
+
+       $email = User::where('id', $request->user_id)->first()->email;
+
+       $ref = "LOG-" . random_int(000, 999) . date('ymdhis');
+
+
+
+
+       $data                  = new Transaction();
+       $data->user_id         = $request->user_id;
+       $data->amount          = $request->amount;
+       $data->ref_id          = $ref;
+       $data->type            = 2; 
+       $data->status          = 2; //initiate
+       $data->save();
+
+
+
+       $message = $email . "| Manual Payment  Approved |  NGN " . number_format($request->amount) . " | on LOG MARKETPLACE";
+       send_notification2($message);
+
+       return back()->with('message', 'Transaction added successfully');
+
+
+
+    }
+
+
+
+    public function delete_payment(request $request)
+	{
+
+
+       ManualPayment::where('id', $request->id)->delete();
+       return back()->with('error', 'Transaction deleted successfully');
+
+
+
+    }
+
+
+    public function update_acct_name(request $request)
+	{
+
+       $payment = ManualPayment::latest()->paginate(20);
+       $acc = AccountDetail::where('id', 1)->first();
+
+        return view('manual-payment', compact('payment', 'acc'));
+
+
+    }
+
+
+    
 
 
     public function search_user(request $request)

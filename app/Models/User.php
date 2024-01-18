@@ -50,4 +50,10 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Models\Transaction');
     }
+
+
+    public function manualpayment()
+    {
+        return $this->belongsTo('App\Models\ManualPayment');
+    }
 }

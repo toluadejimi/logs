@@ -140,6 +140,7 @@ class ProductController extends Controller
         $data['resell_items'] = Item::where('cat_id', 19)->take(5)->get();
         $data['special_items'] = Item::where('cat_id', 20)->take(5)->get();
 
+        $data['categories'] = Category::all();
 
 
 
@@ -292,6 +293,31 @@ public function delete_front_product(Request $request)
 
 
 }
+
+
+public function search(Request $request)
+{
+
+    $cat = Category::where('title', 'LIKE', "%$request->keyword%")->first() ?? null;
+
+    if($cat == null){
+
+        return back()->with('error', "No category found");
+
+    }
+
+    $title = Category::where('id', $cat->id)->first()->title;
+
+    $items = Item::where('cat_id', $cat->id)->get();
+
+    $user = Auth::id() ?? null;
+
+
+ return view('view-all', compact('title', 'user', 'items'));
+
+
+}
+
 
 
 

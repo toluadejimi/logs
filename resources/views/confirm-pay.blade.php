@@ -578,7 +578,7 @@
 <body>
     <div class="default-theme">
 
-   
+
 
         <!DOCTYPE html>
         <html wire:id="KYyr7BXHmAukicbrQqma"
@@ -654,173 +654,47 @@
 
 
 
-                <div class="text-stone-900 text-xl font-bold self-center whitespace-nowrap mt-10">
-                    <svg width="141" height="16" viewBox="0 0 141 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M0.264205 15V0.454545H9.89489V2.99006H3.33949V6.45597H9.25568V8.99148H3.33949V15H0.264205ZM20.9478 0.454545H24.0231V9.90057C24.0231 10.9612 23.7698 11.8892 23.2631 12.6847C22.7612 13.4801 22.0581 14.1004 21.1538 14.5455C20.2494 14.9858 19.1959 15.206 17.9933 15.206C16.7859 15.206 15.73 14.9858 14.8256 14.5455C13.9213 14.1004 13.2182 13.4801 12.7163 12.6847C12.2144 11.8892 11.9634 10.9612 11.9634 9.90057V0.454545H15.0387V9.63778C15.0387 10.1918 15.1594 10.6842 15.4009 11.1151C15.6471 11.5459 15.9928 11.8845 16.4379 12.1307C16.8829 12.3769 17.4014 12.5 17.9933 12.5C18.5898 12.5 19.1083 12.3769 19.5487 12.1307C19.9937 11.8845 20.337 11.5459 20.5785 11.1151C20.8247 10.6842 20.9478 10.1918 20.9478 9.63778V0.454545ZM38.7195 0.454545V15H36.0632L29.7351 5.84517H29.6286V15H26.5533V0.454545H29.2521L35.5305 9.60227H35.6584V0.454545H38.7195ZM46.4165 15H41.2603V0.454545H46.4592C47.9222 0.454545 49.1817 0.745738 50.2376 1.32812C51.2934 1.90578 52.1055 2.73674 52.6737 3.82102C53.2466 4.9053 53.533 6.20265 53.533 7.71307C53.533 9.22822 53.2466 10.5303 52.6737 11.6193C52.1055 12.7083 51.2887 13.544 50.2234 14.1264C49.1628 14.7088 47.8938 15 46.4165 15ZM44.3356 12.3651H46.2887C47.1978 12.3651 47.9625 12.2041 48.5827 11.8821C49.2077 11.5554 49.6765 11.0511 49.989 10.3693C50.3062 9.68277 50.4648 8.79735 50.4648 7.71307C50.4648 6.63826 50.3062 5.75994 49.989 5.07812C49.6765 4.39631 49.2101 3.89441 48.5898 3.57244C47.9696 3.25047 47.2049 3.08949 46.2958 3.08949H44.3356V12.3651ZM63.7141 15L59.5522 0.454545H62.9116L65.3192 10.5611H65.44L68.0962 0.454545H70.9727L73.6218 10.5824H73.7496L76.1573 0.454545H79.5167L75.3548 15H72.3576L69.5877 5.49006H69.4741L66.7113 15H63.7141ZM82.2049 15H78.9094L83.9308 0.454545H87.8938L92.908 15H89.6126L85.9691 3.77841H85.8555L82.2049 15ZM81.9989 9.28267H89.783V11.6832H81.9989V9.28267ZM94.6587 15V0.454545H97.734V12.4645H103.97V15H94.6587ZM106.006 15V0.454545H109.082V12.4645H115.317V15H106.006ZM117.354 15V0.454545H127.155V2.99006H120.429V6.45597H126.651V8.99148H120.429V12.4645H127.184V15H117.354ZM129.046 2.99006V0.454545H140.992V2.99006H136.539V15H133.499V2.99006H129.046Z"
-                            fill="url(#paint0_linear_1_3)" />
-                        <defs>
-                            <linearGradient id="paint0_linear_1_3" x1="142" y1="35" x2="25.5" y2="-74.5"
-                                gradientUnits="userSpaceOnUse">
-                                <stop offset="0.0145941" stop-color="#FF0B9E" />
-                                <stop offset="0.982418" stop-color="#FF6501" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-
-                </div>
 
 
 
 
 
                 <div
-                    class="items-stretch shadow-sm bg-white self-stretch flex justify-between gap-5 mt-9 px-2 py-2 rounded-3xl">
-                    <button id="span-3" class="button" onclick="activateButton(this)">
-                        Fund
-                    </button>
-                    <button id="div-2" class="button" onclick="activateButton(this)">
-                        History
-                    </button>
+                    class="text-blue-500 text-center  mt-5 text-sm justify-center items-stretch bg-blue-500 bg-opacity-20 self-stretch mt-2 px-6 py-3 rounded-xl">
+                    Your payment has been submitted<br> Amount will be added soon.
                 </div>
 
 
-                <form id="myDiv" action="fund-now" class="grid grid-cols-1" gap-3 method="POST">
-                    @csrf
 
-                    <label class="mt-3 mb-3 text-gray-600 font-bold gap-3 text-sm">Enter the Amount (NGN)</label>
-                    <div class="flex">
-                        <span
-                            class="inline-flex items-center px-4 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500">
-                            NGN
-                        </span>
-                        <input
-                            class="border-gray-300 gap-3 focus:border-primary focus:ring-1 focus:ring-primary focus:ring-opacity-50 rounded-md shadow-sm block w-full rounded-l-none"
-                            id="amount" type="number" max="999999" min="5" name="amount"
-                            placeholder="Enter the Amount you want Add" required="required">
-                    </div>
+                <div class="text-center">               
+                <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+                    type="module">
+                </script>
+
+                    <dotlottie-player src="https://lottie.host/9392734f-fc13-4317-9f34-f95c243ffaff/VyZrXdIQfQ.json"
+                        background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay>
+                    </dotlottie-player>
+
+                </div>
 
 
 
-                    <div class="flex mt-5 mb-4">
 
+                <a href="#"
+                    class="text-white text-center text-xl font-bold whitespace-nowrap justify-center items-stretch bg-blue-500 self-center mt-11 mb-11 px-12 py-5 rounded-3xl">
 
-
-                        <div class="flex">
-
-                            <span
-                                class="inline-flex  items-center px-10 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500">
-                                Paywith
-                            </span>
-
-                            <select name="type"class="border-gray-300 gap-3 focus:border-primary focus:ring-1 focus:ring-primary focus:ring-opacity-50 rounded-md shadow-sm block w-full rounded-l-none"
-                            id="amount" type="number" max="999999" min="5" name="amount"
-                            placeholder="Enter the Amount you want Add" required="required">
-
-                                <option class="text-center" value="1"> ENKPAY </option>
-                                <option class="text-center" value="2"> Manual Funding</option>
-
-                            </select>
-                        </div>
-
-                    </div>
-
-
-
-                    <div
-                        class="text-blue-500 text-center text-sm justify-center items-stretch bg-blue-500 bg-opacity-20 self-stretch mt-2 px-6 py-3 rounded-xl">
-                        Add more funds to wallet.
-                    </div>
-                    <button type="submit"
-                        class="text-white text-xl font-bold whitespace-nowrap justify-center items-stretch bg-blue-500 self-center mt-11 mb-11 px-12 py-5 rounded-3xl">
-
-                        Add Funds
-                    </button>
-                </form>
-
-
-
+                    Contact Support
+                </a>
 
 
 
             </div>
 
-            <div id="myDiv3" class="container mx-auto px-5 md:px-100">
-                <div class="space-y-6">
-                    <h1 class="text-2xl font-bold text-primary">List of Transactions</h1>
-                    <div class="border-b border-dashed border-primary w-24"></div>
-                    <div class="bg-gray-400 text-white shadow rounded-lg overflow-hidden">
-                        <div class="border-b py-4 px-5 grid grid-cols-3 md:grid-cols-4">
-
-                            @foreach($transaction as $data)
-                            <div class="hidden md:block">
-                                <label class="text-xs font-medium text-gray-100">Transaction ID #</label>
-                                <div class="text-lg font-bold">{{$data->ref_id}}</div>
-                            </div>
-                            <div>
-                                <label class="text-xs font-medium text-gray-100 mb-2">Type</label>
-                                @if($data->type == 2)
-                                <div>
-                                    <span
-                                        class="uppercase text-xs font-bold bg-green-800 text-white rounded px-2 py-1">Credit</span>
-                                </div>
-                                @else
-                                <div>
-                                    <span
-                                        class="uppercase text-xs font-bold bg-red-800 text-white rounded px-2 py-1">Debit</span>
-                                </div>
-                                @endif
-                            </div>
-                            <div>
-                                <label class="text-xs font-medium text-gray-100 ">Amount</label>
-                                <div class="text-lg font-bold">NGN {{ number_format($data->amount, 2) }}</div>
-                            </div>
-                            @if ($data->status == 2)
-
-                            <div>
-                                <label class="text-xs font-medium text-gray-100 mb-2">Status</label>
-                                <div>
-                                    <span
-                                        class="text-xs font-bold bg-green-300 text-gray-800 rounded px-2 py-1">Completed</span>
-                                </div>
-                            </div>
-
-                            @else
 
 
-                            <div>
-                                <label class="text-xs font-medium text-gray-100 mb-2">Status</label>
-                                <div>
-                                    <a href="resolve-page?trx_ref={{$data->ref_id}}"
-                                        class="text-xs font-bold bg-orange-300 text-gray-800 rounded px-2 py-1">Resolve</a>
-                                </div>
-                            </div>
 
-                            @endif
 
-                        </div>
-                        <div class="border-b py-4 px-5 grid grid-cols-3 md:grid-cols-4">
-                            <div class="hidden md:block">
 
-                            </div>
-                            <div>
-
-                            </div>
-                            <div>
-
-                            </div>
-                            <div>
-
-                            </div>
-
-                            @endforeach
-                        </div>
-                    </div>
-                    <div>
-                    </div>
-
-                </div>
-            </div>
 
 
 

@@ -68,6 +68,12 @@ Route::get('fund-wallet',  [HomeController::class,'fund_wallet']);
 Route::get('fund-account',  [HomeController::class,'fund_wallet']);
 Route::get('profile',  [HomeController::class,'profile']);
 Route::post('fund-now',  [HomeController::class,'fund_now']);
+Route::any('fund-manual-now',  [HomeController::class,'fund_manual_now']);
+
+Route::any('confirm-pay',  [HomeController::class,'confirm_pay']);
+
+
+
 Route::get('verify',  [HomeController::class,'verify_payment']);
 Route::get('resolve-page',  [HomeController::class,'resloveDeposit']);
 Route::any('resolve-now',  [HomeController::class,'resolveNow']);
@@ -155,6 +161,16 @@ Route::post('remove-user',  [AdminController::class,'remove_user']);
 Route::post('edit-front-pr',  [AdminController::class,'edit_front_product']);
 
 
+Route::get('manual-payment',  [AdminController::class,'manual_payment_view']);
+Route::any('verify-payment',  [AdminController::class,'approve_payment']);
+Route::post('update-acct-name',  [AdminController::class,'update_acct_name']);
+Route::any('delete-payment',  [AdminController::class,'delete_payment']);
+
+
+
+
+
+
 
 
 
@@ -190,6 +206,12 @@ Route::post('add-new-product',  [ProductController::class,'add_new_product']);
 Route::post('add-front-product',  [ProductController::class,'add_front_product']);
 
 Route::get('detete-front-product',  [ProductController::class,'delete_front_product']);
+
+
+Route::any('do-search',  [ProductController::class,'search']);
+
+
+
 
 
 Route::post('edit-new-product',  [ProductController::class,'edit_front_product']);

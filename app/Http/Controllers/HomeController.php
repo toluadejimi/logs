@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
-use App\Models\Item;
-use App\Models\SoldLog;
-use App\Models\Transaction;
-use App\Models\User;
 use DateTime;
+use App\Models\Item;
+use App\Models\User;
+use App\Models\SoldLog;
+use App\Models\Category;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
+use App\Models\AccountDetail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
+use App\Models\ManualPayment;
 
 class HomeController extends Controller
 {
@@ -65,6 +67,7 @@ class HomeController extends Controller
         $data['resell_items'] = Item::where('cat_id', 19)->take(5)->get();
         $data['special_items'] = Item::where('cat_id', 20)->take(5)->get();
 
+        $data['categories'] = Category::all();
 
 
 
@@ -124,6 +127,9 @@ class HomeController extends Controller
         $data['special_items'] = Item::where('cat_id', 20)->take(5)->get();
 
 
+        $data['categories'] = Category::all();
+
+
 
 
         $data['url'] = null;
@@ -143,6 +149,54 @@ class HomeController extends Controller
     }
 
 
+    
+
+
+    public function fund_manual_now(Request $request)
+    {
+
+
+
+        if($request->receipt == null){
+            return back()->with('error', "Payment receipt is required");
+        }
+
+
+        $file = $request->file('receipt');
+        $receipt_fileName = date("ymis").$file->getClientOriginalName();
+        $destinationPath = public_path() . 'upload/receipt';
+        $request->receipt->move(public_path('upload/receipt'), $receipt_fileName);
+
+
+        $pay = new ManualPayment();
+        $pay->receipt = $receipt_fileName;
+        $pay->user_id = Auth::id();
+        $pay->amount = $request->amount;
+        $pay->save();
+
+
+        $message = Auth::user()->email . "| submitted payment receipt |  NGN " . number_format($request->amount) . " | on LOG MARKETPLACE";
+        send_notification2($message);
+
+
+        return view('confirm-pay');
+        
+
+    }
+
+
+    public function confirm_pay(Request $request)
+    {
+        
+        return view('confirm-pay');
+
+    
+    }
+
+
+
+
+
     public function fund_now(Request $request)
     {
 
@@ -151,42 +205,99 @@ class HomeController extends Controller
         ]);
 
 
+
+
+
         Transaction::where('user_id', Auth::id())->where('status', 1)->delete() ?? null;
 
 
 
-        if($request->amount < 100){
-            return back()->with('error', 'You can not fund less than NGN 100');
+        if ($request->type == 1) {
+
+            if ($request->amount < 100) {
+                return back()->with('error', 'You can not fund less than NGN 100');
+            }
+
+
+            if ($request->amount > 100000) {
+                return back()->with('error', 'You can not fund more than NGN 100,000');
+            }
+
+
+
+
+            $key = env('WEBKEY');
+            $ref = "LOG-" . random_int(000, 999) . date('ymdhis');
+            $email = Auth::user()->email;
+
+            $url = "https://web.enkpay.com/pay?amount=$request->amount&key=$key&ref=$ref&email=$email";
+
+
+            $data                  = new Transaction();
+            $data->user_id         = Auth::id();
+            $data->amount          = $request->amount;
+            $data->ref_id          = $ref;
+            $data->type            = 2;
+            $data->status          = 1; //initiate
+            $data->save();
+
+
+            $message = Auth::user()->email . "| wants to fund |  NGN " . number_format($request->amount) . " | with ref | $ref |  on LOG MARKETPLACE";
+            send_notification2($message);
+
+            return Redirect::to($url);
         }
 
 
-        if($request->amount > 100000){
-            return back()->with('error', 'You can not fund more than NGN 100,000');
+
+        if ($request->type == 2) {
+
+            if ($request->amount < 100) {
+                return back()->with('error', 'You can not fund less than NGN 100');
+            }
+
+
+            if ($request->amount > 100000) {
+                return back()->with('error', 'You can not fund more than NGN 100,000');
+            }
+
+
+
+
+            $ref = "LOG-" . random_int(000, 999) . date('ymdhis');
+            $email = Auth::user()->email;
+
+
+            $data                  = new Transaction();
+            $data->user_id         = Auth::id();
+            $data->amount          = $request->amount;
+            $data->ref_id          = $ref;
+            $data->type            = 6; //manual funding
+            $data->status          = 1; //initiate
+            $data->save();
+
+
+            $message = Auth::user()->email . "| wants to fund Manually |  NGN " . number_format($request->amount) . " | with ref | $ref |  on LOG MARKETPLACE";
+            send_notification2($message);
+
+            $data['account_details'] = AccountDetail::where('id', 1)->first();
+            $data['amount'] = $request->amount;
+
+            return view('manual-fund', $data);
         }
 
 
 
 
-        $key = env('WEBKEY');
-        $ref = "LOG-" . random_int(000, 999) . date('ymdhis');
-        $email = Auth::user()->email;
-
-        $url = "https://web.enkpay.com/pay?amount=$request->amount&key=$key&ref=$ref&email=$email";
 
 
-        $data                  = new Transaction();
-        $data->user_id         = Auth::id();
-        $data->amount          = $request->amount;
-        $data->ref_id          = $ref;
-        $data->type            = 2;
-        $data->status          = 1; //initiate
-        $data->save();
 
 
-        $message = Auth::user()->email. "| wants to fund |  NGN ".number_format($request->amount)." | with ref | $ref |  on LOG MARKETPLACE";
-        send_notification2($message);
 
-        return Redirect::to($url);
+
+
+
+
     }
 
 
@@ -201,7 +312,7 @@ class HomeController extends Controller
         if ($status == 'failed') {
 
 
-            $message = Auth::user()->email. "| Cancled |  NGN ".number_format($request->amount)." | with ref | $trx_id |  on LOG MARKETPLACE";
+            $message = Auth::user()->email . "| Cancled |  NGN " . number_format($request->amount) . " | with ref | $trx_id |  on LOG MARKETPLACE";
             send_notification2($message);
 
             Transaction::where('ref_id', $trx_id)->where('status', 1)->update(['status' => 3]);
@@ -224,10 +335,6 @@ class HomeController extends Controller
 
 
             return redirect('fund-wallet')->with('error', 'Transaction already confirmed or not found');
-
-
-
-
         }
 
         $curl = curl_init();
@@ -257,14 +364,14 @@ class HomeController extends Controller
         if ($status1 == 'success') {
 
             $chk_trx = Transaction::where('ref_id', $trx_id)->first() ?? null;
-            if($chk_trx == null){
+            if ($chk_trx == null) {
                 return back()->with('error', 'Transaction not processed, Contact Admin');
             }
 
             Transaction::where('ref_id', $trx_id)->update(['status' => 2]);
             User::where('id', Auth::id())->increment('wallet', $amount);
 
-            $message =  Auth::user()->email . "| just funded NGN" . number_format($request->amount, 2). " on Log market";
+            $message =  Auth::user()->email . "| just funded NGN" . number_format($request->amount, 2) . " on Log market";
             send_notification($message);
 
 
@@ -289,12 +396,11 @@ class HomeController extends Controller
             $var = json_decode($var);
 
 
-            $message = Auth::user()->email. "| Just funded |  NGN ".number_format($request->amount)." | with ref | $order_id |  on LOG MARKETPLACE";
+            $message = Auth::user()->email . "| Just funded |  NGN " . number_format($request->amount) . " | with ref | $order_id |  on LOG MARKETPLACE";
             send_notification2($message);
 
 
             return redirect('fund-wallet')->with('message', "Wallet has been funded with $amount");
-
         }
 
         return redirect('fund-wallet')->with('error', 'Transaction already confirmed or not found');
@@ -313,7 +419,6 @@ class HomeController extends Controller
 
             $user = Auth::id() ?? null;
             return redirect('welcome');
-
         }
 
         return back()->with('error', "Email or Password Incorrect");
@@ -323,14 +428,12 @@ class HomeController extends Controller
     public function register_index(Request $request)
     {
         return view('register');
-
     }
 
 
-     public function login_index(Request $request)
-     {
-         return view('login');
-
+    public function login_index(Request $request)
+    {
+        return view('login');
     }
 
 
@@ -400,34 +503,31 @@ class HomeController extends Controller
 
 
         $trx = Transaction::where('ref_id', $request->ref_id)->first()->status ?? null;
-        if($trx == null){
+        if ($trx == null) {
 
-            $message = Auth::user()->email. "is trying to resolve from deleted transaction on LOG MarketPlace";
+            $message = Auth::user()->email . "is trying to resolve from deleted transaction on LOG MarketPlace";
             send_notification($message);
 
-            $message = Auth::user()->email. "is trying to reslove from deleted transaction on LOG MarketPlace";
+            $message = Auth::user()->email . "is trying to reslove from deleted transaction on LOG MarketPlace";
             send_notification2($message);
 
 
 
             return back()->with('error', "Transaction has been deleted");
-
         }
 
 
         $chk = Transaction::where('ref_id', $request->ref_id)->first()->status ?? null;
 
-        if($chk == 2 || $chk == 4 ){
+        if ($chk == 2 || $chk == 4) {
 
-            $message = Auth::user()->email. "is trying to steal hits the endpoint twice on LOG MarketPlace";
+            $message = Auth::user()->email . "is trying to steal hits the endpoint twice on LOG MarketPlace";
             send_notification($message);
 
-            $message = Auth::user()->email. "is trying to steal hits the endpoint twice on LOG MarketPlace";
+            $message = Auth::user()->email . "is trying to steal hits the endpoint twice on LOG MarketPlace";
             send_notification2($message);
 
             return back()->with('message', "You are a thief");
-
-
         }
 
 
@@ -450,17 +550,14 @@ class HomeController extends Controller
             $data->save();
 
 
-            $message = Auth::user()->email. "| just resolved with $request->session_id | NGN ".number_format($amount)." on LOG MarketPlace";
+            $message = Auth::user()->email . "| just resolved with $request->session_id | NGN " . number_format($amount) . " on LOG MarketPlace";
             send_notification($message);
 
-            $message = Auth::user()->email. "| just resolved with $request->session_id | NGN ".number_format($amount)." on LOG MarketPlace";
+            $message = Auth::user()->email . "| just resolved with $request->session_id | NGN " . number_format($amount) . " on LOG MarketPlace";
             send_notification2($message);
 
 
             return back()->with('message', "Transaction successfully Resolved, NGN $amount added to ur wallet");
-
-
-
         }
 
         if ($status == false) {
@@ -626,40 +723,36 @@ class HomeController extends Controller
         $dep = Transaction::where('ref_id', $request->trx_ref)->first() ?? null;
 
 
-        if($dep == null){
+        if ($dep == null) {
             return back()->with('error', "Transaction not Found");
         }
 
-        if($dep->status == 2){
+        if ($dep->status == 2) {
             return back()->with('error', "This Transaction has been successful");
         }
 
 
-        if($dep->status == 4){
+        if ($dep->status == 4) {
             return back()->with('error', "This Transaction has been resolved");
         }
 
 
-        if($dep == null){
-                return back()->with('error', "Transaction has been deleted");
-        }else{
+        if ($dep == null) {
+            return back()->with('error', "Transaction has been deleted");
+        } else {
 
             $ref = $request->trx_ref;
             $user =  Auth::user() ?? null;
             return view('resolve-page', compact('ref', 'user'));
-
         }
-
-
     }
 
 
     public function  resolveNow(request $request)
     {
 
-        if($request->trx_ref == null || $request->session_id == null){
+        if ($request->trx_ref == null || $request->session_id == null) {
             return back()->with('error', "Session ID or Ref Can not be null");
-
         }
 
 
@@ -724,8 +817,8 @@ class HomeController extends Controller
         if ($ck_trx == 1) {
             $session_id = $request->session_id;
             if ($session_id == null) {
-            $notify[] = ['error', "session id or amount cant be empty"];
-            return back()->withNotify($notify);
+                $notify[] = ['error', "session id or amount cant be empty"];
+                return back()->withNotify($notify);
             }
 
 
@@ -767,8 +860,7 @@ class HomeController extends Controller
                 $message = "$user_email | $request->trx_ref | $session_id | $var->amount | just resolved deposit | Log Market Place ";
                 send_notification($message);
                 send_notification2($message);
-                return redirect('/')->with('message',"Transaction successfully Resolved, NGN $amount added to ur wallet");
-
+                return redirect('/')->with('message', "Transaction successfully Resolved, NGN $amount added to ur wallet");
             }
 
             if ($status == false) {
@@ -778,7 +870,4 @@ class HomeController extends Controller
             return back()->with('error', "please try again later");
         }
     }
-
-
-
 }
