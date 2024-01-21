@@ -48,7 +48,7 @@
         // Simulate a 5-second delay
         setTimeout(function () {
             // Remove the loader after 5 seconds
-                    // $('#warning').modal('show');
+            $('#warning').modal('show');
 
         }, 1000);
 

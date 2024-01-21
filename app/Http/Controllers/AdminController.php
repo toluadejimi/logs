@@ -395,6 +395,11 @@ class AdminController extends Controller
 
        $message = $email . "| Manual Payment  Approved |  NGN " . number_format($request->amount) . " | on LOG MARKETPLACE";
        send_notification2($message);
+       send_notification3($message);
+
+
+
+
 
        return back()->with('message', 'Transaction added successfully');
 
@@ -419,10 +424,17 @@ class AdminController extends Controller
     public function update_acct_name(request $request)
 	{
 
-       $payment = ManualPayment::latest()->paginate(20);
-       $acc = AccountDetail::where('id', 1)->first();
+    
+        $acc = AccountDetail::where('id', 1)->update([
 
-        return view('manual-payment', compact('payment', 'acc'));
+            'bank_name' => $request->bank_name,
+            'bank_account' => $request->bank_account,
+            'account_name' => $request->account_name,
+
+        ]);
+
+        return back()->with('message', 'Bank info updated successfully');
+
 
 
     }

@@ -79,7 +79,6 @@ Route::get('resolve-page',  [HomeController::class,'resloveDeposit']);
 Route::any('resolve-now',  [HomeController::class,'resolveNow']);
 Route::get('change-password',  [HomeController::class,'change_password']);
 
-Route::get('item',  [ItemController::class,'item']);
 
 
 
@@ -163,7 +162,7 @@ Route::post('edit-front-pr',  [AdminController::class,'edit_front_product']);
 
 Route::get('manual-payment',  [AdminController::class,'manual_payment_view']);
 Route::any('verify-payment',  [AdminController::class,'approve_payment']);
-Route::post('update-acct-name',  [AdminController::class,'update_acct_name']);
+Route::any('update-acct-name',  [AdminController::class,'update_acct_name']);
 Route::any('delete-payment',  [AdminController::class,'delete_payment']);
 
 
