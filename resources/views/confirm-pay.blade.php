@@ -661,7 +661,7 @@
 
                 <div
                     class="text-blue-500 text-center  mt-5 text-sm justify-center items-stretch bg-blue-500 bg-opacity-20 self-stretch mt-2 px-6 py-3 rounded-xl">
-                    Your payment has been submitted<br> Amount will be added soon.
+                    Your payment has been submitted<br>Your funds will be added in less than 10 minutes
                 </div>
 
 
@@ -680,10 +680,10 @@
 
 
 
-                <a href="#"
+                <a href="/"
                     class="text-white text-center text-xl font-bold whitespace-nowrap justify-center items-stretch bg-blue-500 self-center mt-11 mb-11 px-12 py-5 rounded-3xl">
 
-                    Contact Support
+                    Go Home
                 </a>
 
 
