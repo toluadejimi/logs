@@ -415,11 +415,11 @@
 
             <div class="swiper-container mySwiper p-4 mb-3">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="{{ url('') }}/public/concept/assets/images/Logplace__1.png" class="d-block w-100" alt="..."> </div>
-                    <div class="swiper-slide"> <img src="{{ url('') }}/public/concept/assets/images/Logplace__2.png" class="d-block w-100" alt="..."></div>
+                    <div class="swiper-slide"><a href="#"><img src="{{ url('') }}/public/concept/assets/images/Logplace__1.png" class="d-block w-100" alt="..."></a> </div>
+                    <div class="swiper-slide"><a href="https://t.me/logsmarkeplace"><img src="{{ url('') }}/public/concept/assets/images/Logplace__2.png" class="d-block w-100" alt="..."></a></div>
                     <div class="swiper-slide"> <img src="{{ url('') }}/public/concept/assets/images/Logplace__3.png" class="d-block w-100" alt="...">
                     </div>
-                    <div class="swiper-slide"><img src="{{ url('') }}/public/concept/assets/images/Logplace__4.png" class="d-block w-100" alt="..."></div>\
+                    <div class="swiper-slide"><a href="https://t.me/logsmarkeplace"><img src="{{ url('') }}/public/concept/assets/images/Logplace__4.png" class="d-block w-100" alt="..."></a></div>
 
                 </div>
                                 <div class="swiper-pagination"></div>
