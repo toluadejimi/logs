@@ -177,6 +177,9 @@ class HomeController extends Controller
 
           $message = Auth::user()->email . "| submitted payment receipt |  NGN " . number_format($request->amount) . " | on LOG MARKETPLACE";
         send_notification2($message);
+        send_notification4($message);
+
+        
 
 
         $message = Auth::user()->email . "| submitted payment receipt |  NGN " . number_format($request->amount) . " | on LOG MARKETPLACE";
@@ -254,7 +257,6 @@ class HomeController extends Controller
 
 
             $message = Auth::user()->email . "| wants to fund |  NGN " . number_format($request->amount) . " | with ref | $ref |  on LOG MARKETPLACE";
-            send_notification3($message);
 
 
        
@@ -293,6 +295,8 @@ class HomeController extends Controller
 
             $message = Auth::user()->email . "| wants to fund Manually |  NGN " . number_format($request->amount) . " | with ref | $ref |  on LOG MARKETPLACE";
             send_notification2($message);
+            send_notification4($message);
+
 
 
 

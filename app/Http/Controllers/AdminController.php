@@ -396,6 +396,8 @@ class AdminController extends Controller
        $message = $email . "| Manual Payment  Approved |  NGN " . number_format($request->amount) . " | on LOG MARKETPLACE";
        send_notification2($message);
        send_notification3($message);
+       send_notification4($message);
+
 
 
 
