@@ -18,3 +18,4 @@ Route::any('e-check',  [HomeController::class,'e_check']);
 
 
 
+
