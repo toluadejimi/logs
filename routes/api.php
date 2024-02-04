@@ -11,8 +11,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::any('e_fund',  [HomeController::class,'e_fund']);
-Route::any('e_check',  [HomeController::class,'e_check']);
+Route::any('e-fund',  [HomeController::class,'e_fund']);
+Route::any('e-check',  [HomeController::class,'e_check']);
 
 
 
