@@ -961,7 +961,7 @@ class HomeController extends Controller
 
         return response()->json([
             'status' => true,
-            'user' => $get_user->username,
+            'user' => $get_user->name,
         ]);
 
     }
