@@ -157,7 +157,7 @@
 
                             <span class="fs-4">Username -:{{ Auth::user()->username }}</span>
                             <span class="fs-4">Email -: {{ Auth::user()->email }}</span>
-                            <span class="fs-4">Total Spent -:</span> <span class="badge rounded-pill bg-danger"> NGN {{ number_format($total_bought, 2) }}</span>
+                            <span class="fs-4 badge rounded-pill bg-danger">Total Spent -: NGN {{ number_format($total_bought, 2) }}</span>
 
                             
 
