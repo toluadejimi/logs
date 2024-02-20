@@ -513,9 +513,11 @@ class HomeController extends Controller
 
         $user = Auth::id();
         $orders = SoldLog::latest()->where('user_id', Auth::id())->paginate(5);
+        $total_bought = SoldLog::where('user_id', Auth::id())->sum('amount');
 
 
-        return view('profile', compact('user', 'orders'));
+
+        return view('profile', compact('user', 'orders', 'total_bought'));
     }
 
 
