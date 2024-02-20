@@ -155,8 +155,8 @@
                         <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
 
 
-                            <span class="fs-4 badge rounded-pill bg-success">Username -:{{ Auth::user()->username }}</span>
-                            <span class="fs-4 badge rounded-pill bg-primary">Email -: {{ Auth::user()->email }}</span>
+                            <span class="fs-4 badge rounded-pill bg-success mb-2">Username -:{{ Auth::user()->username }}</span>
+                            <span class="fs-4 badge rounded-pill bg-primary mb-2">Email -: {{ Auth::user()->email }}</span>
                             <span class="fs-4 badge rounded-pill bg-danger">Total Spent -: NGN {{ number_format($total_bought, 2) }}</span>
 
                             
