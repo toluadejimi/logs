@@ -21,7 +21,7 @@
     <title>Log Marketplace </title>
 
     {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script> --}}
-  
+
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
@@ -180,7 +180,7 @@
 
 
 
-    
+
 
 
 
@@ -416,7 +416,7 @@
             <div class="swiper-container mySwiper p-4 mb-3">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide"><a href="#"><img src="{{ url('') }}/public/concept/assets/images/Logplace__1.png" class="d-block w-100" alt="..."></a> </div>
-                    <div class="swiper-slide"><a href="https://t.me/logmarketplacee"><img src="{{ url('') }}/public/concept/assets/images/Logplace__2.png" class="d-block w-100" alt="..."></a></div>
+                    <div class="swiper-slide"><a href=" https://t.me/logmkp"><img src="{{ url('') }}/public/concept/assets/images/Logplace__2.png" class="d-block w-100" alt="..."></a></div>
                      <div class="swiper-slide"><a href="https://tinyurl.com/logsgroup2"><img src="{{ url('') }}/public/concept/assets/images/Logplace__5.png" class="d-block w-100" alt="..."></a></div>
                     <div class="swiper-slide"> <img src="{{ url('') }}/public/concept/assets/images/Logplace__3.png" class="d-block w-100" alt="...">
                     </div>
