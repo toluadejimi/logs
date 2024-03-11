@@ -420,7 +420,7 @@
                      <div class="swiper-slide"><a href="https://tinyurl.com/logsgroup2"><img src="{{ url('') }}/public/concept/assets/images/Logplace__5.png" class="d-block w-100" alt="..."></a></div>
                     <div class="swiper-slide"> <img src="{{ url('') }}/public/concept/assets/images/Logplace__3.png" class="d-block w-100" alt="...">
                     </div>
-                    <div class="swiper-slide"><a href="https://t.me/logsmarkeplace"><img src="{{ url('') }}/public/concept/assets/images/Logplace__4.png" class="d-block w-100" alt="..."></a></div>
+                    <div class="swiper-slide"><a href="https://t.me/logmarketplacee"><img src="{{ url('') }}/public/concept/assets/images/Logplace__4.png" class="d-block w-100" alt="..."></a></div>
 
                 </div>
                                 {{-- <div class="swiper-pagination"></div> --}}
