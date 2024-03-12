@@ -16,7 +16,7 @@
         href="{{ url('') }}/public/concept/assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="{{ url('') }}/public/concept/assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="{{ url('') }}/public/concept/assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
-    <title>Log Marketplace - BRST LOG SITE</title>
+    <title>Log Marketplace - BEST LOG SITE</title>
 </head>
 
 <body>
@@ -73,7 +73,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
-                      
+
 
                         <ul class="navbar-nav flex-column">
                             <li class="nav-divider">
@@ -107,6 +107,13 @@
                             <li class="nav-item ">
                                 <a class="nav-link " href="caterogies"><i
                                         class="fab fa-fw fa-wpforms"></i>Categories</a>
+
+
+                            </li>
+
+                            <li class="nav-item ">
+                                <a class="nav-link " href="coupon"><i
+                                        class="fab fa-fw fa-wpforms"></i>Coupon</a>
 
 
                             </li>
@@ -191,13 +198,13 @@
                     aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
-        
+
                             <div class="modal-body">
                                 <h5>Update Account</h5>
-        
+
                                 <form action="update-acct-name" method="POST">
                                     @csrf
-        
+
                                     <div class="my-2">
                                         <label class="text-muted">Account Name</label>
                                         <input class="form-control2" name="account_name" required type="text" autofocus
@@ -207,26 +214,26 @@
                                         <label class="text-muted" >Account Name</label>
                                         <input class="form-control2" name="bank_name" required type="text" autofocus
                                         placeholder="Enter your title" value="{{ $acc->bank_name }}" >
-                                       
+
 
                                         <label class="text-muted">Account Number</label>
                                         <input class="form-control2" name="bank_account" required type="text" autofocus
                                         placeholder="Enter your title" value="{{ $acc->bank_account }}">
-                                    
+
                                     </div>
-        
-                                    
+
+
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-success">Update</button>
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     </div>
-        
-        
+
+
                                 </form>
-        
-        
+
+
                             </div>
-        
+
                         </div>
                     </div>
                 </div>
@@ -263,12 +270,12 @@
                                             <label>Account Number</label>
                                             <h6>{{ $acc->bank_account }}</h6>
 
-                                         
 
 
-                                        
+
+
                                     </div>
-                                       
+
                                         <button type="button" data-toggle="modal" data-target="#addnew" class="btn btn-sm btn-dark">Update Account Info</button>
                                 </div>
                             </div>
@@ -284,16 +291,16 @@
                         <div class="row">
 
                             <div class="col-xl-6 col-lg-12 col-md-6 col-sm-12 col-12">
-                               
+
                                 <div class="card">
                                     <div class="card-body ">
-        
-        
-        
+
+
+
                                         <div class="card-title">
                                             All Manual Payment
                                         </div>
-        
+
                                         <table class="table table-responsive">
                                             <thead class="thead-dark">
                                                 <tr>
@@ -307,14 +314,14 @@
 
 
 
-        
+
                                                 </tr>
                                             </thead>
                                             <tbody>
-        
-        
+
+
                                                 @foreach ($payment as $data)
-        
+
                                                 <td>
                                                     {{$data->user->email}}
                                                 </td>
@@ -343,7 +350,7 @@
                                                 </td>
 
                                                 <td>
-                                                    
+
                                                 </td>
 
 
@@ -359,30 +366,30 @@
                                                 </td>
 
 
-                                               
-        
-                        
-                                        
-                                        
+
+
+
+
+
                                             </tbody>
-        
-                                           
-        
+
+
+
                                             @endforeach
-        
-        
+
+
                                         </table>
 
                                         {{ $payment->links() }}
-        
-                                      
-        
-        
+
+
+
+
                                     </div>
-        
-        
+
+
                                 </div>
-        
+
 
 
 

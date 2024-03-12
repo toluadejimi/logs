@@ -11,6 +11,7 @@ use App\Models\SoldLog;
 use App\Models\Transaction;
 use App\Models\User;
 use App\Models\MainItem;
+use App\Models\CouponCode;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -18,7 +19,57 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class ProductController extends Controller
 {
-    public function buy_now(request $request){
+
+
+    public function coupon(request $request){
+
+        $data['coupons'] = CouponCode::all();
+        $data['coupons_count'] = CouponCode::count();
+        $data['coupons_pending'] = CouponCode::where('status', 0)->count();
+        $data['coupons_pending_amount'] = CouponCode::where('status', 0)->sum('amount');
+        $data['coupons_used_amount'] = CouponCode::where('status', 1)->sum('amount');
+        $data['coupons_used'] = CouponCode::where('status', 1)->count();
+
+
+
+
+        return view('coupon', $data);
+
+    }
+
+    public function new_coupon(request $request){
+
+        $cup = new CouponCode();
+        $cup->coupon_code = $request->coupon_code;
+        $cup->amount = $request->amount;
+        $cup->save();
+
+        return back()->with('message', 'Cuopon Created Successfully');
+
+    }
+
+    public function update_coupon(request $request){
+
+      CouponCode::where('id', $request->id)->update
+      ([
+          'coupon_code' => $request->coupon_code,
+          'amount' => $request->amount
+      ]);
+
+        return back()->with('message', 'Cuopon Updated Successfully');
+
+    }
+
+
+    public function delete_coupon(request $request){
+
+        CouponCode::where('id', $request->id)->delete();
+
+        return back()->with('message', 'Cuopon Deleted Successfully');
+
+    }
+
+        public function buy_now(request $request){
 
 
         $amount = Item::where('id', $request->item_id)->first()->amount;
@@ -27,6 +78,9 @@ class ProductController extends Controller
 
         $pamount =  $amount * $request->quantity;
         $in_stock = MainItem::where('product_id', $product_id)->count();
+
+
+
 
 
 
@@ -46,7 +100,35 @@ class ProductController extends Controller
         }
 
 
-        User::where('id', Auth::id())->decrement('wallet', $pamount);
+
+            if($request->coupon_code != null){
+
+                $ck = CouponCode::where('coupon_code', $request->coupon_code)->first() ?? null;
+                if($ck == null){
+                    return back()->with('error', 'Coupon does not exist');
+                }
+
+                if($ck->status == 2){
+                    return back()->with('error', 'Coupon is not valid');
+                }
+
+                $charge_amount = $pamount - $ck->amount;
+
+                CouponCode::where('id', $ck->id)->update
+                ([
+                    'status' => 2,
+                ]);
+
+            }else{
+
+                $charge_amount = $pamount;
+
+            }
+
+
+        User::where('id', Auth::id())->decrement('wallet', $charge_amount);
+
+
 
         $get_item = MainItem::select('name')->where('product_id', $product_id)->take($request->quantity)->get();
 
@@ -154,7 +236,6 @@ class ProductController extends Controller
     public function item_view(request $request){
 
 
-
         $user = Auth::id();
         if($user == null){
             return back()->with('error', 'Login your account to buy product');
@@ -165,6 +246,7 @@ class ProductController extends Controller
 
         $product_id = Item::where('id', $request->id)->first()->product_id;
         $title = Item::where('id', $request->id)->first()->title;
+        $icon = Item::where('id', $request->id)->first()->icon;
         $amount = Item::where('id', $request->id)->first()->amount;
         $stock = MainItem::where('product_id', $product_id)->count();
 
@@ -182,7 +264,8 @@ class ProductController extends Controller
         $user = Auth::id() ?? null;
 
 
-        return view('item-view',compact('title', 'inst', 'description', 'item_id', 'stock', 'amount', 'user'));
+
+        return view('item-view',compact('title','icon', 'inst', 'description', 'item_id', 'stock', 'amount', 'user'));
 
 
 
@@ -200,6 +283,7 @@ class ProductController extends Controller
 
         $product_id = Item::where('id', $request->id)->first()->product_id;
         $title = Item::where('id', $request->id)->first()->title;
+        $icon = Item::where('id', $request->id)->first()->icon;
         $amount = Item::where('id', $request->id)->first()->amount;
         $stock = MainItem::where('product_id', $product_id)->count();
 
@@ -209,7 +293,7 @@ class ProductController extends Controller
 
 
 
-        return view('item-view',compact('title', 'instruction', 'description', 'item_id', 'stock', 'amount', 'user'));
+        return view('item-view',compact('title', 'icon', 'instruction', 'description', 'item_id', 'stock', 'amount', 'user'));
 
 
     }

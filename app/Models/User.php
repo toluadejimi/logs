@@ -56,4 +56,12 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Models\ManualPayment');
     }
+
+    public function  coupon_code()
+    {
+        return $this->belongsTo('App\Models\CouponCode');
+    }
+
+
+
 }

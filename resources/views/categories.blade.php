@@ -16,7 +16,7 @@
         href="{{ url('') }}/public/concept/assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="{{ url('') }}/public/concept/assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="{{ url('') }}/public/concept/assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
-    <title>Log Marketplace - BRST LOG SITE</title>
+    <title>Log Marketplace - BEST LOG SITE</title>
 </head>
 
 <body>
@@ -73,7 +73,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
-                      
+
 
                         <ul class="navbar-nav flex-column">
                             <li class="nav-divider">
@@ -107,6 +107,14 @@
                             <li class="nav-item ">
                                 <a class="nav-link active" href="caterogies"><i
                                         class="fab fa-fw fa-wpforms"></i>Categories</a>
+
+
+                            </li>
+
+
+                            <li class="nav-item ">
+                                <a class="nav-link " href="coupon"><i
+                                        class="fab fa-fw fa-wpforms"></i>Coupon</a>
 
 
                             </li>
@@ -183,31 +191,31 @@
                     aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
-        
+
                             <div class="modal-body">
                                 <h5>Add new Category</h5>
-        
+
                                 <form action="/add-new-cat" method="POST">
                                     @csrf
-        
+
                                     <div class="my-2">
                                         <label>Title</label>
                                         <input class="form-control" name="title" required type="text" autofocus
                                             placeholder="Enter your title">
                                     </div>
-        
-                                    
+
+
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-success">Add</button>
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     </div>
-        
-        
+
+
                                 </form>
-        
-        
+
+
                             </div>
-        
+
                         </div>
                     </div>
                 </div>
@@ -238,9 +246,9 @@
                                                 <h1 class="mb-1">{{ $categories }}</h1>
                                             </div>
 
-                                        
+
                                     </div>
-                                       
+
                                         <button type="button" data-toggle="modal" data-target="#addnew" class="btn btn-sm btn-dark"> Add New</button>
                                 </div>
                             </div>
@@ -256,31 +264,31 @@
                         <div class="row">
 
                             <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
-                               
+
 
 
                                 <div class="card">
                                     <div class="card-body ">
-        
-        
-        
+
+
+
                                         <div class="card-title">
                                             All Categories
                                         </div>
-        
+
                                         <table class="table table-sm table-responsive-sm">
                                             <thead class="thead-dark">
                                                 <tr>
                                                     <th scope="col">Title</th>
                                                     <th scope="col">Action</th>
-        
+
                                                 </tr>
                                             </thead>
                                             <tbody>
-        
-        
+
+
                                                 @foreach ($categoriess as $data)
-        
+
                                                 <td>
                                                     {{$data->title}}
                                                 </td>
@@ -289,27 +297,27 @@
                                                 <td>
                                                     <a href="/delete-cat?id={{ $data->id }}" class="btn btn-sm btn-danger">Delete</a>
                                                 </td>
-        
-                        
-                                        
-                                        
+
+
+
+
                                             </tbody>
-        
-                                           
-        
+
+
+
                                             @endforeach
-        
-        
+
+
                                         </table>
-        
-                                      
-        
-        
+
+
+
+
                                     </div>
-        
-        
+
+
                                 </div>
-        
+
 
 
 

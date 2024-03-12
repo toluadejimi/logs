@@ -198,6 +198,18 @@ Route::post('item-view',  [ProductController::class,'item_view']);
 
 Route::get('item-view',  [ProductController::class,'i_view']);
 
+Route::get('coupon',  [ProductController::class,'coupon']);
+Route::post('new-coupon',  [ProductController::class,'new_coupon']);
+Route::get('delete-coupon',  [ProductController::class,'delete_coupon']);
+Route::post('update-coupon',  [ProductController::class,'update_coupon']);
+
+
+
+
+
+
+
+
 Route::get('allcatproduct',  [ProductController::class,'view_all_product']);
 
 Route::post('add-new-product',  [ProductController::class,'add_new_product']);

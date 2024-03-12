@@ -2804,7 +2804,7 @@ místo na portýra narazil na vojenskou hlídku. Ptal se jí na pana Carsona (�
 bajonetem ho vedl k šikovateli. Ten neřekl o mnoho víc a dovedl Prokopa k
 důstojníkovi. Inženýr Carson je tu neznám, řekl důstojník, a co prý s ním pán
 chce? Prokop prohlásil, že chce vlastně mluvit s panem Tomšem. To na
-důstojníka mělo tak dalece účinek, že poslal pro pana obrsta. Pan obrst, velmi
+důstojníka mělo tak dalece účinek, že poslal pro pana oBESTa. Pan oBEST, velmi
 tlustý astmatický člověk, jal se Prokopa důtklivě vyslýchat, kdo je a co tu
 chce; to už bylo v kanceláři asi pět vojenských pánů a prohlíželi si Prokopa
 tak, až se potil. Bylo zřejmo, že čekají na někoho, pro koho zatím

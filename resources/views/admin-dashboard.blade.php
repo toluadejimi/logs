@@ -16,7 +16,7 @@
         href="{{ url('') }}/public/concept/assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="{{ url('') }}/public/concept/assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="{{ url('') }}/public/concept/assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
-    <title>Log Marketplace - BRST LOG SITE</title>
+    <title>Log Marketplace - BEST LOG SITE</title>
 </head>
 
 <body>
@@ -106,6 +106,13 @@
                             <li class="nav-item ">
                                 <a class="nav-link" href="caterogies"><i
                                         class="fab fa-fw fa-wpforms"></i>Categories</a>
+
+
+                            </li>
+
+                            <li class="nav-item ">
+                                <a class="nav-link " href="coupon"><i
+                                        class="fab fa-fw fa-wpforms"></i>Coupon</a>
 
 
                             </li>
@@ -389,28 +396,28 @@
                                                         <td>
                                                             <span class="badge badge-pill badge-warning">Intitated</span>
                                                         </td>
-                
-                
+
+
                                                         @elseif($data->status == 0)
                                                         <td>
                                                             <span class="badge badge-pill badge-warning">Pending</span>
                                                         </td>
-                
+
                                                         @elseif($data->status == 3)
                                                         <td>
                                                             <span class="badge badge-pill badge-danger">Cancled</span>
                                                         </td>
-                
+
                                                         @elseif($data->status == 4)
                                                         <td>
                                                             <span class="badge badge-pill badge-success">Resolved</span>
                                                         </td>
-                
-                
+
+
                                                         @else
                                                         <td>
                                                             <span class="badge badge-pill badge-success">Completed</span>
-                
+
                                                         </td>
                                                         @endif
                                                         <td>{{ date('d/m/y', strtotime($data->created_at)) }} </td>
