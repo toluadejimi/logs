@@ -112,7 +112,10 @@ class ProductController extends Controller
                     return back()->with('error', 'Coupon is not valid');
                 }
 
-                $charge_amount = $pamount - $ck->amount;
+                $percentage = $ck->amount / 100;
+                $coupon_amount = $percentage * $pamount;
+
+                $charge_amount = $pamount - $coupon_amount;
 
                 CouponCode::where('id', $ck->id)->update
                 ([

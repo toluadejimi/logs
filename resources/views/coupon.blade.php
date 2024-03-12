@@ -204,7 +204,7 @@
 
                                         <div class="col">
                                             <div class="my-2">
-                                                <label>Amount</label>
+                                                <label>Percentage %</label>
                                                 <input class="form-control" name="amount" required type="number"
                                                        autofocus
                                                        placeholder="0.00">
@@ -260,7 +260,7 @@
                                         <h1 class="mb-1">{{ $coupons_used }}</h1>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-sm btn-dark"> NGN{{ number_format($coupons_used_amount, 2) }}
+                                <button type="button" class="btn btn-sm btn-dark"> {{ number_format($coupons_used_amount, 2) }}%
                                 </button>
                             </div>
                         </div>
@@ -274,7 +274,7 @@
                                         <h1 class="mb-1">{{ $coupons_pending }}</h1>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-sm btn-dark"> NGN{{ number_format($coupons_pending_amount, 2) }}
+                                <button type="button" class="btn btn-sm btn-dark"> {{ number_format($coupons_pending_amount, 2) }}%
                                 </button>
                             </div>
                         </div>
@@ -300,7 +300,7 @@
                                         <thead class="thead-dark">
                                         <tr>
                                             <th scope="col">Code</th>
-                                            <th scope="col">Amount(NGN)</th>
+                                            <th scope="col">Percentage %</th>
                                             <th scope="col">Status</th>
                                             <th scope="col">Action</th>
 
@@ -367,7 +367,7 @@
 
                                                                         <div class="col">
                                                                             <div class="my-2">
-                                                                                <label>Amount</label>
+                                                                                <label>Percentage %</label>
                                                                                 <input class="form-control" name="amount" required type="text"
                                                                                        autofocus value="{{$data->amount}}">
                                                                             </div>
