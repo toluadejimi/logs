@@ -225,8 +225,8 @@
 
                         <div class="card-body">
 
-                            <div class="card-title text-center">
-                                <h6>Disclimer</h6>
+                            <div class="card-title mt-3 text-center">
+                                <h6>Disclaimer</h6>
 
                             </div>
 
