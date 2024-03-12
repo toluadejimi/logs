@@ -260,7 +260,8 @@
                                         <h1 class="mb-1">{{ $coupons_used }}</h1>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-sm btn-dark"> {{ number_format($coupons_used_amount, 2) }}%
+                                <button type="button"
+                                        class="btn btn-sm btn-dark"> {{ number_format($coupons_used_amount, 2) }}%
                                 </button>
                             </div>
                         </div>
@@ -274,7 +275,8 @@
                                         <h1 class="mb-1">{{ $coupons_pending }}</h1>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-sm btn-dark"> {{ number_format($coupons_pending_amount, 2) }}%
+                                <button type="button"
+                                        class="btn btn-sm btn-dark"> {{ number_format($coupons_pending_amount, 2) }}%
                                 </button>
                             </div>
                         </div>
@@ -335,76 +337,82 @@
                                                 <a href="/delete-coupon?id={{ $data->id }}"
                                                    class="btn btn-sm btn-danger">Delete</a>
 
-                                                <button type="button" data-toggle="modal" data-target="#update{{ $data->id }}"
+                                                <button type="button" data-toggle="modal"
+                                                        data-target="#update{{ $data->id }}"
                                                         class="btn btn-sm btn-dark"> Update
                                                 </button>
                                             </td>
 
 
-                                                <div class="modal fade" id="update{{ $data->id }}" tabindex="-1" role="dialog"
-                                                     aria-labelledby="exampleModalCenterTitle"
-                                                     aria-hidden="true">
-                                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                                        <div class="modal-content">
+                                            <div class="modal fade" id="update{{ $data->id }}" tabindex="-1"
+                                                 role="dialog"
+                                                 aria-labelledby="exampleModalCenterTitle"
+                                                 aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
 
-                                                            <div class="modal-body">
-                                                                <h5>Update Coupon</h5>
+                                                        <div class="modal-body">
+                                                            <h5>Update Coupon</h5>
 
-                                                                <form action="/update-coupon?id={{$data->id}}" method="POST">
-                                                                    @csrf
+                                                            <form action="/update-coupon?id={{$data->id}}"
+                                                                  method="POST">
+                                                                @csrf
 
-                                                                    <div class="row">
+                                                                <div class="row">
 
-                                                                        <div class="col">
-                                                                            <div class="my-2">
-                                                                                <label>Coupon Code</label>
-                                                                                <input class="form-control" name="coupon_code" required type="text"
-                                                                                       autofocus value="{{$data->coupon_code}}">
-                                                                            </div>
-
-                                                                        </div>
-
-
-                                                                        <div class="col">
-                                                                            <div class="my-2">
-                                                                                <label>Percentage %</label>
-                                                                                <input class="form-control" name="amount" required type="text"
-                                                                                       autofocus value="{{$data->amount}}">
-                                                                            </div>
-
-                                                                        </div>
-
-
-                                                                        <div class="col-6">
-                                                                            <div class="my-2">
-                                                                                <label>Status</label>
-                                                                                <select class="form-control" name="status" required>
-                                                                                    <option value="0">Activate</option>
-                                                                                    <option value="2">Deactivate</option>
-                                                                                </select>
-                                                                            </div>
-
+                                                                    <div class="col">
+                                                                        <div class="my-2">
+                                                                            <label>Coupon Code</label>
+                                                                            <input class="form-control"
+                                                                                   name="coupon_code" required
+                                                                                   type="text"
+                                                                                   autofocus
+                                                                                   value="{{$data->coupon_code}}">
                                                                         </div>
 
                                                                     </div>
 
 
-                                                                    <div class="modal-footer">
-                                                                        <button type="submit" class="btn btn-success">Update</button>
-                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
-                                                                        </button>
+                                                                    <div class="col">
+                                                                        <div class="my-2">
+                                                                            <label>Percentage %</label>
+                                                                            <input class="form-control" name="amount"
+                                                                                   required type="text"
+                                                                                   autofocus value="{{$data->amount}}">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-12">
+                                                                    <div class="my-2">
+                                                                        <label>Status</label>
+                                                                        <select class="form-control" name="status" required>
+                                                                            <option value="0">Activate</option>
+                                                                            <option value="2">Deactivate</option>
+                                                                        </select>
                                                                     </div>
 
+                                                                </div>
 
-                                                                </form>
+
+                                                                <div class="modal-footer">
+                                                                    <button type="submit" class="btn btn-success">
+                                                                        Update
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-secondary"
+                                                                            data-dismiss="modal">Close
+                                                                    </button>
+                                                                </div>
 
 
-                                                            </div>
+                                                            </form>
+
 
                                                         </div>
+
                                                     </div>
                                                 </div>
-
+                                            </div>
 
 
                                         </tbody>
