@@ -322,11 +322,11 @@
 
                                             @if($data->status == 0)
                                                 <td>
-                                                    <span class="badge badge-warning text-white">Pending</span>
+                                                    <span class="badge badge-success text-white">Active</span>
                                                 </td>
                                             @else
                                                 <td>
-                                                    <span class="badge badge-success text-white">Used</span>
+                                                    <span class="badge badge-danger text-white">Inactive</span>
                                                 </td>
                                             @endif
 
@@ -370,6 +370,18 @@
                                                                                 <label>Percentage %</label>
                                                                                 <input class="form-control" name="amount" required type="text"
                                                                                        autofocus value="{{$data->amount}}">
+                                                                            </div>
+
+                                                                        </div>
+
+
+                                                                        <div class="col-6">
+                                                                            <div class="my-2">
+                                                                                <label>Status</label>
+                                                                                <select class="form-control" name="status" required>
+                                                                                    <option value="0">Activate</option>
+                                                                                    <option value="2">Deactivate</option>
+                                                                                </select>
                                                                             </div>
 
                                                                         </div>

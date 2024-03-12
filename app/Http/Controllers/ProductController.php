@@ -53,7 +53,8 @@ class ProductController extends Controller
       CouponCode::where('id', $request->id)->update
       ([
           'coupon_code' => $request->coupon_code,
-          'amount' => $request->amount
+          'amount' => $request->amount,
+          'status' => $request->status
       ]);
 
         return back()->with('message', 'Cuopon Updated Successfully');
@@ -117,10 +118,10 @@ class ProductController extends Controller
 
                 $charge_amount = $pamount - $coupon_amount;
 
-                CouponCode::where('id', $ck->id)->update
-                ([
-                    'status' => 2,
-                ]);
+//                CouponCode::where('id', $ck->id)->update
+//                ([
+//                    'status' => 2,
+//                ]);
 
             }else{
 
@@ -130,8 +131,6 @@ class ProductController extends Controller
 
 
         User::where('id', Auth::id())->decrement('wallet', $charge_amount);
-
-
 
         $get_item = MainItem::select('name')->where('product_id', $product_id)->take($request->quantity)->get();
 
@@ -162,7 +161,7 @@ class ProductController extends Controller
 
         $trx = new Transaction();
         $trx->user_id = Auth::id();
-        $trx->amount = $pamount;
+        $trx->amount = $charge_amount;
         $trx->type = 1;
         $trx->ref_id = $ref;
         $trx->status = 1;
@@ -171,7 +170,7 @@ class ProductController extends Controller
         $sl = new SoldLog();
         $sl->user_id = Auth::id();
         $sl->ref_id = $ref;
-        $sl->amount = $pamount;
+        $sl->amount = $charge_amount;
         $sl->status = 1;
         $sl->qty = $request->quantity;
         $sl->item = $url;
