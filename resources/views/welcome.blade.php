@@ -406,11 +406,6 @@
             </div>
             @endif
 
-
-
-
-
-
             <div class="">
 
             <div class="swiper-container mySwiper p-4 mb-3">
