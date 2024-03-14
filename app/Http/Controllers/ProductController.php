@@ -178,6 +178,8 @@ class ProductController extends Controller
 
 
         $data['main_url'] = "<a href='$url'> CLICK HERE TO VIEW YOUR ORDER 👉🏽 DOWNLOAD </a>";
+        $urls =  "🎉 Item Purchased Successfully 🎉 Download your order 🛍️ below ";
+
         $data['url'] =  url('')."/storage/app/$filename";
         $data['user'] = Auth::id() ?? null;
         $data['fbaged'] = Category::where('id', 1)->get();
@@ -223,12 +225,10 @@ class ProductController extends Controller
         $data['strem_items'] = Item::where('cat_id', 18)->take(5)->get();
         $data['resell_items'] = Item::where('cat_id', 19)->take(5)->get();
         $data['special_items'] = Item::where('cat_id', 20)->take(5)->get();
-
         $data['categories'] = Category::all();
 
 
-
-        return view('welcome', $data);
+        return redirect('profile')->with("message", "$urls");
 
 
     }
