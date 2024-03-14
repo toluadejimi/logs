@@ -228,7 +228,7 @@ class ProductController extends Controller
         $data['categories'] = Category::all();
 
 
-        return redirect('profile')->with("message", "$urls");
+        return redirect('profile')->with("order", "");
 
 
     }

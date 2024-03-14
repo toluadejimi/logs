@@ -149,7 +149,7 @@ class HomeController extends Controller
     }
 
 
-    
+
 
 
     public function fund_manual_now(Request $request)
@@ -179,28 +179,28 @@ class HomeController extends Controller
         send_notification2($message);
         send_notification4($message);
 
-        
+
 
 
         $message = Auth::user()->email . "| submitted payment receipt |  NGN " . number_format($request->amount) . " | on LOG MARKETPLACE";
         send_notification3($message);
 
 
-     
+
 
 
         return view('confirm-pay');
-        
+
 
     }
 
 
     public function confirm_pay(Request $request)
     {
-        
+
         return view('confirm-pay');
 
-    
+
     }
 
 
@@ -259,7 +259,7 @@ class HomeController extends Controller
             $message = Auth::user()->email . "| wants to fund |  NGN " . number_format($request->amount) . " | with ref | $ref |  on LOG MARKETPLACE";
 
 
-       
+
 
             return Redirect::to($url);
         }
@@ -344,7 +344,7 @@ class HomeController extends Controller
             $message = Auth::user()->email . "| Cancled |  NGN " . number_format($request->amount) . " | with ref | $trx_id |  on LOG MARKETPLACE";
             send_notification3($message);
 
-           
+
 
             Transaction::where('ref_id', $trx_id)->where('status', 1)->update(['status' => 3]);
             return redirect('fund-wallet')->with('error', 'Transaction Declined');
@@ -440,7 +440,7 @@ class HomeController extends Controller
             send_notification3($message);
 
 
-          
+
 
 
             return redirect('fund-wallet')->with('message', "Wallet has been funded with $amount");
@@ -514,10 +514,11 @@ class HomeController extends Controller
         $user = Auth::id();
         $orders = SoldLog::latest()->where('user_id', Auth::id())->paginate(5);
         $total_bought = SoldLog::where('user_id', Auth::id())->sum('amount');
+        $url_data = SoldLog::latest()->where('user_id', Auth::id())->first()->item;
 
 
 
-        return view('profile', compact('user', 'orders', 'total_bought'));
+        return view('profile', compact('user', 'url_data', 'orders', 'total_bought'));
     }
 
 
@@ -560,7 +561,7 @@ class HomeController extends Controller
             $message = Auth::user()->email . "is trying to reslove from deleted transaction on LOG MarketPlace";
             send_notification3($message);
 
-         
+
 
 
 
