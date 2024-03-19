@@ -188,10 +188,8 @@
                                         @csrf
 
                                         <h6 class="">Have a coupon?</h6>
-                                                <input class="form-control2 mb-3" name="coupon_code" type="text" autofocus
+                                                <input class="form-control2 mb-3" name="coupon_code" type="text"
                                                        placeholder="Enter Coupon Code">
-
-
 
                                         <input type="hidden" id="quantityInput" name="quantity" value="1">
                                         <input type="hidden" name="item_id" value="{{ $item_id }}">
