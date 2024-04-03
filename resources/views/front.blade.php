@@ -8,125 +8,23 @@
     <link rel="canonical" href="index.html"/>
     <meta property="og:locale" content="en_US"/>
     <meta property="og:type" content="article"/>
-    <meta property="og:title" content="test - Kaltani"/>
+    <meta property="og:title" content="LogMarketPlace"/>
     <meta property="og:description"
-          content="Login Sign Up Discover Unique Accounts in our Marketplace Enhance your online presence: Preview, verify and acquire geniune accounts on Logmarketplace Get Started Accounts Marketplace At Logmarketplace, we believe in the power of community-driven commerce. Explore a diverse marketplace filled with all types of accounts, curated by individual sellers just like you. Whether you&#8217;re searching [&hellip;]"/>
-    <meta property="og:url" content="https://kaltani.com/test/"/>
-    <meta property="og:site_name" content="Kaltani"/>
+          content="Home of Accounts"/>
+    <meta property="og:site_name" content="LogmarketPlace"/>
     <meta property="article:modified_time" content="2024-04-03T09:01:37+00:00"/>
-    <meta property="og:image" content="http://kaltani.com/wp-content/uploads/2024/04/download.svg"/>
+    <meta property="og:image" content="http://Logmarketplace.com/wp-content/uploads/2024/04/download.svg"/>
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:label1" content="Est. reading time"/>
     <meta name="twitter:data1" content="5 minutes"/>
     <script type="application/ld+json" class="yoast-schema-graph">
-        {"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://kaltani.com/test/","url":"https://kaltani.com/test/","name":"test - Kaltani","isPartOf":{"@id":"https://kaltani.com/#website"},"primaryImageOfPage":{"@id":"https://kaltani.com/test/#primaryimage"},"image":{"@id":"https://kaltani.com/test/#primaryimage"},"thumbnailUrl":"http://kaltani.com/wp-content/uploads/2024/04/download.svg","datePublished":"2024-04-03T05:37:48+00:00","dateModified":"2024-04-03T09:01:37+00:00","breadcrumb":{"@id":"https://kaltani.com/test/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://kaltani.com/test/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://kaltani.com/test/#primaryimage","url":"https://kaltani.com/wp-content/uploads/2024/04/download.svg","contentUrl":"https://kaltani.com/wp-content/uploads/2024/04/download.svg","width":205,"height":45},{"@type":"BreadcrumbList","@id":"https://kaltani.com/test/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://kaltani.com/"},{"@type":"ListItem","position":2,"name":"test"}]},{"@type":"WebSite","@id":"https://kaltani.com/#website","url":"https://kaltani.com/","name":"Kaltani","description":"Plastic Recycling Company","publisher":{"@id":"https://kaltani.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kaltani.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://kaltani.com/#organization","name":"Kaltani","url":"https://kaltani.com/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://kaltani.com/#/schema/logo/image/","url":"https://kaltani.com/wp-content/uploads/2022/08/Logo-D-web-test-1.png","contentUrl":"https://kaltani.com/wp-content/uploads/2022/08/Logo-D-web-test-1.png","width":231,"height":71,"caption":"Kaltani"},"image":{"@id":"https://kaltani.com/#/schema/logo/image/"}}]}
     </script>
     <!-- / Yoast SEO plugin. -->
 
 
     <link rel='dns-prefetch' href='https://fonts.googleapis.com/'/>
-    <link rel="alternate" type="application/rss+xml" title="Kaltani &raquo; Feed" href="https://kaltani.com/feed/"/>
-    <link rel="alternate" type="application/rss+xml" title="Kaltani &raquo; Comments Feed"
-          href="https://kaltani.com/comments/feed/"/>
-    <script>
-        window._wpemojiSettings = {
-            "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/",
-            "ext": ".png",
-            "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/",
-            "svgExt": ".svg",
-            "source": {"concatemoji": "https:\/\/kaltani.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4.3"}
-        };
-        /*! This file is auto-generated */
-        !function (i, n) {
-            var o, s, e;
 
-            function c(e) {
-                try {
-                    var t = {supportTests: e, timestamp: (new Date).valueOf()};
-                    sessionStorage.setItem(o, JSON.stringify(t))
-                } catch (e) {
-                }
-            }
 
-            function p(e, t, n) {
-                e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(t, 0, 0);
-                var t = new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data),
-                    r = (e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(n, 0, 0), new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data));
-                return t.every(function (e, t) {
-                    return e === r[t]
-                })
-            }
-
-            function u(e, t, n) {
-                switch (t) {
-                    case"flag":
-                        return n(e, "\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f", "\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f") ? !1 : !n(e, "\ud83c\uddfa\ud83c\uddf3", "\ud83c\uddfa\u200b\ud83c\uddf3") && !n(e, "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f", "\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");
-                    case"emoji":
-                        return !n(e, "\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff", "\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff")
-                }
-                return !1
-            }
-
-            function f(e, t, n) {
-                var r = "undefined" != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope ? new OffscreenCanvas(300, 150) : i.createElement("canvas"),
-                    a = r.getContext("2d", {willReadFrequently: !0}),
-                    o = (a.textBaseline = "top", a.font = "600 32px Arial", {});
-                return e.forEach(function (e) {
-                    o[e] = t(a, e, n)
-                }), o
-            }
-
-            function t(e) {
-                var t = i.createElement("script");
-                t.src = e, t.defer = !0, i.head.appendChild(t)
-            }
-
-            "undefined" != typeof Promise && (o = "wpEmojiSettingsSupports", s = ["flag", "emoji"], n.supports = {
-                everything: !0,
-                everythingExceptFlag: !0
-            }, e = new Promise(function (e) {
-                i.addEventListener("DOMContentLoaded", e, {once: !0})
-            }), new Promise(function (t) {
-                var n = function () {
-                    try {
-                        var e = JSON.parse(sessionStorage.getItem(o));
-                        if ("object" == typeof e && "number" == typeof e.timestamp && (new Date).valueOf() < e.timestamp + 604800 && "object" == typeof e.supportTests) return e.supportTests
-                    } catch (e) {
-                    }
-                    return null
-                }();
-                if (!n) {
-                    if ("undefined" != typeof Worker && "undefined" != typeof OffscreenCanvas && "undefined" != typeof URL && URL.createObjectURL && "undefined" != typeof Blob) try {
-                        var e = "postMessage(" + f.toString() + "(" + [JSON.stringify(s), u.toString(), p.toString()].join(",") + "));",
-                            r = new Blob([e], {type: "text/javascript"}),
-                            a = new Worker(URL.createObjectURL(r), {name: "wpTestEmojiSupports"});
-                        return void (a.onmessage = function (e) {
-                            c(n = e.data), a.terminate(), t(n)
-                        })
-                    } catch (e) {
-                    }
-                    c(n = f(s, u, p))
-                }
-                t(n)
-            }).then(function (e) {
-                for (var t in e) n.supports[t] = e[t], n.supports.everything = n.supports.everything && n.supports[t], "flag" !== t && (n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && n.supports[t]);
-                n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && !n.supports.flag, n.DOMReady = !1, n.readyCallback = function () {
-                    n.DOMReady = !0
-                }
-            }).then(function () {
-                return e
-            }).then(function () {
-                var e;
-                n.supports.everything || (n.readyCallback(), (e = n.source || {}).concatemoji ? t(e.concatemoji) : e.wpemoji && e.twemoji && (t(e.twemoji), t(e.wpemoji)))
-            }))
-        }((window, document), window._wpemojiSettings);
-    </script>
-    <link rel='stylesheet' id='formidable-css'
-          href='{{url('')}}/public/arc/wp-content/plugins/formidable/css/formidableforms1.css%3Fver=3272142.css'
-          media='all'/>
-    <link rel='stylesheet' id='astra-theme-css-css'
-          href='{{url('')}}/public/arc/wp-content/themes/astra/assets/css/minified/frontend.min.css%3Fver=4.6.9.css'
-          media='all'/>
     <style id='astra-theme-css-inline-css'>
         .ast-no-sidebar .entry-content .alignfull {
             margin-left: calc(-50vw + 50%);
@@ -2499,7 +2397,7 @@
           href='{{url('')}}/public/arc/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.min.css%3Fver=5.15.3.css'
           media='all'/>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><!--n2css--><!--[if IE]>
-    <script src="https://kaltani.com/wp-content/themes/astra/assets/js/minified/flexibility.min.js?ver=4.6.9"
+    <script src="https://Logmarketplace.com/wp-content/themes/astra/assets/js/minified/flexibility.min.js?ver=4.6.9"
             id="astra-flexibility-js"></script>
     <script id="astra-flexibility-js-after">
         flexibility(document.documentElement);
@@ -2508,15 +2406,15 @@
     <script src="{{url('')}}/public/arc/wp-includes/js/jquery/jquery.min.js%3Fver=3.7.1" id="jquery-core-js"></script>
     <script src="{{url('')}}/public/arc/wp-includes/js/jquery/jquery-migrate.min.js%3Fver=3.4.1"
             id="jquery-migrate-js"></script>
-    <link rel="https://api.w.org/" href="https://kaltani.com/wp-json/"/>
-    <link rel="alternate" type="application/json" href="https://kaltani.com/wp-json/wp/v2/pages/8192"/>
-    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://kaltani.com/xmlrpc.php?rsd"/>
+    <link rel="https://api.w.org/" href="https://Logmarketplace.com/wp-json/"/>
+    <link rel="alternate" type="application/json" href="https://Logmarketplace.com/wp-json/wp/v2/pages/8192"/>
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://Logmarketplace.com/xmlrpc.php?rsd"/>
     <meta name="generator" content="WordPress 6.4.3"/>
-    <link rel='shortlink' href='https://kaltani.com/?p=8192'/>
+    <link rel='shortlink' href='https://Logmarketplace.com/?p=8192'/>
     <link rel="alternate" type="application/json+oembed"
-          href="https://kaltani.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaltani.com%2Ftest%2F"/>
+          href="https://Logmarketplace.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2FLogmarketplace.com%2Ftest%2F"/>
     <link rel="alternate" type="text/xml+oembed"
-          href="https://kaltani.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaltani.com%2Ftest%2F&#038;format=xml"/>
+          href="https://Logmarketplace.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2FLogmarketplace.com%2Ftest%2F&#038;format=xml"/>
     <meta name="generator" content="Site Kit by Google 1.123.1"/>
     <meta name="generator"
           content="Elementor 3.20.3; features: e_optimized_assets_loading, e_optimized_css_loading, additional_custom_breakpoints, block_editor_assets_optimize, e_image_loading_optimization; settings: css_print_method-external, google_font-enabled, font_display-auto">
@@ -2531,10 +2429,10 @@
             t.src = "https://nitroscripts.com/YTDzLkzKDYmtZOFzjyYIXCeYEmNxRYul", t.async = !0, t.id = "nitro-script", document.head.appendChild(t)
         })();</script>
     <meta name="theme-color" content="#FFFFFF">
-    <link rel="icon" href="https://kaltani.com/wp-content/uploads/2022/07/favicon-1-150x150.png" sizes="32x32"/>
-    <link rel="icon" href="https://kaltani.com/wp-content/uploads/2022/07/favicon-1.png" sizes="192x192"/>
-    <link rel="apple-touch-icon" href="https://kaltani.com/wp-content/uploads/2022/07/favicon-1.png"/>
-    <meta name="msapplication-TileImage" content="https://kaltani.com/wp-content/uploads/2022/07/favicon-1.png"/>
+    <link rel="icon" href="https://Logmarketplace.com/wp-content/uploads/2022/07/favicon-1-150x150.png" sizes="32x32"/>
+    <link rel="icon" href="https://Logmarketplace.com/wp-content/uploads/2022/07/favicon-1.png" sizes="192x192"/>
+    <link rel="apple-touch-icon" href="https://Logmarketplace.com/wp-content/uploads/2022/07/favicon-1.png"/>
+    <meta name="msapplication-TileImage" content="https://Logmarketplace.com/wp-content/uploads/2022/07/favicon-1.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 </head>
 <body
@@ -3764,7 +3662,7 @@ text-fill-color: transparent;">Journey</b></h2></div>
         id="astra-theme-js-js"></script>
 <script id="eael-general-js-extra">
     var localize = {
-        "ajaxurl": "https:\/\/kaltani.com\/wp-admin\/admin-ajax.php",
+        "ajaxurl": "https:\/\/Logmarketplace.com\/wp-admin\/admin-ajax.php",
         "nonce": "2cbf8beb60",
         "i18n": {"added": "Added ", "compare": "Compare", "loading": "Loading..."},
         "eael_translate_text": {
@@ -3774,7 +3672,7 @@ text-fill-color: transparent;">Journey</b></h2></div>
             "shipping_text": "Shipping",
             "fg_mfp_counter_text": "of"
         },
-        "page_permalink": "https:\/\/kaltani.com\/test\/",
+        "page_permalink": "https:\/\/Logmarketplace.com\/test\/",
         "cart_redirectition": "",
         "cart_page_url": "",
         "el_breakpoints": {
@@ -3850,11 +3748,11 @@ text-fill-color: transparent;">Journey</b></h2></div>
 </script>
 <script id="elementor-pro-frontend-js-before">
     var ElementorProFrontendConfig = {
-        "ajaxurl": "https:\/\/kaltani.com\/wp-admin\/admin-ajax.php",
+        "ajaxurl": "https:\/\/Logmarketplace.com\/wp-admin\/admin-ajax.php",
         "nonce": "40eee7f3f9",
         "urls": {
-            "assets": "https:\/\/kaltani.com\/wp-content\/plugins\/elementor-pro\/assets\/",
-            "rest": "https:\/\/kaltani.com\/wp-json\/"
+            "assets": "https:\/\/Logmarketplace.com\/wp-content\/plugins\/elementor-pro\/assets\/",
+            "rest": "https:\/\/Logmarketplace.com\/wp-json\/"
         },
         "shareButtonsNetworks": {
             "facebook": {"title": "Facebook", "has_counter": true},
@@ -3877,7 +3775,7 @@ text-fill-color: transparent;">Journey</b></h2></div>
             "print": {"title": "Print"}
         },
         "facebook_sdk": {"lang": "en_US", "app_id": ""},
-        "lottie": {"defaultAnimationUrl": "https:\/\/kaltani.com\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}
+        "lottie": {"defaultAnimationUrl": "https:\/\/Logmarketplace.com\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}
     };
 </script>
 <script src="{{url('')}}/public/arc/wp-content/plugins/elementor-pro/assets/js/frontend.min.js%3Fver=3.12.3"
@@ -3974,7 +3872,7 @@ text-fill-color: transparent;">Journey</b></h2></div>
             "form-submissions": true,
             "e_scroll_snap": true
         },
-        "urls": {"assets": "https:\/\/kaltani.com\/wp-content\/plugins\/elementor\/assets\/"},
+        "urls": {"assets": "https:\/\/Logmarketplace.com\/wp-content\/plugins\/elementor\/assets\/"},
         "swiperClass": "swiper",
         "settings": {"page": [], "editorPreferences": []},
         "kit": {
@@ -3988,7 +3886,7 @@ text-fill-color: transparent;">Journey</b></h2></div>
             "lightbox_title_src": "title",
             "lightbox_description_src": "description"
         },
-        "post": {"id": 8192, "title": "test%20-%20Kaltani", "excerpt": "", "featuredImage": false}
+        "post": {"id": 8192, "title": "test%20-%20Logmarketplace", "excerpt": "", "featuredImage": false}
     };
 </script>
 <script src="{{url('')}}/public/arc/wp-content/plugins/elementor/assets/js/frontend.min.js%3Fver=3.20.3"
