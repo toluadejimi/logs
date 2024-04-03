@@ -3060,7 +3060,7 @@ text-fill-color: transparent;">Marketplace</b></h2></div>
                         data-id="5ff926b" data-element_type="widget" data-widget_type="button.default">
                         <div class="elementor-widget-container">
                             <div class="elementor-button-wrapper">
-                                <a class="elementor-button elementor-button-link elementor-size-sm" href="index.html#">
+                                <a class="elementor-button elementor-button-link elementor-size-sm" href="https://logmarketplace.com/shop">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">Purchase an account</span>
 		</span>
