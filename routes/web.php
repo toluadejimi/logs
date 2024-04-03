@@ -28,7 +28,10 @@ use App\Http\Controllers\ItemController;
 
 //auth
 
-Route::get('/',  [HomeController::class,'index']);
+Route::get('/',  [HomeController::class,'front']);
+
+Route::get('/shop',  [HomeController::class,'index']);
+
 
 
 Route::post('login',  [HomeController::class,'login']);

@@ -18,6 +18,12 @@ use App\Models\ManualPayment;
 
 class HomeController extends Controller
 {
+
+    public function front(request $request)
+    {
+        return view('front');
+
+    }
     public function index(request $request)
     {
 
@@ -39,6 +45,9 @@ class HomeController extends Controller
         $data['strem'] = Category::where('id', 18)->get();
         $data['resell'] = Category::where('id', 19)->get();
         $data['special'] = Category::where('id', 20)->get();
+        $data['con_fb'] = Category::where('id', 21)->get();
+        $data['tools'] = Category::where('id', 22)->get();
+
 
 
 
@@ -66,6 +75,8 @@ class HomeController extends Controller
         $data['strem_items'] = Item::where('cat_id', 18)->take(5)->get();
         $data['resell_items'] = Item::where('cat_id', 19)->take(5)->get();
         $data['special_items'] = Item::where('cat_id', 20)->take(5)->get();
+        $data['con_fb_items'] = Item::where('cat_id', 21)->take(5)->get();
+        $data['tools_items'] = Item::where('cat_id', 22)->take(5)->get();
 
         $data['categories'] = Category::all();
 
@@ -98,6 +109,8 @@ class HomeController extends Controller
         $data['strem'] = Category::where('id', 18)->get();
         $data['resell'] = Category::where('id', 19)->get();
         $data['special'] = Category::where('id', 20)->get();
+        $data['con_fb'] = Category::where('id', 21)->get();
+        $data['tools'] = Category::where('id', 22)->get();
 
 
 
@@ -125,6 +138,8 @@ class HomeController extends Controller
         $data['strem_items'] = Item::where('cat_id', 18)->take(5)->get();
         $data['resell_items'] = Item::where('cat_id', 19)->take(5)->get();
         $data['special_items'] = Item::where('cat_id', 20)->take(5)->get();
+        $data['con_fb_items'] = Item::where('cat_id', 21)->take(5)->get();
+        $data['tools_items'] = Item::where('cat_id', 22)->take(5)->get();
 
 
         $data['categories'] = Category::all();
