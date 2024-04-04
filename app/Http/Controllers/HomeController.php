@@ -91,6 +91,8 @@ class HomeController extends Controller
     public function welcome_index(request $request)
     {
 
+
+
         $data['user'] = Auth::id() ?? null;
         $data['fbaged'] = Category::where('id', 1)->get();
         $data['insta_cat'] = Category::where('id', 2)->get();
@@ -161,6 +163,12 @@ class HomeController extends Controller
 
 
         return view('fund-wallet', compact('user', 'transaction'));
+    }
+
+
+    public function customer(Request $request)
+    {
+        return view('customercare');
     }
 
 
@@ -525,17 +533,31 @@ class HomeController extends Controller
     public function profile(request $request)
     {
 
-
+        check_auth();
         $user = Auth::id();
-        $orders = SoldLog::latest()->where('user_id', Auth::id())->paginate(5);
         $total_bought = SoldLog::where('user_id', Auth::id())->sum('amount');
-        $url_data = SoldLog::latest()->where('user_id', Auth::id())->first()->item;
+        $url_data = SoldLog::latest()->where('user_id', Auth::id())->first()->item ?? null;
 
 
 
-        return view('profile', compact('user', 'url_data', 'orders', 'total_bought'));
+        return view('profile', compact('user', 'url_data',  'total_bought'));
     }
 
+    public function order(request $request)
+    {
+        $ckh = Auth::check();
+        if($ckh == false){
+            return redirect('login')->with('error', "Not Autheticated");
+        }
+
+        $orders = SoldLog::latest()->where('user_id', Auth::id())->paginate(5);
+
+        return view('order', compact('orders'));
+
+
+
+
+    }
 
 
 

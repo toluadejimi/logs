@@ -50,6 +50,8 @@ Route::get('terms',  [HomeController::class,'terms']);
 Route::get('policy',  [HomeController::class,'policy']);
 Route::get('rules',  [HomeController::class,'rules']);
 Route::post('update-password-now',  [HomeController::class,'update_password_now']);
+Route::get('order',  [HomeController::class,'order']);
+Route::any('customercare',  [HomeController::class,'customer']);
 
 
 

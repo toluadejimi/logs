@@ -15,6 +15,15 @@ use Illuminate\Support\Str;
 
 
 
+function check_auth()
+{
+    $ckh = Auth::check();
+    if($ckh == false){
+        return redirect('login')->with('error', "Not Autheticated");
+    }
+
+}
+
 function resolve_complete($order_id)
 {
 
@@ -108,7 +117,7 @@ function send_notification($message)
 }
 
 
-    
+
 
 
 
