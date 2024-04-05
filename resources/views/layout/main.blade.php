@@ -388,7 +388,7 @@
 
             <div class="" id="wallet">
 
-                <h5>{{number_format(Auth::user()->wallet, 2)}}</h5>
+                <h5>₦ {{number_format(Auth::user()->wallet, 2)}}</h5>
 
 
             </div>

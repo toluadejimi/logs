@@ -164,7 +164,7 @@
                             <td>
                             </td>
                             <td class="small">
-                                NGN{{ number_format($data->amount, 2) }}
+                                ₦{{ number_format($data->amount, 2) }}
                             </td>
                             <td>
                                 @if ($data->qty == 0)
@@ -262,7 +262,7 @@
                             <td>
                             </td>
                             <td class="small">
-                                NGN{{ number_format($data->amount, 2) }}
+                                ₦{{ number_format($data->amount, 2) }}
                             </td>
                             <td>
                                 @if ($data->qty == 0)
@@ -361,7 +361,7 @@
                             <td>
                             </td>
                             <td class="small">
-                                NGN{{ number_format($data->amount, 2) }}
+                                ₦{{ number_format($data->amount, 2) }}
                             </td>
                             <td>
                                 @if ($data->qty == 0)
@@ -464,7 +464,7 @@
                             <td>
                             </td>
                             <td class="small">
-                                NGN{{ number_format($data->amount, 2) }}
+                                ₦{{ number_format($data->amount, 2) }}
                             </td>
                             <td>
                                 @if ($data->qty == 0)
@@ -567,7 +567,7 @@
                                 <td>
                                 </td>
                                 <td class="small">
-                                    NGN{{ number_format($data->amount, 2) }}
+                                    ₦{{ number_format($data->amount, 2) }}
                                 </td>
                                 <td>
                                     @if ($data->qty == 0)
@@ -675,7 +675,7 @@
                                     <td>
                                     </td>
                                     <td class="small">
-                                        NGN{{ number_format($data->amount, 2) }}
+                                        ₦{{ number_format($data->amount, 2) }}
                                     </td>
                                     <td>
                                         @if ($data->qty == 0)
@@ -784,7 +784,7 @@
                                         <td>
                                         </td>
                                         <td class="small">
-                                            NGN{{ number_format($data->amount, 2) }}
+                                            ₦{{ number_format($data->amount, 2) }}
                                         </td>
                                         <td>
                                             @if ($data->qty == 0)
@@ -895,7 +895,7 @@
                                             <td>
                                             </td>
                                             <td class="small">
-                                                NGN{{ number_format($data->amount, 2) }}
+                                                ₦{{ number_format($data->amount, 2) }}
                                             </td>
                                             <td>
                                                 @if ($data->qty == 0)
@@ -1008,7 +1008,7 @@
                                                 <td>
                                                 </td>
                                                 <td class="small">
-                                                    NGN{{ number_format($data->amount, 2) }}
+                                                    ₦{{ number_format($data->amount, 2) }}
                                                 </td>
                                                 <td>
                                                     @if ($data->qty == 0)
@@ -1126,7 +1126,7 @@
                                                     <td>
                                                     </td>
                                                     <td class="small">
-                                                        NGN{{ number_format($data->amount, 2) }}
+                                                        ₦{{ number_format($data->amount, 2) }}
                                                     </td>
                                                     <td>
                                                         @if ($data->qty == 0)
@@ -1246,7 +1246,7 @@
                                                         <td>
                                                         </td>
                                                         <td class="small">
-                                                            NGN{{ number_format($data->amount, 2) }}
+                                                            ₦{{ number_format($data->amount, 2) }}
                                                         </td>
                                                         <td>
                                                             @if ($data->qty == 0)
@@ -1369,7 +1369,7 @@
                                                             <td>
                                                             </td>
                                                             <td class="small">
-                                                                NGN{{ number_format($data->amount, 2) }}
+                                                                ₦{{ number_format($data->amount, 2) }}
                                                             </td>
                                                             <td>
                                                                 @if ($data->qty == 0)
@@ -1490,7 +1490,7 @@
                                                                 <td>
                                                                 </td>
                                                                 <td class="small">
-                                                                    NGN{{ number_format($data->amount, 2) }}
+                                                                    ₦{{ number_format($data->amount, 2) }}
                                                                 </td>
                                                                 <td>
                                                                     @if ($data->qty == 0)
@@ -1616,7 +1616,7 @@
                                                                     <td>
                                                                     </td>
                                                                     <td class="small">
-                                                                        NGN{{ number_format($data->amount, 2) }}
+                                                                        ₦{{ number_format($data->amount, 2) }}
                                                                     </td>
                                                                     <td>
                                                                         @if ($data->qty == 0)
@@ -1747,7 +1747,7 @@
                                                                         <td>
                                                                         </td>
                                                                         <td class="small">
-                                                                            NGN{{ number_format($data->amount, 2) }}
+                                                                            ₦{{ number_format($data->amount, 2) }}
                                                                         </td>
                                                                         <td>
                                                                             @if ($data->qty == 0)
@@ -1880,7 +1880,7 @@
                                                                         <td>
                                                                         </td>
                                                                         <td class="small">
-                                                                            NGN{{ number_format($data->amount, 2) }}
+                                                                            ₦{{ number_format($data->amount, 2) }}
                                                                         </td>
                                                                         <td>
                                                                             @if ($data->qty == 0)
@@ -2014,7 +2014,7 @@
                                                                         <td>
                                                                         </td>
                                                                         <td class="small">
-                                                                            NGN{{ number_format($data->amount, 2) }}
+                                                                            ₦{{ number_format($data->amount, 2) }}
                                                                         </td>
                                                                         <td>
                                                                             @if ($data->qty == 0)
@@ -2148,7 +2148,7 @@
                                                                         <td>
                                                                         </td>
                                                                         <td class="small">
-                                                                            NGN{{ number_format($data->amount, 2) }}
+                                                                            ₦{{ number_format($data->amount, 2) }}
                                                                         </td>
                                                                         <td>
                                                                             @if ($data->qty == 0)
