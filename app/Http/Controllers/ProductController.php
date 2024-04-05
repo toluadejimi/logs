@@ -263,6 +263,20 @@ class ProductController extends Controller
         $description = Item::where('id', $request->id)->first()->description;
 
 
+        $url = url('');
+
+
+        $shareComponent = Share::page(
+            "$url/item-view?id=$request->id",
+            "$title",
+        )
+            ->facebook()
+            ->twitter()
+            ->telegram()
+            ->whatsapp();
+
+
+
 
 
 
@@ -271,7 +285,7 @@ class ProductController extends Controller
 
 
 
-        return view('item-view',compact('title','icon', 'inst', 'description', 'item_id', 'stock', 'amount', 'user'));
+        return view('item-view',compact('title','icon', 'shareComponent', 'inst', 'description', 'item_id', 'stock', 'amount', 'user'));
 
 
 
