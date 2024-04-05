@@ -129,19 +129,19 @@
                                 @if($data->type == 2)
                                     <div>
                                     <span
-                                        class="uppercase text-xs font-bold bg-green-800 text-black rounded px-2 py-1">Credit</span>
+                                        class="text-small">Credit</span>
                                     </div>
                                 @else
                                     <div>
                                     <span
-                                        class="uppercase text-xs font-bold bg-red-800 text-black rounded px-2 py-1">Debit</span>
+                                        class=text-small">Debit</span>
                                     </div>
                                 @endif
 
                             </div>
 
                             <div class="col">
-                                <div class="text-lg font-bold">N{{ number_format($data->amount, 2) }}</div>
+                                <div class="text-small">₦ {{ number_format($data->amount, 2) }}</div>
                             </div>
 
                             @if ($data->status == 2)
@@ -149,7 +149,7 @@
                                 <div>
                                     <div>
                                     <span
-                                        class="badge badge-warning">Completed</span>
+                                        class="badge text-small badge-success">Completed</span>
                                     </div>
                                 </div>
 
@@ -158,7 +158,7 @@
                                 <div>
                                     <div>
                                         <a href="resolve-page?trx_ref={{$data->ref_id}}"
-                                           class="badge badge-warning">Resolve</a>
+                                           class="badge text-small badge-warning">Resolve</a>
                                     </div>
                                 </div>
 
