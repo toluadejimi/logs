@@ -2,20 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Imports\MainItemsClass;
-use App\Models\Category;
+use Share;
 use App\Models\Item;
+use App\Models\User;
 use App\Models\Output;
 use App\Models\Product;
 use App\Models\SoldLog;
-use App\Models\Transaction;
-use App\Models\User;
+use App\Models\Category;
 use App\Models\MainItem;
 use App\Models\CouponCode;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
+use App\Imports\MainItemsClass;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -238,6 +239,8 @@ class ProductController extends Controller
     public function item_view(request $request){
 
 
+
+
         $user = Auth::id();
         if($user == null){
             return back()->with('error', 'Login your account to buy product');
@@ -262,6 +265,7 @@ class ProductController extends Controller
 
 
 
+
         $item_id = $request->id;
         $user = Auth::id() ?? null;
 
@@ -274,7 +278,6 @@ class ProductController extends Controller
     }
 
     public function i_view(request $request){
-
 
 
         $user = Auth::id();
@@ -295,7 +298,22 @@ class ProductController extends Controller
 
 
 
-        return view('item-view',compact('title', 'icon', 'instruction', 'description', 'item_id', 'stock', 'amount', 'user'));
+        $url = url('');
+
+
+        $shareComponent = Share::page(
+            "$url/item-view?id=$request->id",
+            "$title",
+        )
+            ->facebook()
+            ->twitter()
+            ->telegram()
+            ->whatsapp();
+
+
+
+
+        return view('item-view',compact('title', 'shareComponent', 'icon', 'instruction', 'description', 'item_id', 'stock', 'amount', 'user'));
 
 
     }

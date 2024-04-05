@@ -2,6 +2,26 @@
 @section('content')
 
 
+    <style>
+        div#social-links {
+            margin: 0 auto;
+            max-width: 500px;
+        }
+        div#social-links ul li {
+            display: inline-block;
+        }
+        div#social-links ul li a {
+            padding: 10px;
+            border: 1px solid #fff;
+            margin: 2.5px;
+            font-size: 20px;
+            color: #222;
+            background-color: #ff087c;
+            border-radius: 10px;
+            color: white;
+        }
+    </style>
+
     <!-- section start -->
 
     <div class="collection-wrapper">
@@ -81,6 +101,16 @@
                                     </div>
                                 </div>
 
+
+                                <hr>
+
+                                <div class="p-2">
+                                    <h6 class="">Share product</h6>
+
+
+                                    {!! $shareComponent !!}
+
+                                </div>
 
                                 <hr>
 
