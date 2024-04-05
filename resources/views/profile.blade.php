@@ -107,8 +107,8 @@
 
 
                 <div class="lh-100">
-                    <h6 class="mb-0 text-black lh-100">Change Password</h6>
-                    <a href="log-out"><small>Logout</small></a>
+                    <h6 class="mb-0 text-black lh-100">Log Out</h6>
+                    <a href="log-out"><small>Click Here to Log Out</small></a>
                 </div>
             </div>
 

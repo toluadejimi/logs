@@ -1,7 +1,11 @@
 @extends('layout.main')
 @section('content')
 
+
     <div class="container">
+
+
+
         <div class="flex">
 
             @if ($errors->any())
