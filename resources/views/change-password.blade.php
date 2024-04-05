@@ -80,7 +80,7 @@
                                             <input type="password" placeholder="confirm password" class="form-control mb-2" required
                                                 name="password_confirmation">
 
-                                            <button class="btn btn-sm btn-success my-3" type="submit">
+                                            <button style="background: linear-gradient(279deg, #FF0B9E -6.58%, #FF6501 121.69%); color: white;" class="btn btn-block my-3" type="submit">
                                                 Continue
                                             </button>
                                         </div>
