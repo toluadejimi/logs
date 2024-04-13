@@ -69,7 +69,8 @@
                 <thead class="thead-dark">
                 <tr>
                     <th scope="col">Order ID</th>
-                    <th scope="col">Data</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Item</th>
                     <th scope="col">Amount</th>
                     <th scope="col">QTY</th>
                     <th scope="col">Status</th>
@@ -86,6 +87,12 @@
                     <td class="small">
                         {{ $data->ref_id }}
                     </td>
+
+
+                    <td class="small">
+                     {{$data->cat_name}}
+                    </td>
+
 
                     <td class="small">
                         <a class="btn btn-sm btn-black" href="{{$data->item}}"> CLICK HERE TO VIEW YOUR

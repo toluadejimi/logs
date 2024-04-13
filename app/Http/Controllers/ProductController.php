@@ -146,16 +146,19 @@ class ProductController extends Controller
         $filename = date('ymdhis').'data.txt';
         Storage::disk('local')->put($filename, $text);
 
+
+        $cat_id = Item::where('product_id', $product_id)->first()->cat_id;
+        $cat_name = Category::where('id', $cat_id)->first()->title;
+
+
         $get_item = MainItem::whereIn('name', $get_item->pluck('name'))
         ->delete();
 
+
         Item::where('product_id', $product_id)->decrement('qty', $request->quantity);
 
+
         $url =  url('')."/storage/app/$filename";
-
-
-
-
 
 
         $ref= random_int(000, 999).date('ymdhis');
@@ -175,6 +178,7 @@ class ProductController extends Controller
         $sl->status = 1;
         $sl->qty = $request->quantity;
         $sl->item = $url;
+        $sl->cat_name = $cat_name;
         $sl->save();
 
 
@@ -229,7 +233,7 @@ class ProductController extends Controller
         $data['categories'] = Category::all();
 
 
-        return redirect('profile')->with("order", "");
+        return redirect('order')->with('message', "Item Purchased Successfully 🎉");
 
 
     }
