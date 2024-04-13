@@ -95,8 +95,7 @@
 
 
                     <td class="small">
-                        <a class="btn btn-sm btn-black" href="{{$data->item}}"> CLICK HERE TO VIEW YOUR
-                        ORDER 👉🏽 DOWNLOAD.</a>
+                        <a class="text-small btn btn-sm btn-black" href="{{$data->item}}"> VIEW YOUR ORDER 👉🏽</a>
                     </td>
 
                     <td class="small">
