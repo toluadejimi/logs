@@ -47,6 +47,8 @@ class HomeController extends Controller
         $data['special'] = Category::where('id', 20)->get();
         $data['con_fb'] = Category::where('id', 21)->get();
         $data['tools'] = Category::where('id', 22)->get();
+        $data['usa_fb'] = Category::where('id', 23)->get();
+
 
 
 
@@ -77,6 +79,8 @@ class HomeController extends Controller
         $data['special_items'] = Item::where('cat_id', 20)->take(5)->get();
         $data['con_fb_items'] = Item::where('cat_id', 21)->take(5)->get();
         $data['tools_items'] = Item::where('cat_id', 22)->take(5)->get();
+        $data['usa_fb_items'] = Item::where('cat_id', 23)->take(5)->get();
+
 
         $data['categories'] = Category::all();
 
