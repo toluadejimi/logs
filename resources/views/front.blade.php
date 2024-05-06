@@ -2582,7 +2582,7 @@
                                                     font-size: 59px
                                                 }</style>
                                             <h2 class="elementor-heading-title elementor-size-default"><a
-                                                    href="https://logmarketplace.com/login" target="_blank">Login</a>
+                                                    href="https://v2.logmarketplace.com/user/login" target="_blank">Login</a>
                                             </h2></div>
                                     </div>
                                 </div>
@@ -2597,7 +2597,7 @@
                                         <div class="elementor-widget-container">
                                             <div class="elementor-button-wrapper">
                                                 <a class="elementor-button elementor-button-link elementor-size-sm"
-                                                   href="https://logmarketplace.com/register" target="_blank">
+                                                   href="https://v2.logmarketplace.com/user/register" target="_blank">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">Sign Up</span>
 		</span>
@@ -2642,7 +2642,7 @@
                         data-id="8db1525" data-element_type="widget" data-widget_type="icon.default">
                         <div class="elementor-widget-container">
                             <div class="elementor-icon-wrapper">
-                                <a class="elementor-icon" href="https://logmarketplace.com/login" target="_blank">
+                                <a class="elementor-icon" href="https://v2.logmarketplace.com/user/login" target="_blank">
                                     <i aria-hidden="true" class="fas fa-user-circle"></i> </a>
                             </div>
                         </div>
@@ -2716,7 +2716,7 @@ text-fill-color: transparent;">Marketplace</b></h2></div>
                         <div class="elementor-widget-container">
                             <div class="elementor-button-wrapper">
                                 <a class="elementor-button elementor-button-link elementor-size-sm"
-                                   href="https://logmarketplace.com/register">
+                                   href="https://v2.logmarketplace.com/user/register">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">Get Started</span>
 		</span>
@@ -2958,7 +2958,7 @@ text-fill-color: transparent;">Marketplace</b></h2></div>
                         data-id="5ff926b" data-element_type="widget" data-widget_type="button.default">
                         <div class="elementor-widget-container">
                             <div class="elementor-button-wrapper">
-                                <a class="elementor-button elementor-button-link elementor-size-sm" href="https://logmarketplace.com/shop">
+                                <a class="elementor-button elementor-button-link elementor-size-sm" href="https://v2.logmarketplace.com/products">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">Purchase an account</span>
 		</span>
@@ -3450,7 +3450,7 @@ text-fill-color: transparent;">Journey</b></h2></div>
                         <div class="elementor-widget-container">
                             <div class="elementor-button-wrapper">
                                 <a class="elementor-button elementor-button-link elementor-size-sm"
-                                   href="https://logmarketplace.com/shop">
+                                   href="https://v2.logmarketplace.com/products">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">Explore Marketplace</span>
 		</span>
