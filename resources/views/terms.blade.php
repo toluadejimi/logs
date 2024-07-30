@@ -102,7 +102,7 @@
 
             <h5>Terms and Conditions</h5>
            <p class="small">
-            
+
             Don’t use our product to harm other people , bullying on social networks, comment spam, threats, etc and to
             commit other illegal actions – fraud, extortion, data theft, etc.<br><br>
 
@@ -119,8 +119,6 @@
                 <li class="nav-item"><a href="terms" class="nav-link px-2 text-muted">Terms & Condition</a></li>
                 <li class="nav-item"><a href="policy" class="nav-link px-2 text-muted">Policy</a></li>
                 <li class="nav-item"><a href="rules" class="nav-link px-2 text-muted">Rules</a></li>
-
-
             </ul>
             <p class="text-center text-muted">&copy; 2023 Log MarketPlace</p>
         </footer>
